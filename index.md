@@ -1,7 +1,6 @@
 ---
 layout: home
-title: Welcome to Roti Tales
+title: Roti Tales
 ---
 
-This is a simple blog powered by Jekyll and hosted with GitHub Pages.
-More stories coming soon!
+The journey of tales will begin soon!
