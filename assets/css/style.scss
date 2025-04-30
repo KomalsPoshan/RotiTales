@@ -14,18 +14,17 @@ body {
 
 .site-header {
     color: #4d000a;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 120px;
+}
+
+.site-header-image {
     background-image: url('/assets/images/Roti Tales - Banner.png');
-    background-size: cover;
     background-position: center;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 2rem;
+    background-size: cover;
+    height: 80px;
+    left: 0;
+    position: fixed;
+    right: 0;
+    top: 0;
 }
 
 .site-header-left {
@@ -52,8 +51,16 @@ body {
     font-weight: bold;
 }
 
+.social-icons {
+    align-items: center;
+    display: flex;
+    justify-content: right;
+    padding-right: 24px;
+    padding-top: 4px;
+}
+
 .social-icons a {
-    margin-left: 12px;
+    margin: 8px;
 }
 
 .social-icons img {
