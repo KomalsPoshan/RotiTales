@@ -9,10 +9,12 @@ body {
     background-color: #fff5e8;
     color: #ab4f2e;
     font-family: 'Kufam', sans-serif;
+    font-size: 18px;
     text-align: justify;
 }
 
-.site-header {
+.site-header,
+.site-header a {
     color: #4d000a;
 }
 
@@ -27,28 +29,29 @@ body {
     top: 0;
 }
 
-.site-header-left {
-    display: contents;
-    width: 50%;
+.site-header-logo-title a {
+    align-items: center;
+    display: flex;
+    margin: 32px;
+    position: fixed;
 }
 
-.site-header-left img {
+.site-header-logo-title img {
     border-radius: 20%;
-    height: 14%;
-    position: fixed;
-    top: 32px;
+    height: 232px;
 }
 
 .site-main {
     margin: 24px;
-    padding-top: 32px; // Same as top for header image
+    padding-top: 64px; 
     position: fixed;
-    top: 14%; // same as height of header image
+    top: 232px; // same as height of logo image
 }
 
 .site-title {
-    font-size: 1.5rem;
+    font-size: 3.2rem;
     font-weight: bold;
+    margin-left: 32px;
 }
 
 .social-icons {
