@@ -1,14 +1,21 @@
+// ---
+// ---
+
+// @import "{{ site.theme }}";
+
 @import url('https://fonts.googleapis.com/css2?family=Kufam&display=swap');
 
 body {
     background-color: #fff5e8;
+    color: #ab4f2e;
     font-family: 'Kufam', sans-serif;
     margin: 0;
     padding-top: 80px;
-    /* account for fixed header */
+    text-align: justify;
 }
 
 .site-header {
+    color: #4d000a;
     position: fixed;
     top: 0;
     left: 0;
@@ -21,7 +28,6 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 0 2rem;
-    z-index: 1000;
 }
 
 .logo {
@@ -37,12 +43,6 @@ body {
 .site-title {
     font-size: 1.5rem;
     font-weight: bold;
-    color: #333;
-}
-
-.social-icons {
-    display: flex;
-    align-items: center;
 }
 
 .social-icons a {
@@ -51,17 +51,9 @@ body {
 
 .social-icons img {
     width: 24px;
-    height: 24px;
-    object-fit: contain;
-    transition: transform 0.2s, filter 0.2s;
+    filter: invert(11%) sepia(33%) saturate(4960%) hue-rotate(331deg) brightness(81%) contrast(115%);
 }
 
 .social-icons img:hover {
-    transform: scale(1.1);
-    filter: brightness(1.2);
-}
-
-.social-icons img:focus {
-    outline: 2px solid #333;
-    outline-offset: 2px;
+    transform: scale(1.4);
 }
