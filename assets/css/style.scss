@@ -120,7 +120,6 @@ body {
   align-items: center;
   gap: 24px;
   margin: 0 auto;
-  margin-top: 520px;
   width: 470px;
 }
 
@@ -137,10 +136,8 @@ body {
   border-radius: 23px;
   box-shadow: 0px 4px 10.5px -1px rgba(171, 79, 46, 0.41);
   display: flex;
-  gap: 16px;
   height: 91px;
   justify-content: space-between;
-  padding: 20px 40px;
   text-decoration: none;
   width: 100%;
 }
@@ -158,10 +155,9 @@ body {
 /* Label text for each button */
 .social-button .social-label {
   color: #4d000a;
-  font-size: 20px;
-  font-weight: 400;
+  font-size: 30px;
+  font-weight: 1000;
   flex: 1;
-  text-align: center;
 }
 
 .social-button.clicked .social-label {
@@ -177,8 +173,8 @@ body {
 
 /* Arrow icon (default vs clicked handled via src switch in HTML) */
 .social-button .arrow {
-  width: 49px;
-  object-fit: contain;
+  margin-right: 12px;
+  width: 60px;
 }
 
 /* Main content positioning */
