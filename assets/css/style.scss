@@ -19,7 +19,7 @@ body {
   flex-wrap: wrap;
   gap: 12px;
   justify-content: center;
-  margin-bottom: 20px;
+  margin-bottom: 12px;
 }
 
 /* Footer */
@@ -72,7 +72,7 @@ body {
   color: #4d000a;
   font-size: 32px;
   font-weight: 1000;
-  margin-top: 70px;
+  margin-top: 48px;
 }
 
 /* Roti Tales logo image */
@@ -82,7 +82,6 @@ body {
   left: 50%;
   object-fit: cover;
   position: absolute;
-  top: 20px;
   transform: translateX(-50%);
   width: 214px;
   z-index: 10;
@@ -93,7 +92,7 @@ body {
   background-color: rgba(171, 79, 46, 0.14);
   border-radius: 28px;
   color: #4d000a;
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 500;
   padding: 8px 16px;
   white-space: nowrap;
@@ -129,12 +128,13 @@ body {
     ),
     linear-gradient(0deg, rgba(255, 245, 232, 1), rgba(255, 245, 232, 1));
   border: 4px solid #f5b859;
-  border-radius: 23px;
+  border-radius: 20px;
   box-shadow: 0px 4px 10.5px -1px rgba(171, 79, 46, 0.41);
   display: flex;
   height: 60px;
   justify-content: space-between;
-  margin: 8px 0px;
+  margin: 16px 0px;
+  padding-left: 8px;
   width: 100%;
 }
 
@@ -151,7 +151,7 @@ body {
 /* Label text for each button */
 .social-button .social-label {
   color: #4d000a;
-  font-size: 24px;
+  font-size: 20px;
   font-weight: 1000;
   flex: 1;
   margin-top: 4px;
@@ -163,28 +163,28 @@ body {
 
 /* Platform logo */
 .social-button img {
-  height: 40px;
+  height: 32px;
   margin: 0px 10px;
-  width: 60px;
+  width: 40px;
   object-fit: contain;
 }
 
 /* Arrow icon (default vs clicked handled via src switch in HTML) */
 .social-button .arrow {
   margin-right: 12px;
-  width: 48px;
+  width: 40px;
 }
 
 /* Main content positioning */
 .site-main {
   margin: 24px;
-  padding-bottom: 128px;
+  padding-bottom: 24px;
 }
 
 /* Header wrapper */
 .site-header {
   background-color: #fff5e8;
-  height: 440px;
+  height: 408px;
   position: relative;
   width: 100%;
 }
