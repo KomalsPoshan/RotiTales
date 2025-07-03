@@ -1,6 +1,6 @@
 ---
 layout: home
-title: Roti Tales
+title: Home
 ---
 
 The journey of tales will begin soon!
