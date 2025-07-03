@@ -138,7 +138,7 @@ body {
   width: 100%;
 }
 
-.social-button.clicked {
+.social-button:hover {
   background: linear-gradient(
       90deg,
       rgba(245, 184, 89, 0) 0%,
@@ -157,7 +157,7 @@ body {
   margin-top: 4px;
 }
 
-.social-button.clicked .social-label {
+.social-button:hover .social-label {
   color: #fff5e8;
 }
 
