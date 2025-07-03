@@ -161,6 +161,14 @@ body {
   color: #fff5e8;
 }
 
+.social-button:not(:hover) .social-button-hover {
+    display: none;
+}
+
+.social-button:hover img:not(.social-button-hover) {
+    display: none;
+}
+
 /* Platform logo */
 .social-button img {
   height: 32px;
