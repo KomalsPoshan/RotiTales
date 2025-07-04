@@ -197,3 +197,90 @@ body {
   position: relative;
   width: 100%;
 }
+
+/* All mobile device overrides */
+.mobile-device header {
+    background-image: url("/assets/images/Roti Tales - Banner.png");
+}
+
+body.mobile-device {
+    background-image: url("/assets/images/Roti Tales - Banner.png");    
+}
+
+.mobile-device .site-footer {
+    font-size: 10px;
+    padding: 10px 60px;
+    text-align: left;
+}
+
+.mobile-device .header-card {
+    width: 320px;
+}
+
+.mobile-device .header-handle {
+    font-size: 12px;
+    margin-top: 0px;
+}
+
+.mobile-device .header-description {
+    font-size: 12px;
+    margin-top: 8px;
+}
+
+.mobile-device .header-title {
+    font-size: 24px;
+}
+
+.mobile-device .pill {
+    font-size: 12px;
+    margin-left: 2px;
+    padding: 8px 8px
+}
+
+.mobile-device .pattern-background {
+    background-image: none;
+}
+
+.mobile-device .social-links {
+    width: 240px;
+}
+
+.mobile-device .social-button {
+    border-width: 2px;
+    height: 48px;
+}
+
+.mobile-device .social-button:hover {
+    background: linear-gradient(90deg, rgba(245,184,89,0) 0%, rgba(245,184,89,0.25) 100%),linear-gradient(0deg, #f5b859, #f5b859);
+    border-color: #fff5e8;
+}
+
+.mobile-device .social-label {
+    font-size: 16px;
+    font-weight: 200;
+}
+
+.mobile-device .social-button:hover .social-label {
+    color: #4d000a
+}
+
+.mobile-device .social-button:hover .social-button-hover {
+    display: none
+}
+
+.mobile-device .social-button:hover img:not(.social-button-hover) {
+    display:inherit
+}
+
+.mobile-device .social-button img {
+    height: 28px;
+    margin: 0px 8px;
+}
+
+.mobile-device .social-button .arrow {
+    width: 36px;
+}
+
+.mobile-device .site-header {
+    height: 360px;
+}
