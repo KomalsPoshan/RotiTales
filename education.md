@@ -6,12 +6,47 @@ permalink: /education.html
 
 <h1 style="text-align: center; margin-top: 2rem;">🎓 Education Videos</h1>
 
-<div class="video-container">
-  <iframe 
-    width="100%" 
-    height="500" 
-    src="https://www.youtube.com/embed/videoseries?list=PLca7YZGvJBnX8Q_pfbBsePRChDufQQVE2" 
-    frameborder="0" 
-    allowfullscreen>
-  </iframe>
+<div class="shorts-carousel">
+  <button class="carousel-nav prev" onclick="moveCarousel(-1)">&#10094;</button>
+
+  <div class="carousel-track">
+    <div class="carousel-slide"><iframe id="prevVideo" allowfullscreen></iframe></div>
+    <div class="carousel-slide center"><iframe id="currentVideo" allowfullscreen></iframe></div>
+    <div class="carousel-slide"><iframe id="nextVideo" allowfullscreen></iframe></div>
+  </div>
+
+  <button class="carousel-nav next" onclick="moveCarousel(1)">&#10095;</button>
 </div>
+
+<script>
+  const videoIds = [
+    "GI2yXCMt6qY",
+    "mxb1spl3uEQ",
+    "UmADIP7Eneo",
+    "bKHeCYNw9bY",
+    "5VvCXdIaX_k",
+    "ef1_NUR4aig",
+    "oQPZyqFDFJc",
+    "pPo5bd8tm2Y"
+  ];
+
+  let currentIndex = 0;
+
+  function updateIframes() {
+    const total = videoIds.length;
+    const prev = (currentIndex - 1 + total) % total;
+    const next = (currentIndex + 1) % total;
+
+    document.getElementById('prevVideo').src = `https://www.youtube.com/embed/${videoIds[prev]}`;
+    document.getElementById('currentVideo').src = `https://www.youtube.com/embed/${videoIds[currentIndex]}`;
+    document.getElementById('nextVideo').src = `https://www.youtube.com/embed/${videoIds[next]}`;
+  }
+
+  function moveCarousel(direction) {
+    const total = videoIds.length;
+    currentIndex = (currentIndex + direction + total) % total;
+    updateIframes();
+  }
+
+  document.addEventListener('DOMContentLoaded', updateIframes);
+</script>
