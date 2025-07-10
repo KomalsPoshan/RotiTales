@@ -1,0 +1,17 @@
+---
+layout: default
+title: Education
+permalink: /education.html
+---
+
+<h1 style="text-align: center; margin-top: 2rem;">🎓 Education Videos</h1>
+
+<div class="video-container">
+  <iframe 
+    width="100%" 
+    height="500" 
+    src="https://www.youtube.com/embed/videoseries?list=PLca7YZGvJBnX8Q_pfbBsePRChDufQQVE2" 
+    frameborder="0" 
+    allowfullscreen>
+  </iframe>
+</div>
