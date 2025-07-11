@@ -4,15 +4,21 @@ title: Education
 permalink: /education.html
 ---
 
-<h1 style="text-align: center; margin-top: 2rem;">🎓 Education Videos</h1>
+<h1 style="text-align: center; margin-top: 2rem;">Educational Videos</h1>
 
 <div class="shorts-carousel">
-  <button class="carousel-nav prev" onclick="moveCarousel(-1)">&#10094;</button>
-
   <div class="carousel-track">
-    <div class="carousel-slide"><iframe id="prevVideo" allowfullscreen></iframe></div>
-    <div class="carousel-slide center"><iframe id="currentVideo" allowfullscreen></iframe></div>
-    <div class="carousel-slide"><iframe id="nextVideo" allowfullscreen></iframe></div>
+    <div class="carousel-slide">
+      <iframe id="prevVideo" allowfullscreen />
+      <div class="overlayDiv" onclick="moveCarousel(-1)"/>
+    </div>
+    <div class="carousel-slide center">
+      <iframe id="currentVideo" allowfullscreen />
+    </div>
+    <div class="carousel-slide">
+      <iframe id="nextVideo" allowfullscreen />
+      <div class="overlayDiv" onclick="moveCarousel(1)"/>
+    </div>
   </div>
 
   <button class="carousel-nav next" onclick="moveCarousel(1)">&#10095;</button>
