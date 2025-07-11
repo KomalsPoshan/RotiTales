@@ -8,15 +8,15 @@ permalink: /education.html
 
 <div class="shorts-carousel">
   <div class="carousel-slide">
-    <iframe id="prevVideo" allowfullscreen />
+    <iframe id="prevVideo" allowfullscreen></iframe>
     <div class="overlayDiv" onclick="moveCarousel(-1)"/>
   </div>
   <div class="carousel-slide">
-    <iframe id="nextVideo" allowfullscreen />
+    <iframe id="nextVideo" allowfullscreen></iframe>
     <div class="overlayDiv" onclick="moveCarousel(1)"/>
   </div>
   <div class="carousel-slide center">
-    <iframe id="currentVideo" allowfullscreen />
+    <iframe id="currentVideo" allowfullscreen></iframe>
   </div>
 </div>
 
