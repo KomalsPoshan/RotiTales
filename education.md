@@ -8,12 +8,12 @@ permalink: /education.html
 
 <div class="shorts-carousel">
   <div class="carousel-slide">
-    <iframe id="prevVideo" allowfullscreen></iframe>
-    <div class="overlayDiv" onclick="moveCarousel(-1)"/>
+    <iframe id="prev-video" allowfullscreen></iframe>
+    <div class="overlay-div" onclick="moveCarousel(-1)"/>
   </div>
   <div class="carousel-slide">
-    <iframe id="nextVideo" allowfullscreen></iframe>
-    <div class="overlayDiv" onclick="moveCarousel(1)"/>
+    <iframe id="next-video" allowfullscreen></iframe>
+    <div class="overlay-div" onclick="moveCarousel(1)"/>
   </div>
   <div class="carousel-slide center">
     <iframe id="currentVideo" allowfullscreen></iframe>
