@@ -4,7 +4,7 @@ title: Education
 permalink: /education.html
 ---
 
-<h1 style="text-align: center; margin-top: 2rem;">Educational Videos</h1>
+<h1 style="header">Educational Videos</h1>
 
 <div class="shorts-carousel">
   <div class="carousel-track">
