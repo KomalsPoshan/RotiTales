@@ -16,7 +16,7 @@ permalink: /education.html
     <div class="overlay-div" onclick="moveCarousel(1)"></div>
   </div>
   <div class="carousel-slide center">
-    <iframe id="currentVideo" allowfullscreen></iframe>
+    <iframe id="current-video" allowfullscreen></iframe>
   </div>
 </div>
 
@@ -39,9 +39,9 @@ permalink: /education.html
     const prev = (currentIndex - 1 + total) % total;
     const next = (currentIndex + 1) % total;
 
-    document.getElementById('prevVideo').src = `https://www.youtube.com/embed/${videoIds[prev]}`;
-    document.getElementById('currentVideo').src = `https://www.youtube.com/embed/${videoIds[currentIndex]}`;
-    document.getElementById('nextVideo').src = `https://www.youtube.com/embed/${videoIds[next]}`;
+    document.getElementById('prev-video').src = `https://www.youtube.com/embed/${videoIds[prev]}`;
+    document.getElementById('current-video').src = `https://www.youtube.com/embed/${videoIds[currentIndex]}`;
+    document.getElementById('next-video').src = `https://www.youtube.com/embed/${videoIds[next]}`;
   }
 
   function moveCarousel(direction) {
