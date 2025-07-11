@@ -208,10 +208,6 @@ body {
   justify-content: center;
 }
 
-.carousel-track {
-  display: contents;
-}
-
 .carousel-slide {
   opacity: 0.7;
   transform: scale(0.9);
@@ -236,37 +232,6 @@ body {
   z-index: 2;
   transform: scale(1);
   opacity: 1;
-}
-
-.carousel-nav {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background-color: rgba(0,0,0,0.4);
-  color: #fff;
-  border: none;
-  padding: 0.5rem 0.75rem;
-  font-size: 2rem;
-  cursor: pointer;
-  z-index: 3;
-  border-radius: 50%;
-  transition: background 0.3s;
-}
-
-.carousel-nav:hover {
-  background-color: rgba(0,0,0,0.7);
-}
-
-.carousel-nav.prev { left: -2.5rem; }
-.carousel-nav.next { right: -2.5rem; }
-
-@media (max-width: 500px) {
-  .shorts-carousel {
-    max-width: 280px;
-  }
-  .carousel-track {
-    height: 500px;
-  }
 }
 
 /* All mobile device overrides */
