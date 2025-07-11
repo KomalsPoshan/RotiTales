@@ -234,6 +234,14 @@ body {
   opacity: 1;
 }
 
+.carousel-slide .overlay-div {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  height: 100%;
+  width: 100%;
+}
+
 /* All mobile device overrides */
 .mobile-device header {
     background-image: url("/assets/images/Roti Tales - Banner.png");
