@@ -12,12 +12,12 @@ permalink: /education.html
       <iframe id="prevVideo" allowfullscreen />
       <div class="overlayDiv" onclick="moveCarousel(-1)"/>
     </div>
-    <div class="carousel-slide center">
-      <iframe id="currentVideo" allowfullscreen />
-    </div>
     <div class="carousel-slide">
       <iframe id="nextVideo" allowfullscreen />
       <div class="overlayDiv" onclick="moveCarousel(1)"/>
+    </div>
+    <div class="carousel-slide center">
+      <iframe id="currentVideo" allowfullscreen />
     </div>
   </div>
 
