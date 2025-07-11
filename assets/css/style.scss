@@ -203,17 +203,36 @@ body {
 }
 
 .shorts-carousel {
-  display: flex;
+  position: relative;
+  width: 100%;
+  max-width: 360px;
+  height: 640px;
+  margin: 2rem auto;
 }
 
 .carousel-slide {
-
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
 }
 
 .carousel-slide iframe {
+  width: 100%;
   height: 100%;
   border: none;
-  border-radius: 12px;
+  border-radius: 10px;
+}
+
+.prev-video,
+.prev-video.overlay-div {
+  transform: translateX(-60%) scale(0.9);
+}
+
+.next-video,
+.next-video.overlay-div {
+  transform: translateX(60%) scale(0.9);
 }
 
 .carousel-slide.center {
@@ -221,22 +240,23 @@ body {
   top: 0;
   width: 100%;
   height: 100%;
-  z-index: 2;
   transform: scale(1);
   opacity: 1;
+  pointer-events: visible;
+  cursor: pointer;
 }
 
 .carousel-slide .overlay-div {
   position: absolute;
-  top: 0px;
-  left: 0px;
-  height: 100%;
+  top: 0;
+  left: 0;
   width: 100%;
+  height: 100%;
 }
 
 /* All mobile device overrides */
 .mobile-device header {
-    background-image: url("/assets/images/Roti Tales - Banner.png");
+  background-image: url("/assets/images/Roti Tales - Banner.png");
 }
 
 body.mobile-device {
