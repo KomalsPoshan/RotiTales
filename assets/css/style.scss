@@ -225,13 +225,13 @@ body {
   border-radius: 10px;
 }
 
-.prev-video,
-.prev-video.overlay-div {
+#prev-video,
+#prev-video+.overlay-div {
   transform: translateX(-60%) scale(0.9);
 }
 
-.next-video,
-.next-video.overlay-div {
+#next-video,
+#next-video+.overlay-div {
   transform: translateX(60%) scale(0.9);
 }
 
