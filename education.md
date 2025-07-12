@@ -74,7 +74,8 @@ permalink: /education.html
   }
 
   function getUrl(videoIdIndex) {
-    return "https://www.youtube.com/embed/${videoIds[videoId]}";
+    var videoId = videoIds[videoIdIndex];
+    return "https://www.youtube.com/embed/${videoId}";
   }
 
   function loadVideos() {
