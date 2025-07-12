@@ -53,7 +53,9 @@ permalink: /education.html
     var stt = 0;
     for (var i = active + 1; i < items.length; i++) {
       stt++;
-      items[i].style.transform = 'translateX(${120*stt}px) scale(${1 - 0.1*stt})';
+      x = 120*stt;
+      scale = 1 - 0.1*stt;
+      items[i].style.transform = 'translateX(${x}px) scale(${scale})';
       items[i].style.zIndex = -stt;
       items[i].style.filter = 'blue(5px)';
       items[i].style.opacity = stt > 1 ? 0 : 0.6;      
@@ -62,7 +64,9 @@ permalink: /education.html
     stt = 0;
     for (var i = active - 1; i >= 0; i--) {
       stt++;
-      items[i].style.transform = 'translateX(${-120*stt}px) scale(${1 - 0.1*stt})';
+      x = -120*stt;
+      scale = 1 - 0.1*stt;
+      items[i].style.transform = 'translateX(${x}px) scale(${scale})';
       items[i].style.zIndex = -stt;
       items[i].style.filter = 'blue(5px)';
       items[i].style.opacity = stt > 1 ? 0 : 0.6;      
