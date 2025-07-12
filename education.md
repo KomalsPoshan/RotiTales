@@ -57,7 +57,7 @@ permalink: /education.html
       stt++;
       x = 120*stt;
       scale = 1 - 0.1*stt;
-      items[i].style.transform = 'translateX(' & x & 'px) scale( ' & scale & ')';
+      items[i].style.transform = "translateX(" + x + "px) scale(" + scale + ')';
       items[i].style.zIndex = -stt;
       items[i].style.filter = 'blue(5px)';
       items[i].style.opacity = stt > 1 ? 0 : 0.6;      
@@ -69,7 +69,7 @@ permalink: /education.html
       stt++;
       x = -120*stt;
       scale = 1 - 0.1*stt;
-      items[i].style.transform = 'translateX(' & x & 'px) scale( ' & scale & ')';
+      items[i].style.transform = "translateX(" + x + "px) scale(" + scale + ')';
       items[i].style.zIndex = -stt;
       items[i].style.filter = 'blue(5px)';
       items[i].style.opacity = stt > 1 ? 0 : 0.6;      
@@ -79,7 +79,7 @@ permalink: /education.html
 
   function getUrl(videoIdIndex) {
     var videoId = videoIds[videoIdIndex];
-    return "https://www.youtube.com/embed/" & videoId;
+    return "https://www.youtube.com/embed/" + videoId;
   }
 
   function loadVideos() {
