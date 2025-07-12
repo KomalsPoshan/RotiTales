@@ -224,30 +224,29 @@ body {
   border: none;
   border-radius: 10px;
   pointer-events: none;
-  transition: transform 0.5s ease-in-out; // 👈 enable animation
 }
 
-#prev-video,
-#prev-video+.overlay-div {
-  transform: translateX(-60%) scale(0.9);
-}
+// #prev-video,
+// #prev-video+.overlay-div {
+//   transform: translateX(-60%) scale(0.9);
+// }
 
-#next-video,
-#next-video+.overlay-div {
-  transform: translateX(60%) scale(0.9);
-}
+// #next-video,
+// #next-video+.overlay-div {
+//   transform: translateX(60%) scale(0.9);
+// }
 
-.carousel-slide.center {
-  position: relative;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  transform: scale(1);
-  opacity: 1;
-  pointer-events: auto;
-  cursor: pointer;
-  z-index: 1;
-}
+// .carousel-slide.center {
+//   position: relative;
+//   top: 0;
+//   width: 100%;
+//   height: 100%;
+//   transform: scale(1);
+//   opacity: 1;
+//   pointer-events: auto;
+//   cursor: pointer;
+//   z-index: 1;
+// }
 
 .carousel-slide .overlay-div {
   position: absolute;
