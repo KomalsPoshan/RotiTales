@@ -44,11 +44,41 @@ permalink: /education.html
     document.getElementById('next-video').src = `https://www.youtube.com/embed/${videoIds[next]}`;
   }
 
-  function moveCarousel(direction) {
-    const total = videoIds.length;
+function moveCarousel(direction) {
+  const prev = document.getElementById('prev-video');
+  const curr = document.getElementById('current-video');
+  const next = document.getElementById('next-video');
+  const total = videoIds.length;
+
+  // Determine which element is moving to center
+  const target = direction > 0 ? next : prev;
+
+  // Add the transitionend listener BEFORE triggering transforms
+  target.addEventListener('transitionend', function handler() {
+    // Update current index
     currentIndex = (currentIndex + direction + total) % total;
+
+    // Reset transforms and update video sources
     updateIframes();
+
+    // Clean up the handler
+    target.removeEventListener('transitionend', handler);
+  });
+
+  // Trigger animated transform
+  if (direction > 0) {
+    // Move next to center
+    curr.style.transform = 'translateX(-60%) scale(0.9)';
+    next.style.transform = 'translateX(0) scale(1)';
+    prev.style.transform = 'translateX(-120%) scale(0.9)';
+  } else {
+    // Move prev to center
+    curr.style.transform = 'translateX(60%) scale(0.9)';
+    prev.style.transform = 'translateX(0) scale(1)';
+    next.style.transform = 'translateX(120%) scale(0.9)';
   }
+}
+
 
   document.addEventListener('DOMContentLoaded', updateIframes);
 </script>
