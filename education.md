@@ -7,16 +7,22 @@ permalink: /education.html
 <h1 style="header">Educational Videos</h1>
 
 <div class="shorts-carousel">
-  <div class="carousel-slide center">
-    <iframe id="current-video" allowfullscreen></iframe>
+  <div class="carousel-slide">
+    <iframe allowfullscreen></iframe>
   </div>
   <div class="carousel-slide">
-    <iframe id="prev-video" allowfullscreen></iframe>
+    <iframe allowfullscreen></iframe>
     <div class="overlay-div" onclick="moveCarousel(-1)"></div>
   </div>
   <div class="carousel-slide">
-    <iframe id="next-video" allowfullscreen></iframe>
+    <iframe allowfullscreen></iframe>
+  </div>
+  <div class="carousel-slide">
+    <iframe allowfullscreen></iframe>
     <div class="overlay-div" onclick="moveCarousel(1)"></div>
+  </div>
+  <div class="carousel-slide">
+    <iframe allowfullscreen></iframe>
   </div>
 </div>
 
@@ -32,53 +38,59 @@ permalink: /education.html
     "pPo5bd8tm2Y"
   ];
 
-  let currentIndex = 0;
+  let currVideoIndex = 0;
 
-  function updateIframes() {
-    const total = videoIds.length;
-    const prev = (currentIndex - 1 + total) % total;
-    const next = (currentIndex + 1) % total;
+  let items = document.querySelectorAll('.carousel-slide');
+  let videoItems = document.querySelectorAll('.carousel-slide iframe');
 
-    document.getElementById('prev-video').src = `https://www.youtube.com/embed/${videoIds[prev]}`;
-    document.getElementById('current-video').src = `https://www.youtube.com/embed/${videoIds[currentIndex]}`;
-    document.getElementById('next-video').src = `https://www.youtube.com/embed/${videoIds[next]}`;
+  function loadElements() {
+    let active = 2;
+    items[active].style.transform = 'none';
+    items[active].style.zIndex = 1;
+    items[active].style.filter = 'none';
+    items[active].style.opacity = 1;
+
+    var stt = 0;
+    for (var i = active + 1; i < items.length; i++) {
+      stt++;
+      items[i].style.transform = 'translateX(${120*stt}px) scale(${1 - 0.2*stt}) rotateY(-1 deg)';
+      items[i].style.zIndex = -stt;
+      items[i].style.filter = 'blue(5px)';
+      items[i].style.opacity = stt > 1 ? 0 : 0.6;      
+    }
+
+    stt = 0;
+    for (var i = active - 1; i >= 0; i--) {
+      stt++;
+      items[i].style.transform = 'translateX(${-120*stt}px) scale(${1 - 0.2*stt}) rotateY(1 deg)';
+      items[i].style.zIndex = -stt;
+      items[i].style.filter = 'blue(5px)';
+      items[i].style.opacity = stt > 1 ? 0 : 0.6;      
+    }
+  }
+
+  function loadVideos() {
+    let active = 2;
+    videoItems[active].src = videoIds[currVideoIndex];
+    for (var i = active + 1; i < videoItems.length; i++) {
+      index = (currVideoIndex + videoIds.length - 1)%videoIds.length;
+      videoItems[i].src = videoIds[index];
+    }
+    for (var i = active - 1; i >= 0; i--) {
+      index = (currVideoIndex + 1)%videoIds.length;
+      videoItems[i].src = videoIds[index];
+    }
+  }
+
+  function loadAll() {
+  loadVideos();
+  loadElements();
   }
 
 function moveCarousel(direction) {
-  const prev = document.getElementById('prev-video');
-  const curr = document.getElementById('current-video');
-  const next = document.getElementById('next-video');
-  const total = videoIds.length;
-
-  // Determine which element is moving to center
-  const target = direction > 0 ? next : prev;
-
-  // Add the transitionend listener BEFORE triggering transforms
-  target.addEventListener('transitionend', function handler() {
-    // Update current index
-    currentIndex = (currentIndex + direction + total) % total;
-
-    // Reset transforms and update video sources
-    updateIframes();
-
-    // Clean up the handler
-    target.removeEventListener('transitionend', handler);
-  });
-
-  // Trigger animated transform
-  if (direction > 0) {
-    // Move next to center
-    curr.style.transform = 'translateX(-60%) scale(0.9)';
-    next.style.transform = 'translateX(0) scale(1)';
-    prev.style.transform = 'translateX(-120%) scale(0.9)';
-  } else {
-    // Move prev to center
-    curr.style.transform = 'translateX(60%) scale(0.9)';
-    prev.style.transform = 'translateX(0) scale(1)';
-    next.style.transform = 'translateX(120%) scale(0.9)';
-  }
+  currVideoIndex = (currVideoIndex + videoIds.length + direction)%videoIds.length;
+  loadAll();
 }
 
-
-  document.addEventListener('DOMContentLoaded', updateIframes);
+document.addEventListener('DOMContentLoaded', loadAll);
 </script>
