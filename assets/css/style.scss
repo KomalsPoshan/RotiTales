@@ -215,7 +215,6 @@ body {
   top: 0;
   width: 100%;
   height: 100%;
-  pointer-events: none;
   opacity: 0.5;
 }
 
@@ -224,6 +223,7 @@ body {
   height: 100%;
   border: none;
   border-radius: 10px;
+  pointer-events: none;
 }
 
 #prev-video,
@@ -243,7 +243,7 @@ body {
   height: 100%;
   transform: scale(1);
   opacity: 1;
-  pointer-events: visible;
+  pointer-events: auto;
   cursor: pointer;
 }
 
@@ -253,6 +253,8 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
+  pointer-events: auto;
+  cursor: pointer;
 }
 
 /* All mobile device overrides */
