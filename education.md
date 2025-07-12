@@ -69,16 +69,20 @@ permalink: /education.html
     }
   }
 
+  function getUrl(videoIdIndex) {
+    return "https://www.youtube.com/embed/${videoIds[videoId]}";
+  }
+
   function loadVideos() {
     let active = 2;
-    videoItems[active].src = videoIds[currVideoIndex];
+    videoItems[active].src = getUrl(currVideoIndex);
     for (var i = active + 1; i < videoItems.length; i++) {
       index = (currVideoIndex + videoIds.length - 1)%videoIds.length;
-      videoItems[i].src = videoIds[index];
+      videoItems[i].src = getUrl(index);
     }
     for (var i = active - 1; i >= 0; i--) {
       index = (currVideoIndex + 1)%videoIds.length;
-      videoItems[i].src = videoIds[index];
+      videoItems[i].src = getUrl(index);
     }
   }
 
