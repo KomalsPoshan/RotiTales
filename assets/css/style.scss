@@ -224,6 +224,7 @@ body {
   border: none;
   border-radius: 10px;
   pointer-events: none;
+  transition: transform 0.5s ease-in-out; // 👈 enable animation
 }
 
 #prev-video,
