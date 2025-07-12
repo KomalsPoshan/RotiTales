@@ -49,6 +49,8 @@ permalink: /education.html
     items[active].style.zIndex = 1;
     items[active].style.filter = 'none';
     items[active].style.opacity = 1;
+    videoItems[active].pointer-events = 'auto';
+    videoItems[active].cursor = 'pointer';
 
     var stt = 0;
     for (var i = active + 1; i < items.length; i++) {
@@ -59,6 +61,7 @@ permalink: /education.html
       items[i].style.zIndex = -stt;
       items[i].style.filter = 'blue(5px)';
       items[i].style.opacity = stt > 1 ? 0 : 0.6;      
+      videoItems[active].pointer-events = 'none';
     }
 
     stt = 0;
@@ -70,6 +73,7 @@ permalink: /education.html
       items[i].style.zIndex = -stt;
       items[i].style.filter = 'blue(5px)';
       items[i].style.opacity = stt > 1 ? 0 : 0.6;      
+      videoItems[active].pointer-events = 'none';
     }
   }
 
