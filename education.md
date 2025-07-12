@@ -12,14 +12,14 @@ permalink: /education.html
   </div>
   <div class="carousel-slide">
     <iframe allowfullscreen></iframe>
-    <div class="overlay-div" onclick="moveCarousel(-1)"></div>
-  </div>
-  <div class="carousel-slide">
-    <iframe allowfullscreen></iframe>
-  </div>
-  <div class="carousel-slide">
-    <iframe allowfullscreen></iframe>
     <div class="overlay-div" onclick="moveCarousel(1)"></div>
+  </div>
+  <div class="carousel-slide">
+    <iframe allowfullscreen></iframe>
+  </div>
+  <div class="carousel-slide">
+    <iframe allowfullscreen></iframe>
+    <div class="overlay-div" onclick="moveCarousel(-1)"></div>
   </div>
   <div class="carousel-slide">
     <iframe allowfullscreen></iframe>
@@ -27,6 +27,7 @@ permalink: /education.html
 </div>
 
 <script>
+  /* Reverse order */
   const videoIds = [
     "GI2yXCMt6qY",
     "mxb1spl3uEQ",
@@ -43,8 +44,8 @@ permalink: /education.html
   let items = document.querySelectorAll('.carousel-slide');
   let videoItems = document.querySelectorAll('.carousel-slide iframe');
 
-  function loadElements() {
-    let active = 2;
+  function loadElements(direction) {
+    let active = 2 + direction;
     items[active].style.transform = 'none';
     items[active].style.zIndex = 1;
     items[active].style.filter = 'none';
@@ -95,14 +96,15 @@ permalink: /education.html
     }
   }
 
-  function loadAll() {
+function loadAll() {
   loadVideos();
-  loadElements();
-  }
+  loadElements(0);
+}
 
 function moveCarousel(direction) {
+  loadElements(direction);
   currVideoIndex = (currVideoIndex + videoIds.length + direction)%videoIds.length;
-  loadAll();
+  loadVideos();
 }
 
 document.addEventListener('DOMContentLoaded', loadAll);
