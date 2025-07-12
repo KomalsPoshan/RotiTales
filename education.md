@@ -7,6 +7,9 @@ permalink: /education.html
 <h1 style="header">Educational Videos</h1>
 
 <div class="shorts-carousel">
+  <div class="carousel-slide center">
+    <iframe id="current-video" allowfullscreen></iframe>
+  </div>
   <div class="carousel-slide">
     <iframe id="prev-video" allowfullscreen></iframe>
     <div class="overlay-div" onclick="moveCarousel(-1)"></div>
@@ -14,9 +17,6 @@ permalink: /education.html
   <div class="carousel-slide">
     <iframe id="next-video" allowfullscreen></iframe>
     <div class="overlay-div" onclick="moveCarousel(1)"></div>
-  </div>
-  <div class="carousel-slide center">
-    <iframe id="current-video" allowfullscreen></iframe>
   </div>
 </div>
 
