@@ -28,22 +28,6 @@ title: Home
     <img class="arrow social-button-hover" src="/assets/icons/arrow-flour.svg" alt="Arrow icon"/>
   </a>
 
-  <a class="social-button" href="https://www.tiktok.com/@rotitales">
-    <img src="/assets/icons/tiktok-clay.svg" alt="TikTok logo" />
-    <img class="social-button-hover" src="/assets/icons/tiktok-flour.svg" alt="TikTok logo"/>
-    <div class="social-label">TikTok</div>
-    <img class="arrow" src="/assets/icons/arrow-clay.svg" alt="Arrow icon" />
-    <img class="arrow social-button-hover" src="/assets/icons/arrow-flour.svg" alt="Arrow icon"/>
-  </a>
-
-  <a class="social-button" href="https://x.com/RotiTales">
-    <img src="/assets/icons/x-clay.svg" alt="X logo" />
-    <img class="social-button-hover" src="/assets/icons/x-flour.svg" alt="X logo"/>
-    <div class="social-label">X (Twitter)</div>
-    <img class="arrow" src="/assets/icons/arrow-clay.svg" alt="Arrow icon" />
-    <img class="arrow social-button-hover" src="/assets/icons/arrow-flour.svg" alt="Arrow icon"/>
-  </a>
-
   <a class="social-button" href="https://www.youtube.com/@rotitales">
     <img src="/assets/icons/youtube-clay.svg" alt="YouTube logo" />
     <img class="social-button-hover" src="/assets/icons/youtube-flour.svg" alt="YouTube logo"/>
