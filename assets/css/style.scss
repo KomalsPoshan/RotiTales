@@ -605,7 +605,7 @@ body {
   height: 80px;
   border-radius: 50%;
   object-fit: cover;
-  border: 4px solid var(--wheat);
+  border: 3px solid var(--wheat);
   box-shadow: 0 4px 20px rgba(171, 79, 46, 0.25);
   flex-shrink: 0;
 }
@@ -625,7 +625,7 @@ body {
 .platform-tagline {
   font-family: 'Kufam', sans-serif;
   font-size: 15px;
-  color: rgba(77, 0, 10, 0.55);
+  color: rgba(77, 0, 10, 0.8);
   margin: 4px 0 0;
 }
 

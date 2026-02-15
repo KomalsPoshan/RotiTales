@@ -152,13 +152,13 @@ title: Home
       </div>
     </div>
     <div class="platform-row">
-      <a href="https://www.youtube.com/@rotitales" class="platform-option">
-        <img src="/assets/icons/youtube-clay.svg" alt="YouTube" />
-        <span>YouTube</span>
-      </a>
       <a href="https://instagram.com/rotitales" class="platform-option">
         <img src="/assets/icons/instagram-clay.svg" alt="Instagram" />
         <span>Instagram</span>
+      </a>
+      <a href="https://www.youtube.com/@rotitales" class="platform-option">
+        <img src="/assets/icons/youtube-clay.svg" alt="YouTube" />
+        <span>YouTube</span>
       </a>
       <a href="https://www.facebook.com/rotitales" class="platform-option">
         <img src="/assets/icons/facebook-clay.svg" alt="Facebook" />
