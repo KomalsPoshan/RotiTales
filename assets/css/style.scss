@@ -549,10 +549,10 @@ body {
 
 .platform-modal {
   background:
-    linear-gradient(160deg, rgba(255,245,232,0.93) 0%, rgba(253,225,185,0.93) 100%),
+    linear-gradient(160deg, rgba(255,245,232,0.75) 0%, rgba(253,225,185,0.75) 100%),
     url('/assets/images/pattern_roti_flour.png');
   background-size: auto, 180px;
-  border: 3px solid var(--wheat);
+  border: 4px solid var(--wheat);
   border-radius: 28px;
   padding: 36px 28px 32px;
   text-align: center;
@@ -597,15 +597,15 @@ body {
   align-items: center;
   justify-content: center;
   gap: 14px;
-  margin-bottom: 8px;
+  margin-bottom: 20px;
 }
 
 .platform-logo {
-  width: 64px;
-  height: 64px;
+  width: 80px;
+  height: 80px;
   border-radius: 50%;
   object-fit: cover;
-  border: 3px solid var(--wheat);
+  border: 4px solid var(--wheat);
   box-shadow: 0 4px 20px rgba(171, 79, 46, 0.25);
   flex-shrink: 0;
 }
@@ -616,7 +616,7 @@ body {
 
 .platform-heading {
   font-family: 'Kufam', sans-serif;
-  font-size: 24px;
+  font-size: 28px;
   font-weight: 1000;
   color: var(--warmth);
   margin: 0;
@@ -624,17 +624,9 @@ body {
 
 .platform-tagline {
   font-family: 'Kufam', sans-serif;
-  font-size: 13px;
-  color: rgba(77, 0, 10, 0.55);
-  margin: 3px 0 0;
-}
-
-.platform-cta-text {
-  font-family: 'Kufam', sans-serif;
   font-size: 15px;
-  font-weight: 700;
-  color: var(--clay);
-  margin: 0 0 24px;
+  color: rgba(77, 0, 10, 0.55);
+  margin: 4px 0 0;
 }
 
 /* Horizontal row of platforms */
@@ -680,7 +672,19 @@ body {
 
 /* Rotating spotlight animation */
 @keyframes platformSpotlight {
-  0%, 12% {
+  0% {
+    transform: translateY(0) scale(1);
+    background: rgba(255, 253, 250, 0.75);
+    border-color: var(--wheat);
+    box-shadow: none;
+  }
+  6% {
+    transform: translateY(-4px) scale(1.12);
+    background: var(--wheat);
+    border-color: var(--clay);
+    box-shadow: 0 6px 24px rgba(245, 184, 89, 0.45);
+  }
+  14% {
     transform: translateY(-4px) scale(1.12);
     background: var(--wheat);
     border-color: var(--clay);
@@ -822,9 +826,8 @@ body.mobile-device {
 
 /* Mobile: platform popup */
 .mobile-device .platform-modal { padding: 28px 20px 24px; }
-.mobile-device .platform-logo { width: 48px; height: 48px; }
-.mobile-device .platform-heading { font-size: 20px; }
-.mobile-device .platform-cta-text { font-size: 13px; margin-bottom: 18px; }
+.mobile-device .platform-logo { width: 60px; height: 60px; }
+.mobile-device .platform-heading { font-size: 22px; }
 .mobile-device .platform-row { gap: 8px; }
 .mobile-device .platform-option { padding: 12px 8px; font-size: 10px; border-radius: 14px; }
 .mobile-device .platform-option img { width: 26px; height: 26px; }

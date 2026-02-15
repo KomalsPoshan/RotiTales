@@ -148,10 +148,9 @@ title: Home
       <img src="/assets/images/rotitales_roti_on_fire_logo.png" alt="Roti Tales" class="platform-logo" />
       <div class="platform-brand">
         <h3 class="platform-heading">Roti Tales</h3>
-        <p class="platform-tagline">Healthier rotis, happier families</p>
+        <p class="platform-tagline">Follow to keep eating healthy rotis!</p>
       </div>
     </div>
-    <p class="platform-cta-text">Follow us &mdash; never miss a recipe!</p>
     <div class="platform-row">
       <a href="https://www.youtube.com/@rotitales" class="platform-option">
         <img src="/assets/icons/youtube-clay.svg" alt="YouTube" />
