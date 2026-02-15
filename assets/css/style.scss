@@ -164,6 +164,39 @@ body {
   transform: translate(-50%, -50%);
 }
 
+/* Mute button — overlaid on video card */
+.card-mute {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  z-index: 6;
+  background: rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  border: 1px solid rgba(255, 245, 232, 0.2);
+  border-radius: 50%;
+  width: 38px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: var(--flour);
+  transition: background 0.2s, transform 0.2s;
+  padding: 0;
+}
+
+.card-mute:hover {
+  background: rgba(0, 0, 0, 0.65);
+  transform: scale(1.1);
+}
+
+/* Mute icon toggle */
+.card-mute.is-muted .sound-icon-on { display: none; }
+.card-mute.is-muted .sound-icon-muted { display: inline; }
+.card-mute:not(.is-muted) .sound-icon-muted { display: none; }
+.card-mute:not(.is-muted) .sound-icon-on { display: inline; }
+
 /* Title label — bottom of card */
 .slide-label {
   position: absolute;
@@ -310,12 +343,6 @@ body {
   pointer-events: none;
 }
 
-/* Mute button icon toggle */
-.ctrl-mute.is-muted .sound-icon-on { display: none; }
-.ctrl-mute.is-muted .sound-icon-muted { display: inline; }
-.ctrl-mute:not(.is-muted) .sound-icon-muted { display: none; }
-.ctrl-mute:not(.is-muted) .sound-icon-on { display: inline; }
-
 /* Play/Pause icon toggle */
 .ctrl-playpause .pp-play { display: none; }
 .ctrl-playpause .pp-pause { display: inline; }
@@ -358,8 +385,11 @@ body {
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  padding: 16px 32px;
-  background: linear-gradient(to bottom, rgba(255,245,232,0.6) 0%, transparent 100%);
+  padding: 14px 32px;
+  background: rgba(255, 245, 232, 0.65);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(245, 184, 89, 0.3);
   box-sizing: border-box;
 }
 
@@ -760,6 +790,7 @@ body.mobile-device {
 
 .mobile-device .slide-label h3 { font-size: 15px; }
 .mobile-device .slide-label p { font-size: 11px; }
+.mobile-device .card-mute { width: 32px; height: 32px; top: 10px; right: 10px; }
 
 /* Mobile: controls */
 .mobile-device .hero-controls {

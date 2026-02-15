@@ -25,6 +25,18 @@ title: Home
           <div class="slide-video slide-video-api">
             <div id="hero-player"></div>
           </div>
+          <button class="card-mute is-muted" id="ctrl-mute" aria-label="Toggle sound">
+            <svg class="sound-icon-muted" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M11 5L6 9H2v6h4l5 4V5z"/>
+              <line x1="23" y1="9" x2="17" y2="15"/>
+              <line x1="17" y1="9" x2="23" y2="15"/>
+            </svg>
+            <svg class="sound-icon-on" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M11 5L6 9H2v6h4l5 4V5z"/>
+              <path d="M19.07 4.93a10 10 0 010 14.14"/>
+              <path d="M15.54 8.46a5 5 0 010 7.07"/>
+            </svg>
+          </button>
           <div class="slide-label">
             <h3>Are all carbs bad?</h3>
             <p>Simple swaps for more nutritious rotis</p>
@@ -96,19 +108,6 @@ title: Home
       <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
     </button>
 
-    <button class="ctrl-btn ctrl-mute is-muted" id="ctrl-mute" aria-label="Toggle sound">
-      <svg class="sound-icon-muted" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M11 5L6 9H2v6h4l5 4V5z"/>
-        <line x1="23" y1="9" x2="17" y2="15"/>
-        <line x1="17" y1="9" x2="23" y2="15"/>
-      </svg>
-      <svg class="sound-icon-on" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M11 5L6 9H2v6h4l5 4V5z"/>
-        <path d="M19.07 4.93a10 10 0 010 14.14"/>
-        <path d="M15.54 8.46a5 5 0 010 7.07"/>
-      </svg>
-    </button>
-
     <button class="ctrl-btn ctrl-playpause" id="ctrl-playpause" aria-label="Play/Pause">
       <svg class="pp-pause" viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg>
       <svg class="pp-play" viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><polygon points="5,3 19,12 5,21"/></svg>
@@ -134,8 +133,8 @@ title: Home
     <img src="/assets/images/Poshan_Logo_2Color-Flour.png" alt="Poshan" class="mission-logo" />
     <h2 class="mission-title">Healthier Rotis, Happier Families</h2>
     <p class="mission-text">Roti Tales is a Poshan initiative empowering families with simple ways to make everyday rotis more nutritious — one recipe at a time.</p>
-    <a class="mission-cta" href="https://poshan.us">
-      Learn about Poshan
+    <a class="mission-cta platform-trigger" href="#">
+      Follow RotiTales
       <span class="mission-cta-arrow">&#8594;</span>
     </a>
   </div>
