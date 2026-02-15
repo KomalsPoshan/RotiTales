@@ -177,13 +177,64 @@ body {
   50% { transform: rotate(-45deg) translate(5px, 5px); }
 }
 
-/* Pills inside the white info box */
-.category-pills {
+/* ===== SLIM NAV BAR (overlays hero) ===== */
+.site-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
   display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-  justify-content: center;
-  margin: 12px 0px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 32px;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.6) 0%, transparent 100%);
+  transition: background 0.3s;
+  box-sizing: border-box;
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+}
+
+.nav-logo img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.nav-logo span {
+  font-family: 'Kufam', sans-serif;
+  font-size: 20px;
+  font-weight: 1000;
+  color: #fff5e8;
+  text-shadow: 0 1px 8px rgba(0,0,0,0.4);
+}
+
+.nav-pills {
+  display: flex;
+  gap: 8px;
+}
+
+.nav-pill {
+  font-family: 'Kufam', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  color: rgba(255, 245, 232, 0.85);
+  background: rgba(255, 245, 232, 0.12);
+  padding: 6px 16px;
+  border-radius: 20px;
+  text-decoration: none;
+  transition: background 0.2s, color 0.2s;
+}
+
+.nav-pill:hover {
+  background: rgba(245, 184, 89, 0.35);
+  color: #fff5e8;
 }
 
 /* Footer */
@@ -495,12 +546,9 @@ body {
   padding-top: 48px;
 }
 
-/* Header wrapper */
+/* Old header wrapper - no longer used, kept minimal for non-home pages */
 .site-header {
-  background-color: #fff5e8;
-  height: 408px;
-  position: relative;
-  width: 100%;
+  display: none;
 }
 
 .shorts-carousel {
@@ -559,44 +607,31 @@ body {
 }
 
 /* All mobile device overrides */
-.mobile-device header {
-  background-image: url("/assets/images/Roti Tales - Banner.png");
-}
-
 body.mobile-device {
-    background-image: url("/assets/images/Roti Tales - Banner.png");    
+    background-image: url("/assets/images/Roti Tales - Banner.png");
 }
 
 .mobile-device .site-footer {
     font-size: 10px;
 }
 
-.mobile-device .header-card {
-    width: 320px;
+/* Mobile nav bar */
+.mobile-device .site-nav {
+    padding: 10px 16px;
 }
 
-.mobile-device .header-handle {
-    font-size: 12px;
-    margin-top: 0px;
+.mobile-device .nav-logo img {
+    width: 32px;
+    height: 32px;
 }
 
-.mobile-device .header-description {
-    font-size: 12px;
-    margin-top: 8px;
+.mobile-device .nav-logo span {
+    font-size: 16px;
 }
 
-.mobile-device .header-title {
-    font-size: 24px;
-}
-
-.mobile-device .pill {
-    font-size: 12px;
-    margin-left: 2px;
-    padding: 8px 8px
-}
-
-.mobile-device .pattern-background {
-    background-image: none;
+.mobile-device .nav-pill {
+    font-size: 11px;
+    padding: 5px 10px;
 }
 
 .mobile-device .social-links {
@@ -641,10 +676,6 @@ body.mobile-device {
 
 .mobile-device .site-main {
   margin-top: 0px;
-}
-
-.mobile-device .site-header {
-    height: 360px;
 }
 
 .mobile-device .featured-section {
