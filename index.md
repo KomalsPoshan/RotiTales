@@ -343,13 +343,11 @@ function dismissNudge() {
   nudgeDismissed = true;
   var nudge = document.getElementById('follow-nudge');
   if (nudge) nudge.classList.remove('is-visible');
-  try { sessionStorage.setItem('followNudgeDismissed', '1'); } catch(e) {}
 }
 
 (function() {
   var nudge = document.getElementById('follow-nudge');
   if (!nudge) return;
-  try { if (sessionStorage.getItem('followNudgeDismissed')) return; } catch(e) {}
   if (!nudgeDismissed) nudge.classList.add('is-visible');
   nudge.addEventListener('click', function() {
     if (window._openPlatformPopup) window._openPlatformPopup();
