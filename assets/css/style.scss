@@ -165,8 +165,26 @@ body {
 }
 
 @keyframes ctrlPulse {
-  0%, 100% { box-shadow: 0 0 0 0 rgba(245, 184, 89, 0.5); }
-  50% { box-shadow: 0 0 0 8px rgba(245, 184, 89, 0); }
+  0% {
+    box-shadow: 0 0 0 0 var(--wheat), 0 0 0 0 var(--abundance);
+    transform: scale(1);
+  }
+  25% {
+    box-shadow: 0 0 8px 4px var(--wheat), 0 0 0 8px var(--abundance);
+    transform: scale(1.1);
+  }
+  50% {
+    box-shadow: 0 0 4px 2px var(--abundance), 0 0 0 12px rgba(46, 97, 33, 0);
+    transform: scale(1);
+  }
+  75% {
+    box-shadow: 0 0 8px 4px var(--wheat), 0 0 0 8px rgba(246, 186, 89, 0);
+    transform: scale(1.08);
+  }
+  100% {
+    box-shadow: 0 0 0 0 var(--wheat), 0 0 0 0 var(--abundance);
+    transform: scale(1);
+  }
 }
 
 /* Mute icon toggle */
