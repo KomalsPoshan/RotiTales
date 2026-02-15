@@ -531,7 +531,7 @@ body {
   position: fixed;
   inset: 0;
   z-index: 9999;
-  background: rgba(36, 2, 3, 0.7);
+  background: color-mix(in srgb, var(--warmth-dark) 70%, transparent);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   display: flex;
@@ -548,11 +548,9 @@ body {
 }
 
 .platform-modal {
-  background:
-    linear-gradient(160deg, rgba(255,245,232,0.75) 0%, rgba(253,225,185,0.75) 100%),
-    url('/assets/images/pattern_roti_flour.png');
-  background-size: auto, 180px;
-  border: 4px solid var(--wheat);
+  background: url('/assets/images/pattern_roti_flour.png');
+  background-size: 50%;
+  border: 8px solid var(--wheat);
   border-radius: 28px;
   padding: 36px 28px 32px;
   text-align: center;
@@ -562,7 +560,7 @@ body {
   overflow: hidden;
   box-shadow:
     0 16px 60px rgba(0, 0, 0, 0.5),
-    0 0 0 1px rgba(245, 184, 89, 0.2),
+    0 0 0 1px var(--wheat-30),
     inset 0 1px 0 rgba(255, 255, 255, 0.3);
   transform: scale(0.9) translateY(20px);
   transition: transform 0.3s;
@@ -597,7 +595,7 @@ body {
   align-items: center;
   justify-content: center;
   gap: 14px;
-  margin-bottom: 20px;
+  margin-bottom: 28px;
 }
 
 .platform-logo {
@@ -606,7 +604,7 @@ body {
   border-radius: 50%;
   object-fit: cover;
   border: 3px solid var(--wheat);
-  box-shadow: 0 4px 20px rgba(171, 79, 46, 0.25);
+  box-shadow: 0 4px 20px var(--clay-30);
   flex-shrink: 0;
 }
 
@@ -624,8 +622,9 @@ body {
 
 .platform-tagline {
   font-family: 'Kufam', sans-serif;
-  font-size: 15px;
-  color: rgba(77, 0, 10, 0.8);
+  font-size: 18px;
+  color: var(--clay);
+  text-shadow: 2px 2px 4px var(--wheat);
   margin: 4px 0 0;
 }
 
@@ -642,7 +641,7 @@ body {
   align-items: center;
   gap: 8px;
   padding: 16px 14px;
-  background: rgba(255, 253, 250, 0.75);
+  background: color-mix(in srgb, var(--flour-light) 75%, transparent);
   border: 2px solid var(--wheat);
   border-radius: 18px;
   text-decoration: none;
@@ -659,7 +658,7 @@ body {
   background: var(--wheat);
   border-color: var(--wheat);
   transform: translateY(-3px) scale(1.05);
-  box-shadow: 0 6px 20px rgba(171, 79, 46, 0.25);
+  box-shadow: 0 6px 20px var(--clay-30);
   color: var(--warmth);
   text-decoration: none;
 }
@@ -674,7 +673,7 @@ body {
 @keyframes platformSpotlight {
   0% {
     transform: translateY(0) scale(1);
-    background: rgba(255, 253, 250, 0.75);
+    background: color-mix(in srgb, var(--flour-light) 75%, transparent);
     border-color: var(--wheat);
     box-shadow: none;
   }
@@ -682,17 +681,17 @@ body {
     transform: translateY(-4px) scale(1.12);
     background: var(--wheat);
     border-color: var(--clay);
-    box-shadow: 0 6px 24px rgba(245, 184, 89, 0.45);
+    box-shadow: 0 6px 24px var(--wheat-30);
   }
   14% {
     transform: translateY(-4px) scale(1.12);
     background: var(--wheat);
     border-color: var(--clay);
-    box-shadow: 0 6px 24px rgba(245, 184, 89, 0.45);
+    box-shadow: 0 6px 24px var(--wheat-30);
   }
   22%, 100% {
     transform: translateY(0) scale(1);
-    background: rgba(255, 253, 250, 0.75);
+    background: color-mix(in srgb, var(--flour-light) 75%, transparent);
     border-color: var(--wheat);
     box-shadow: none;
   }
