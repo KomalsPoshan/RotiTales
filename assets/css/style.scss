@@ -128,31 +128,45 @@ body {
   transform: translate(-50%, -50%);
 }
 
-/* Mute button — overlaid on video card */
-.card-mute {
+/* Overlay controls — play/pause + mute on video card */
+.card-overlay-controls {
   position: absolute;
   top: 12px;
   right: 12px;
   z-index: 6;
-  background: rgba(0, 0, 0, 0.45);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.card-ctrl {
+  background: rgba(0, 0, 0, 0.5);
   backdrop-filter: blur(6px);
   -webkit-backdrop-filter: blur(6px);
-  border: 1px solid rgba(255, 245, 232, 0.2);
+  border: 2px solid var(--wheat);
   border-radius: 50%;
-  width: 38px;
-  height: 38px;
+  width: 40px;
+  height: 40px;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
   color: var(--flour);
-  transition: background 0.2s, transform 0.2s;
+  transition: background 0.2s, transform 0.2s, border-color 0.2s;
   padding: 0;
+  animation: ctrlPulse 2.5s ease-in-out 3;
 }
 
-.card-mute:hover {
-  background: rgba(0, 0, 0, 0.65);
-  transform: scale(1.1);
+.card-ctrl:hover {
+  background: rgba(0, 0, 0, 0.7);
+  border-color: var(--flour);
+  transform: scale(1.12);
+  animation: none;
+}
+
+@keyframes ctrlPulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(245, 184, 89, 0.5); }
+  50% { box-shadow: 0 0 0 8px rgba(245, 184, 89, 0); }
 }
 
 /* Mute icon toggle */
@@ -770,7 +784,9 @@ body.mobile-device {
 
 .mobile-device .slide-label h3 { font-size: 15px; }
 .mobile-device .slide-label p { font-size: 11px; }
-.mobile-device .card-mute { width: 32px; height: 32px; top: 10px; right: 10px; }
+.mobile-device .card-overlay-controls { top: 8px; right: 8px; gap: 6px; }
+.mobile-device .card-ctrl { width: 32px; height: 32px; }
+.mobile-device .card-ctrl svg { width: 14px; height: 14px; }
 
 /* Mobile: controls */
 .mobile-device .hero-controls {

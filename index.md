@@ -16,7 +16,12 @@ title: Home
           <div class="slide-video slide-video-api">
             <div id="hero-player"></div>
           </div>
-          <button class="card-mute is-muted" id="ctrl-mute" aria-label="Toggle sound">
+          <div class="card-overlay-controls">
+          <button class="card-ctrl ctrl-playpause" id="ctrl-playpause" aria-label="Play/Pause">
+            <svg class="pp-pause" viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg>
+            <svg class="pp-play" viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><polygon points="5,3 19,12 5,21"/></svg>
+          </button>
+          <button class="card-ctrl card-mute is-muted" id="ctrl-mute" aria-label="Toggle sound">
             <svg class="sound-icon-muted" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <path d="M11 5L6 9H2v6h4l5 4V5z"/>
               <line x1="23" y1="9" x2="17" y2="15"/>
@@ -28,6 +33,7 @@ title: Home
               <path d="M15.54 8.46a5 5 0 010 7.07"/>
             </svg>
           </button>
+          </div>
           <div class="slide-label">
             <h3>Are all carbs bad?</h3>
             <p>Simple swaps for more nutritious rotis</p>
@@ -97,11 +103,6 @@ title: Home
   <div class="hero-controls">
     <button class="ctrl-btn" id="ctrl-prev" aria-label="Previous">
       <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
-    </button>
-
-    <button class="ctrl-btn ctrl-playpause" id="ctrl-playpause" aria-label="Play/Pause">
-      <svg class="pp-pause" viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg>
-      <svg class="pp-play" viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><polygon points="5,3 19,12 5,21"/></svg>
     </button>
 
     <div class="hero-dots" id="hero-dots">
