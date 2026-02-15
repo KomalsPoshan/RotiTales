@@ -20,62 +20,70 @@ title: Home
     <div class="carousel-track" id="carousel-track">
 
       <!-- Slide 1: API-controlled autoplay video -->
-      <div class="carousel-slide" data-index="0">
-        <div class="slide-video slide-video-api">
-          <div id="hero-player"></div>
-        </div>
-        <div class="slide-label">
-          <h3>Are all carbs bad?</h3>
-          <p>Simple swaps for more nutritious rotis</p>
+      <div class="carousel-slide is-active" data-index="0">
+        <div class="slide-card">
+          <div class="slide-video slide-video-api">
+            <div id="hero-player"></div>
+          </div>
+          <div class="slide-label">
+            <h3>Are all carbs bad?</h3>
+            <p>Simple swaps for more nutritious rotis</p>
+          </div>
         </div>
       </div>
 
       <!-- Slide 2 -->
       <div class="carousel-slide" data-index="1">
-        <div class="slide-video">
-          <iframe src="https://www.youtube.com/embed/oQPZyqFDFJc" allowfullscreen loading="lazy"></iframe>
-        </div>
-        <div class="slide-label">
-          <h3>Nutrition Made Simple</h3>
-          <p>Quick tips that pack a punch</p>
+        <div class="slide-card">
+          <div class="slide-video">
+            <iframe src="https://www.youtube.com/embed/oQPZyqFDFJc" allowfullscreen loading="lazy"></iframe>
+          </div>
+          <div class="slide-label">
+            <h3>Nutrition Made Simple</h3>
+            <p>Quick tips that pack a punch</p>
+          </div>
         </div>
       </div>
 
       <!-- Slide 3: Connect card -->
       <div class="carousel-slide" data-index="2">
-        <div class="slide-connect">
-          <img src="/assets/images/rotitales_roti_on_fire_logo.png" alt="Roti Tales" class="connect-logo" />
-          <h3 class="connect-title">Join the Family</h3>
-          <p class="connect-desc">Follow Roti Tales everywhere</p>
-          <div class="connect-grid">
-            <a href="https://www.youtube.com/@rotitales" class="connect-link">
-              <img src="/assets/icons/youtube-clay.svg" alt="YouTube" />
-              <span>YouTube</span>
-            </a>
-            <a href="https://instagram.com/rotitales" class="connect-link">
-              <img src="/assets/icons/instagram-clay.svg" alt="Instagram" />
-              <span>Instagram</span>
-            </a>
-            <a href="https://www.facebook.com/rotitales" class="connect-link">
-              <img src="/assets/icons/facebook-clay.svg" alt="Facebook" />
-              <span>Facebook</span>
-            </a>
-            <a href="https://www.linkedin.com/showcase/rotitales" class="connect-link">
-              <img src="/assets/icons/linkedin-clay.svg" alt="LinkedIn" />
-              <span>LinkedIn</span>
-            </a>
+        <div class="slide-card">
+          <div class="slide-connect">
+            <img src="/assets/images/rotitales_roti_on_fire_logo.png" alt="Roti Tales" class="connect-logo" />
+            <h3 class="connect-title">Join the Family</h3>
+            <p class="connect-desc">Follow Roti Tales everywhere</p>
+            <div class="connect-grid">
+              <a href="https://www.youtube.com/@rotitales" class="connect-link">
+                <img src="/assets/icons/youtube-clay.svg" alt="YouTube" />
+                <span>YouTube</span>
+              </a>
+              <a href="https://instagram.com/rotitales" class="connect-link">
+                <img src="/assets/icons/instagram-clay.svg" alt="Instagram" />
+                <span>Instagram</span>
+              </a>
+              <a href="https://www.facebook.com/rotitales" class="connect-link">
+                <img src="/assets/icons/facebook-clay.svg" alt="Facebook" />
+                <span>Facebook</span>
+              </a>
+              <a href="https://www.linkedin.com/showcase/rotitales" class="connect-link">
+                <img src="/assets/icons/linkedin-clay.svg" alt="LinkedIn" />
+                <span>LinkedIn</span>
+              </a>
+            </div>
           </div>
         </div>
       </div>
 
       <!-- Slide 4 -->
       <div class="carousel-slide" data-index="3">
-        <div class="slide-video">
-          <iframe src="https://www.youtube.com/embed/ef1_NUR4aig" allowfullscreen loading="lazy"></iframe>
-        </div>
-        <div class="slide-label">
-          <h3>Kitchen Vibes</h3>
-          <p>Feel-good roti making moments</p>
+        <div class="slide-card">
+          <div class="slide-video">
+            <iframe src="https://www.youtube.com/embed/ef1_NUR4aig" allowfullscreen loading="lazy"></iframe>
+          </div>
+          <div class="slide-label">
+            <h3>Kitchen Vibes</h3>
+            <p>Feel-good roti making moments</p>
+          </div>
         </div>
       </div>
 
@@ -137,9 +145,15 @@ title: Home
 <div class="platform-overlay" id="platform-popup">
   <div class="platform-modal">
     <button class="platform-close" id="platform-close" type="button">&times;</button>
-    <img src="/assets/images/rotitales_roti_on_fire_logo.png" alt="Roti Tales" class="platform-logo" />
-    <h3 class="platform-heading">Find us on</h3>
-    <div class="platform-grid">
+    <div class="platform-header">
+      <img src="/assets/images/rotitales_roti_on_fire_logo.png" alt="Roti Tales" class="platform-logo" />
+      <div class="platform-brand">
+        <h3 class="platform-heading">Roti Tales</h3>
+        <p class="platform-tagline">Healthier rotis, happier families</p>
+      </div>
+    </div>
+    <p class="platform-cta-text">Follow us &mdash; never miss a recipe!</p>
+    <div class="platform-row">
       <a href="https://www.youtube.com/@rotitales" class="platform-option">
         <img src="/assets/icons/youtube-clay.svg" alt="YouTube" />
         <span>YouTube</span>
@@ -214,13 +228,20 @@ function onYouTubeIframeAPIReady() {
   var totalSlides = dots.length;
   var current = 0;
 
+  var slides = document.querySelectorAll('.carousel-slide');
+
   function goTo(idx) {
     if (idx < 0) idx = totalSlides - 1;
     if (idx >= totalSlides) idx = 0;
     current = idx;
-    track.style.transform = 'translateX(-' + (current * 100) + '%)';
+    var slidePct = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--slide-pct')) || 70;
+    var offset = (100 - slidePct) / 2;
+    track.style.transform = 'translateX(' + (offset - current * slidePct) + '%)';
     dots.forEach(function(d, i) {
       d.classList.toggle('active', i === current);
+    });
+    slides.forEach(function(s, i) {
+      s.classList.toggle('is-active', i === current);
     });
     // Pause hero player when not on slide 0, resume when back
     if (heroPlayer && heroPlayer.pauseVideo) {

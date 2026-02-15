@@ -19,6 +19,7 @@
   --abundance: #2E6121;
   --abundance-light: #98B690;
   --abundance-30: #2E61214D;
+  --slide-pct: 70;
 }
 
 html { scroll-behavior: smooth; }
@@ -36,7 +37,8 @@ body {
   position: relative;
   width: 100%;
   height: 100vh;
-  background: #000;
+  background: var(--flour) url('/assets/images/pattern_illustrations_flour.png');
+  background-size: 300px;
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -66,18 +68,16 @@ body {
   font-family: 'Kufam', sans-serif;
   font-size: 22px;
   font-weight: 1000;
-  color: var(--flour);
+  color: var(--warmth);
   margin: 0;
-  text-shadow: 0 1px 10px rgba(0,0,0,0.5);
   letter-spacing: 1px;
 }
 
 .hero-brand-sub {
   font-family: 'Kufam', sans-serif;
   font-size: 12px;
-  color: rgba(255, 245, 232, 0.65);
+  color: rgba(77, 0, 10, 0.55);
   margin: 2px 0 0;
-  text-shadow: 0 1px 6px rgba(0,0,0,0.4);
 }
 
 /* Carousel viewport — centered with padding for border feel */
@@ -99,24 +99,46 @@ body {
 
 .carousel-slide {
   flex-shrink: 0;
-  width: 100%;
+  width: calc(var(--slide-pct) * 1%);
   height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 0 10px;
+  box-sizing: border-box;
 }
 
-/* Video slide */
-.slide-video {
+/* Card wrapper inside each slide */
+.slide-card {
   position: relative;
-  width: 100%;
-  max-width: 340px;
+  height: 100%;
   aspect-ratio: 9 / 16;
   border-radius: 20px;
   overflow: hidden;
+  border: 3px solid var(--wheat);
   box-shadow:
-    0 8px 40px rgba(0, 0, 0, 0.6),
-    0 0 0 1px rgba(255, 245, 232, 0.08);
+    0 8px 40px rgba(0, 0, 0, 0.25),
+    0 0 20px rgba(245, 184, 89, 0.15);
+  transition: transform 0.5s ease, opacity 0.5s ease;
+  transform: scale(0.92);
+  opacity: 0.5;
+}
+
+.carousel-slide.is-active .slide-card {
+  transform: scale(1);
+  opacity: 1;
+  box-shadow:
+    0 12px 48px rgba(0, 0, 0, 0.35),
+    0 0 30px rgba(245, 184, 89, 0.25);
+}
+
+/* Video slide — fills the card */
+.slide-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 
 .slide-video iframe {
@@ -142,14 +164,14 @@ body {
   transform: translate(-50%, -50%);
 }
 
-/* Title label on top-left of video */
+/* Title label — bottom of card */
 .slide-label {
   position: absolute;
-  top: 0;
+  bottom: 0;
   left: 0;
   right: 0;
-  padding: 16px 16px 36px;
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7) 0%, transparent 100%);
+  padding: 36px 16px 16px;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.75) 0%, transparent 100%);
   z-index: 2;
   text-align: left;
   pointer-events: none;
@@ -172,22 +194,17 @@ body {
   text-shadow: 0 1px 6px rgba(0, 0, 0, 0.4);
 }
 
-/* Connect slide */
+/* Connect slide — fills the card wrapper */
 .slide-connect {
   width: 100%;
-  max-width: 340px;
-  aspect-ratio: 9 / 16;
+  height: 100%;
   background: var(--flour);
-  border-radius: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   padding: 32px 20px;
   box-sizing: border-box;
-  box-shadow:
-    0 8px 40px rgba(0, 0, 0, 0.6),
-    0 0 0 1px rgba(255, 245, 232, 0.08);
 }
 
 .connect-logo {
@@ -263,12 +280,12 @@ body {
   display: flex;
   align-items: center;
   gap: 12px;
-  background: rgba(0, 0, 0, 0.4);
+  background: rgba(77, 0, 10, 0.65);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   padding: 10px 20px;
   border-radius: 40px;
-  border: 1px solid rgba(255, 245, 232, 0.12);
+  border: 1px solid rgba(245, 184, 89, 0.25);
 }
 
 .ctrl-btn {
@@ -342,7 +359,7 @@ body {
   align-items: center;
   justify-content: flex-end;
   padding: 16px 32px;
-  background: linear-gradient(to bottom, rgba(0,0,0,0.5) 0%, transparent 100%);
+  background: linear-gradient(to bottom, rgba(255,245,232,0.6) 0%, transparent 100%);
   box-sizing: border-box;
 }
 
@@ -359,9 +376,9 @@ body {
 .nav-pill {
   font-family: 'Kufam', sans-serif;
   font-size: 14px;
-  font-weight: 500;
-  color: rgba(255, 245, 232, 0.85);
-  background: rgba(255, 245, 232, 0.12);
+  font-weight: 600;
+  color: var(--warmth);
+  background: rgba(77, 0, 10, 0.08);
   padding: 6px 16px;
   border-radius: 20px;
   text-decoration: none;
@@ -371,8 +388,8 @@ body {
 }
 
 .nav-pill:hover {
-  background: rgba(245, 184, 89, 0.35);
-  color: var(--flour);
+  background: rgba(245, 184, 89, 0.4);
+  color: var(--warmth);
 }
 
 /* ===== FOOTER ===== */
@@ -501,14 +518,18 @@ body {
 }
 
 .platform-modal {
-  background: linear-gradient(160deg, var(--flour) 0%, var(--wheat-light) 100%);
+  background:
+    linear-gradient(160deg, rgba(255,245,232,0.93) 0%, rgba(253,225,185,0.93) 100%),
+    url('/assets/images/pattern_roti_flour.png');
+  background-size: auto, 180px;
   border: 3px solid var(--wheat);
   border-radius: 28px;
-  padding: 40px 32px 36px;
+  padding: 36px 28px 32px;
   text-align: center;
-  max-width: 340px;
-  width: 90%;
+  max-width: 420px;
+  width: 92%;
   position: relative;
+  overflow: hidden;
   box-shadow:
     0 16px 60px rgba(0, 0, 0, 0.5),
     0 0 0 1px rgba(245, 184, 89, 0.2),
@@ -533,67 +554,120 @@ body {
   padding: 0;
   line-height: 1;
   transition: color 0.2s;
+  z-index: 2;
 }
 
 .platform-close:hover {
   color: var(--clay);
 }
 
+/* Header: logo + title side by side */
+.platform-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  margin-bottom: 8px;
+}
+
 .platform-logo {
-  width: 72px;
-  height: 72px;
+  width: 64px;
+  height: 64px;
   border-radius: 50%;
   object-fit: cover;
-  margin-bottom: 14px;
   border: 3px solid var(--wheat);
   box-shadow: 0 4px 20px rgba(171, 79, 46, 0.25);
+  flex-shrink: 0;
+}
+
+.platform-brand {
+  text-align: left;
 }
 
 .platform-heading {
   font-family: 'Kufam', sans-serif;
-  font-size: 22px;
+  font-size: 24px;
   font-weight: 1000;
   color: var(--warmth);
+  margin: 0;
+}
+
+.platform-tagline {
+  font-family: 'Kufam', sans-serif;
+  font-size: 13px;
+  color: rgba(77, 0, 10, 0.55);
+  margin: 3px 0 0;
+}
+
+.platform-cta-text {
+  font-family: 'Kufam', sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--clay);
   margin: 0 0 24px;
 }
 
-.platform-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 14px;
+/* Horizontal row of platforms */
+.platform-row {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
 }
 
 .platform-option {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 10px;
-  padding: 22px 14px;
-  background: rgba(255, 253, 250, 0.7);
+  gap: 8px;
+  padding: 16px 14px;
+  background: rgba(255, 253, 250, 0.75);
   border: 2px solid var(--wheat);
   border-radius: 18px;
   text-decoration: none;
   color: var(--warmth);
   font-family: 'Kufam', sans-serif;
-  font-size: 14px;
+  font-size: 12px;
   font-weight: 700;
-  transition: all 0.2s;
+  flex: 1;
+  min-width: 0;
+  transition: all 0.3s ease;
 }
 
 .platform-option:hover {
   background: var(--wheat);
   border-color: var(--wheat);
-  transform: translateY(-3px);
+  transform: translateY(-3px) scale(1.05);
   box-shadow: 0 6px 20px rgba(171, 79, 46, 0.25);
   color: var(--warmth);
   text-decoration: none;
 }
 
 .platform-option img {
-  width: 36px;
-  height: 36px;
+  width: 32px;
+  height: 32px;
   object-fit: contain;
 }
+
+/* Rotating spotlight animation */
+@keyframes platformSpotlight {
+  0%, 12% {
+    transform: translateY(-4px) scale(1.12);
+    background: var(--wheat);
+    border-color: var(--clay);
+    box-shadow: 0 6px 24px rgba(245, 184, 89, 0.45);
+  }
+  22%, 100% {
+    transform: translateY(0) scale(1);
+    background: rgba(255, 253, 250, 0.75);
+    border-color: var(--wheat);
+    box-shadow: none;
+  }
+}
+
+.platform-overlay.is-open .platform-option:nth-child(1) { animation: platformSpotlight 8s ease-in-out 0.5s infinite; }
+.platform-overlay.is-open .platform-option:nth-child(2) { animation: platformSpotlight 8s ease-in-out 2.5s infinite; }
+.platform-overlay.is-open .platform-option:nth-child(3) { animation: platformSpotlight 8s ease-in-out 4.5s infinite; }
+.platform-overlay.is-open .platform-option:nth-child(4) { animation: platformSpotlight 8s ease-in-out 6.5s infinite; }
 
 /* ===== FOLLOW NUDGE ===== */
 .follow-nudge {
@@ -653,6 +727,7 @@ body {
 
 /* ===== MOBILE OVERRIDES ===== */
 body.mobile-device {
+  --slide-pct: 85;
   background-image: url("/assets/images/Roti Tales - Banner.png");
 }
 
@@ -672,6 +747,7 @@ body.mobile-device {
 .mobile-device .hero-brand-logo {
   width: 36px;
   height: 36px;
+  border-color: rgba(245, 184, 89, 0.6);
 }
 
 .mobile-device .hero-brand-title { font-size: 18px; }
@@ -679,15 +755,7 @@ body.mobile-device {
 
 /* Mobile: carousel */
 .mobile-device .carousel-viewport {
-  padding: 64px 16px 72px;
-}
-
-.mobile-device .slide-video {
-  max-width: 260px;
-}
-
-.mobile-device .slide-connect {
-  max-width: 260px;
+  padding: 64px 8px 72px;
 }
 
 .mobile-device .slide-label h3 { font-size: 15px; }
@@ -722,10 +790,13 @@ body.mobile-device {
 .mobile-device .site-footer { padding: 14px 0 10px; }
 
 /* Mobile: platform popup */
-.mobile-device .platform-modal { padding: 28px 24px 24px; }
-.mobile-device .platform-logo { width: 56px; height: 56px; }
-.mobile-device .platform-heading { font-size: 18px; margin-bottom: 20px; }
-.mobile-device .platform-option { padding: 16px 10px; font-size: 12px; }
+.mobile-device .platform-modal { padding: 28px 20px 24px; }
+.mobile-device .platform-logo { width: 48px; height: 48px; }
+.mobile-device .platform-heading { font-size: 20px; }
+.mobile-device .platform-cta-text { font-size: 13px; margin-bottom: 18px; }
+.mobile-device .platform-row { gap: 8px; }
+.mobile-device .platform-option { padding: 12px 8px; font-size: 10px; border-radius: 14px; }
+.mobile-device .platform-option img { width: 26px; height: 26px; }
 
 /* Mobile: follow nudge */
 .mobile-device .follow-nudge { bottom: 16px; right: 16px; font-size: 13px; padding: 12px 18px 12px 14px; }
