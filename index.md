@@ -9,24 +9,32 @@ title: Home
     <div id="hero-player"></div>
   </div>
 
-  <!-- Mobile fallback: roti-on-flame image when autoplay isn't supported -->
+  <!-- Mobile fallback: roti-on-flame when autoplay is blocked -->
   <img src="/assets/images/rotitales_roti_on_fire_logo.png" alt="Roti Tales" class="hero-mobile-poster" />
 
   <div class="hero-overlay"></div>
 
   <div class="hero-content">
-    <img src="/assets/images/Roti Tales - Logo.png" alt="Roti Tales" class="hero-logo" />
+    <img src="/assets/images/rotitales_roti_on_fire_logo.png" alt="Roti Tales" class="hero-logo" />
     <h1 class="hero-title">Roti Tales</h1>
     <p class="hero-tagline">Helping families eat healthier rotis</p>
-    <a class="hero-cta" href="https://www.youtube.com/watch?v=pPo5bd8tm2Y" id="hero-watch-btn">
-      <span class="hero-cta-icon">&#9654;</span> Watch Now
+    <a class="hero-cta" href="#reels" target="_self" id="hero-explore-btn">
+      <span class="hero-cta-icon">&#9654;</span> Explore
     </a>
   </div>
 
-  <!-- Sound toggle button -->
+  <!-- Sound toggle (SVG icons for cross-browser support) -->
   <button class="hero-sound-btn is-muted" id="hero-sound-btn" aria-label="Toggle sound">
-    <span class="sound-icon-muted">&#128263;</span>
-    <span class="sound-icon-on">&#128266;</span>
+    <svg class="sound-icon-muted" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M11 5L6 9H2v6h4l5 4V5z"/>
+      <line x1="23" y1="9" x2="17" y2="15"/>
+      <line x1="17" y1="9" x2="23" y2="15"/>
+    </svg>
+    <svg class="sound-icon-on" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M11 5L6 9H2v6h4l5 4V5z"/>
+      <path d="M19.07 4.93a10 10 0 010 14.14"/>
+      <path d="M15.54 8.46a5 5 0 010 7.07"/>
+    </svg>
   </button>
 
   <div class="hero-scroll-hint" id="scroll-hint">
@@ -35,62 +43,75 @@ title: Home
   </div>
 </div>
 
-<!-- ====== WATCH & LEARN ====== -->
-<div class="featured-section section-elevated">
-  <h2 class="section-title">Watch & Learn</h2>
-  <p class="section-subtitle">Quick videos on how to make healthier rotis for your family</p>
+<!-- ====== IMMERSIVE VIDEO FEED ====== -->
+<div class="reel-feed" id="reels">
 
-  <div class="video-row">
-    <div class="video-card">
-      <iframe src="https://www.youtube.com/embed/pPo5bd8tm2Y" allowfullscreen loading="lazy"></iframe>
-    </div>
-    <div class="video-card">
-      <iframe src="https://www.youtube.com/embed/oQPZyqFDFJc" allowfullscreen loading="lazy"></iframe>
-    </div>
-    <div class="video-card">
-      <iframe src="https://www.youtube.com/embed/ef1_NUR4aig" allowfullscreen loading="lazy"></iframe>
+  <div class="reel-section reel-dark">
+    <div class="reel-card">
+      <div class="reel-video">
+        <iframe src="https://www.youtube.com/embed/pPo5bd8tm2Y" allowfullscreen loading="lazy"></iframe>
+      </div>
+      <div class="reel-info">
+        <h3 class="reel-title">The Healthier Roti</h3>
+        <p class="reel-desc">Simple swaps to make your everyday roti more nutritious</p>
+      </div>
     </div>
   </div>
 
-  <a class="cta-button" href="https://www.youtube.com/playlist?list=PLca7YZGvJBnX8Q_pfbBsePRChDufQQVE2">
-    <img src="/assets/icons/youtube-clay.svg" alt="YouTube" />
-    <img class="cta-button-hover" src="/assets/icons/youtube-flour.svg" alt="YouTube" />
-    <span>Watch the full playlist</span>
-    <img class="arrow" src="/assets/icons/arrow-clay.svg" alt="Arrow" />
-    <img class="arrow cta-button-hover" src="/assets/icons/arrow-flour.svg" alt="Arrow" />
-  </a>
-</div>
-
-<!-- ====== PATTERN DIVIDER ====== -->
-<div class="pattern-divider">
-  <img src="/assets/images/pattern_roti_flour.png" alt="" class="pattern-divider-img" />
-</div>
-
-<!-- ====== FROM OUR INSTAGRAM ====== -->
-<div class="featured-section">
-  <h2 class="section-title">From Our Instagram</h2>
-  <p class="section-subtitle">Tips, reels & behind-the-scenes</p>
-
-  <div class="instagram-row">
-    <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/reel/DFuftgwJPbM/" data-instgrm-version="14">
-      <a href="https://www.instagram.com/reel/DFuftgwJPbM/"></a>
-    </blockquote>
-
-    <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/reel/DFYTsZbpsaC/" data-instgrm-version="14">
-      <a href="https://www.instagram.com/reel/DFYTsZbpsaC/"></a>
-    </blockquote>
+  <div class="reel-section reel-warm">
+    <div class="reel-card">
+      <div class="reel-video">
+        <iframe src="https://www.youtube.com/embed/oQPZyqFDFJc" allowfullscreen loading="lazy"></iframe>
+      </div>
+      <div class="reel-info">
+        <h3 class="reel-title">Nutrition Made Simple</h3>
+        <p class="reel-desc">Quick tips that pack a punch</p>
+      </div>
+    </div>
   </div>
 
-  <a class="cta-button" href="https://instagram.com/rotitales">
-    <img src="/assets/icons/instagram-clay.svg" alt="Instagram" />
-    <img class="cta-button-hover" src="/assets/icons/instagram-flour.svg" alt="Instagram" />
-    <span>Follow us on Instagram</span>
-    <img class="arrow" src="/assets/icons/arrow-clay.svg" alt="Arrow" />
-    <img class="arrow cta-button-hover" src="/assets/icons/arrow-flour.svg" alt="Arrow" />
-  </a>
+  <!-- Connect card woven into the scroll -->
+  <div class="reel-section reel-connect">
+    <div class="reel-card connect-card">
+      <img src="/assets/images/rotitales_roti_on_fire_logo.png" alt="Roti Tales" class="connect-logo" />
+      <h3 class="connect-title">Join the Family</h3>
+      <p class="connect-desc">Follow Roti Tales everywhere</p>
+      <div class="connect-grid">
+        <a href="https://www.youtube.com/@rotitales" class="connect-link">
+          <img src="/assets/icons/youtube-clay.svg" alt="YouTube" />
+          <span>YouTube</span>
+        </a>
+        <a href="https://instagram.com/rotitales" class="connect-link">
+          <img src="/assets/icons/instagram-clay.svg" alt="Instagram" />
+          <span>Instagram</span>
+        </a>
+        <a href="https://www.facebook.com/rotitales" class="connect-link">
+          <img src="/assets/icons/facebook-clay.svg" alt="Facebook" />
+          <span>Facebook</span>
+        </a>
+        <a href="https://www.linkedin.com/showcase/rotitales" class="connect-link">
+          <img src="/assets/icons/linkedin-clay.svg" alt="LinkedIn" />
+          <span>LinkedIn</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="reel-section reel-dark">
+    <div class="reel-card">
+      <div class="reel-video">
+        <iframe src="https://www.youtube.com/embed/ef1_NUR4aig" allowfullscreen loading="lazy"></iframe>
+      </div>
+      <div class="reel-info">
+        <h3 class="reel-title">Kitchen Vibes</h3>
+        <p class="reel-desc">Feel-good roti making moments</p>
+      </div>
+    </div>
+  </div>
+
 </div>
 
-<!-- ====== OUR MISSION ====== -->
+<!-- ====== OUR MISSION (user loves this section) ====== -->
 <div class="mission-section">
   <div class="mission-inner">
     <img src="/assets/images/Poshan_Logo_2Color-Flour.png" alt="Poshan" class="mission-logo" />
@@ -103,46 +124,32 @@ title: Home
   </div>
 </div>
 
-<!-- ====== CONNECT WITH US ====== -->
-<div class="featured-section">
-  <h2 class="section-title">Connect With Us</h2>
-
-  <div class="social-links">
-    <a class="social-button" href="https://www.facebook.com/rotitales">
-      <img src="/assets/icons/facebook-clay.svg" alt="Facebook logo" />
-      <img class="social-button-hover" src="/assets/icons/facebook-flour.svg" alt="Facebook logo"/>
-      <div class="social-label">Facebook</div>
-      <img class="arrow" src="/assets/icons/arrow-clay.svg" alt="Arrow icon" />
-      <img class="arrow social-button-hover" src="/assets/icons/arrow-flour.svg" alt="Arrow icon"/>
-    </a>
-
-    <a class="social-button" href="https://instagram.com/rotitales">
-      <img src="/assets/icons/instagram-clay.svg" alt="Instagram logo" />
-      <img class="social-button-hover" src="/assets/icons/instagram-flour.svg" alt="Instagram logo"/>
-      <div class="social-label">Instagram</div>
-      <img class="arrow" src="/assets/icons/arrow-clay.svg" alt="Arrow icon" />
-      <img class="arrow social-button-hover" src="/assets/icons/arrow-flour.svg" alt="Arrow icon"/>
-    </a>
-
-    <a class="social-button" href="https://www.linkedin.com/showcase/rotitales">
-      <img src="/assets/icons/linkedin-clay.svg" alt="LinkedIn logo" />
-      <img class="social-button-hover" src="/assets/icons/linkedin-flour.svg" alt="LinkedIn logo"/>
-      <div class="social-label">LinkedIn</div>
-      <img class="arrow" src="/assets/icons/arrow-clay.svg" alt="Arrow icon" />
-      <img class="arrow social-button-hover" src="/assets/icons/arrow-flour.svg" alt="Arrow icon"/>
-    </a>
-
-    <a class="social-button" href="https://www.youtube.com/@rotitales">
-      <img src="/assets/icons/youtube-clay.svg" alt="YouTube logo" />
-      <img class="social-button-hover" src="/assets/icons/youtube-flour.svg" alt="YouTube logo"/>
-      <div class="social-label">YouTube</div>
-      <img class="arrow" src="/assets/icons/arrow-clay.svg" alt="Arrow icon" />
-      <img class="arrow social-button-hover" src="/assets/icons/arrow-flour.svg" alt="Arrow icon"/>
-    </a>
+<!-- ====== PLATFORM CHOOSER POPUP ====== -->
+<div class="platform-overlay" id="platform-popup">
+  <div class="platform-modal">
+    <button class="platform-close" id="platform-close" type="button">&times;</button>
+    <img src="/assets/images/rotitales_roti_on_fire_logo.png" alt="Roti Tales" class="platform-logo" />
+    <h3 class="platform-heading">Find us on</h3>
+    <div class="platform-grid">
+      <a href="https://www.youtube.com/@rotitales" class="platform-option">
+        <img src="/assets/icons/youtube-clay.svg" alt="YouTube" />
+        <span>YouTube</span>
+      </a>
+      <a href="https://instagram.com/rotitales" class="platform-option">
+        <img src="/assets/icons/instagram-clay.svg" alt="Instagram" />
+        <span>Instagram</span>
+      </a>
+      <a href="https://www.facebook.com/rotitales" class="platform-option">
+        <img src="/assets/icons/facebook-clay.svg" alt="Facebook" />
+        <span>Facebook</span>
+      </a>
+      <a href="https://www.linkedin.com/showcase/rotitales" class="platform-option">
+        <img src="/assets/icons/linkedin-clay.svg" alt="LinkedIn" />
+        <span>LinkedIn</span>
+      </a>
+    </div>
   </div>
 </div>
-
-<script async src="//www.instagram.com/embed.js"></script>
 
 <!-- YouTube IFrame API for background hero video -->
 <script>
@@ -182,6 +189,18 @@ function onYouTubeIframeAPIReady() {
   });
 }
 
+// Smooth scroll for Explore button
+var exploreBtn = document.getElementById('hero-explore-btn');
+if (exploreBtn) {
+  exploreBtn.addEventListener('click', function(e) {
+    e.preventDefault();
+    var target = document.getElementById('reels');
+    if (target) {
+      target.scrollIntoView({ behavior: 'smooth' });
+    }
+  });
+}
+
 // Fade out scroll hint on scroll
 window.addEventListener('scroll', function() {
   var hint = document.getElementById('scroll-hint');
@@ -193,7 +212,8 @@ window.addEventListener('scroll', function() {
 // Sound toggle for hero video
 var soundBtn = document.getElementById('hero-sound-btn');
 if (soundBtn) {
-  soundBtn.addEventListener('click', function() {
+  soundBtn.addEventListener('click', function(e) {
+    e.stopPropagation();
     if (!heroPlayer || !heroPlayer.isMuted) return;
     if (heroPlayer.isMuted()) {
       heroPlayer.unMute();
@@ -204,4 +224,43 @@ if (soundBtn) {
     }
   });
 }
+
+// Platform chooser popup
+(function() {
+  var popup = document.getElementById('platform-popup');
+  var closeBtn = document.getElementById('platform-close');
+  if (!popup) return;
+
+  function openPopup() {
+    popup.classList.add('is-open');
+  }
+  function closePopup() {
+    popup.classList.remove('is-open');
+  }
+
+  // Any element with .platform-trigger opens the popup
+  document.querySelectorAll('.platform-trigger').forEach(function(el) {
+    el.addEventListener('click', function(e) {
+      e.preventDefault();
+      e.stopPropagation();
+      openPopup();
+    });
+  });
+
+  if (closeBtn) {
+    closeBtn.addEventListener('click', closePopup);
+  }
+
+  // Close on backdrop click
+  popup.addEventListener('click', function(e) {
+    if (e.target === popup) {
+      closePopup();
+    }
+  });
+
+  // Close on Escape
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') closePopup();
+  });
+})();
 </script>
