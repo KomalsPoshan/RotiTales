@@ -3,6 +3,30 @@ layout: home
 title: Home
 ---
 
+<!-- ====== CINEMATIC HERO ====== -->
+<div class="hero">
+  <div class="hero-video-wrap">
+    <div id="hero-player"></div>
+  </div>
+
+  <div class="hero-overlay"></div>
+
+  <div class="hero-content">
+    <img src="/assets/images/Roti Tales - Logo.png" alt="Roti Tales" class="hero-logo" />
+    <h1 class="hero-title">Roti Tales</h1>
+    <p class="hero-tagline">Helping families eat healthier rotis</p>
+    <a class="hero-cta" href="https://www.youtube.com/watch?v=pPo5bd8tm2Y" id="hero-watch-btn">
+      <span class="hero-cta-icon">&#9654;</span> Watch Now
+    </a>
+  </div>
+
+  <div class="hero-scroll-hint" id="scroll-hint">
+    <span>Scroll to explore</span>
+    <div class="scroll-arrow"></div>
+  </div>
+</div>
+
+<!-- ====== WATCH & LEARN ====== -->
 <div class="featured-section">
   <h2 class="section-title">Watch & Learn</h2>
   <p class="section-subtitle">Quick videos on how to make healthier rotis for your family</p>
@@ -28,6 +52,7 @@ title: Home
   </a>
 </div>
 
+<!-- ====== FROM OUR INSTAGRAM ====== -->
 <div class="featured-section">
   <h2 class="section-title">From Our Instagram</h2>
   <p class="section-subtitle">Tips, reels & behind-the-scenes</p>
@@ -51,6 +76,7 @@ title: Home
   </a>
 </div>
 
+<!-- ====== CONNECT WITH US ====== -->
 <div class="featured-section">
   <h2 class="section-title">Connect With Us</h2>
 
@@ -90,3 +116,50 @@ title: Home
 </div>
 
 <script async src="//www.instagram.com/embed.js"></script>
+
+<!-- YouTube IFrame API for background hero video -->
+<script>
+var tag = document.createElement('script');
+tag.src = "https://www.youtube.com/iframe_api";
+var firstScriptTag = document.getElementsByTagName('script')[0];
+firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+var heroPlayer;
+function onYouTubeIframeAPIReady() {
+  heroPlayer = new YT.Player('hero-player', {
+    videoId: 'pPo5bd8tm2Y',
+    playerVars: {
+      autoplay: 1,
+      mute: 1,
+      controls: 0,
+      showinfo: 0,
+      rel: 0,
+      loop: 1,
+      playlist: 'pPo5bd8tm2Y',
+      modestbranding: 1,
+      iv_load_policy: 3,
+      disablekb: 1,
+      fs: 0,
+      playsinline: 1
+    },
+    events: {
+      onReady: function(e) {
+        e.target.playVideo();
+      },
+      onStateChange: function(e) {
+        if (e.data === YT.PlayerState.ENDED) {
+          heroPlayer.playVideo();
+        }
+      }
+    }
+  });
+}
+
+// Fade out scroll hint on scroll
+window.addEventListener('scroll', function() {
+  var hint = document.getElementById('scroll-hint');
+  if (hint) {
+    hint.style.opacity = window.scrollY > 80 ? '0' : '1';
+  }
+});
+</script>
