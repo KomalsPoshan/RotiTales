@@ -9,6 +9,9 @@ title: Home
     <div id="hero-player"></div>
   </div>
 
+  <!-- Mobile fallback: roti-on-flame image when autoplay isn't supported -->
+  <img src="/assets/images/rotitales_roti_on_fire_logo.png" alt="Roti Tales" class="hero-mobile-poster" />
+
   <div class="hero-overlay"></div>
 
   <div class="hero-content">
@@ -19,6 +22,12 @@ title: Home
       <span class="hero-cta-icon">&#9654;</span> Watch Now
     </a>
   </div>
+
+  <!-- Sound toggle button -->
+  <button class="hero-sound-btn is-muted" id="hero-sound-btn" aria-label="Toggle sound">
+    <span class="sound-icon-muted">&#128263;</span>
+    <span class="sound-icon-on">&#128266;</span>
+  </button>
 
   <div class="hero-scroll-hint" id="scroll-hint">
     <span>Scroll to explore</span>
@@ -52,6 +61,11 @@ title: Home
   </a>
 </div>
 
+<!-- ====== PATTERN DIVIDER ====== -->
+<div class="pattern-divider">
+  <img src="/assets/images/pattern_roti_flour.png" alt="" class="pattern-divider-img" />
+</div>
+
 <!-- ====== FROM OUR INSTAGRAM ====== -->
 <div class="featured-section">
   <h2 class="section-title">From Our Instagram</h2>
@@ -74,6 +88,19 @@ title: Home
     <img class="arrow" src="/assets/icons/arrow-clay.svg" alt="Arrow" />
     <img class="arrow cta-button-hover" src="/assets/icons/arrow-flour.svg" alt="Arrow" />
   </a>
+</div>
+
+<!-- ====== OUR MISSION ====== -->
+<div class="mission-section">
+  <div class="mission-inner">
+    <img src="/assets/images/Poshan_Logo_2Color-Flour.png" alt="Poshan" class="mission-logo" />
+    <h2 class="mission-title">Healthier Rotis, Happier Families</h2>
+    <p class="mission-text">Roti Tales is a Poshan initiative empowering families with simple ways to make everyday rotis more nutritious — one recipe at a time.</p>
+    <a class="mission-cta" href="https://poshan.us">
+      Learn about Poshan
+      <span class="mission-cta-arrow">&#8594;</span>
+    </a>
+  </div>
 </div>
 
 <!-- ====== CONNECT WITH US ====== -->
@@ -162,4 +189,19 @@ window.addEventListener('scroll', function() {
     hint.style.opacity = window.scrollY > 80 ? '0' : '1';
   }
 });
+
+// Sound toggle for hero video
+var soundBtn = document.getElementById('hero-sound-btn');
+if (soundBtn) {
+  soundBtn.addEventListener('click', function() {
+    if (!heroPlayer || !heroPlayer.isMuted) return;
+    if (heroPlayer.isMuted()) {
+      heroPlayer.unMute();
+      soundBtn.classList.remove('is-muted');
+    } else {
+      heroPlayer.mute();
+      soundBtn.classList.add('is-muted');
+    }
+  });
+}
 </script>
