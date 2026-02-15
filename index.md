@@ -14,16 +14,7 @@ title: Home
 
   <div class="hero-overlay"></div>
 
-  <div class="hero-content">
-    <img src="/assets/images/rotitales_roti_on_fire_logo.png" alt="Roti Tales" class="hero-logo" />
-    <h1 class="hero-title">Roti Tales</h1>
-    <p class="hero-tagline">Helping families eat healthier rotis</p>
-    <a class="hero-cta" href="#reels" target="_self" id="hero-explore-btn">
-      <span class="hero-cta-icon">&#9654;</span> Explore
-    </a>
-  </div>
-
-  <!-- Sound toggle (SVG icons for cross-browser support) -->
+  <!-- Sound toggle — top left -->
   <button class="hero-sound-btn is-muted" id="hero-sound-btn" aria-label="Toggle sound">
     <svg class="sound-icon-muted" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
       <path d="M11 5L6 9H2v6h4l5 4V5z"/>
@@ -37,81 +28,86 @@ title: Home
     </svg>
   </button>
 
+  <div class="hero-content">
+    <img src="/assets/images/rotitales_roti_on_fire_logo.png" alt="Roti Tales" class="hero-logo" />
+    <h1 class="hero-title">Roti Tales</h1>
+    <p class="hero-tagline">Helping families eat healthier rotis</p>
+    <a class="hero-cta" href="#reels" target="_self" id="hero-explore-btn">
+      <span class="hero-cta-icon">&#9654;</span> Explore
+    </a>
+  </div>
+
   <div class="hero-scroll-hint" id="scroll-hint">
     <span>Scroll to explore</span>
     <div class="scroll-arrow"></div>
   </div>
 </div>
 
-<!-- ====== IMMERSIVE VIDEO FEED ====== -->
+<!-- ====== HORIZONTAL VIDEO FEED ====== -->
 <div class="reel-feed" id="reels">
+  <div class="reel-track">
 
-  <div class="reel-section reel-dark">
     <div class="reel-card">
       <div class="reel-video">
         <iframe src="https://www.youtube.com/embed/pPo5bd8tm2Y" allowfullscreen loading="lazy"></iframe>
-      </div>
-      <div class="reel-info">
-        <h3 class="reel-title">The Healthier Roti</h3>
-        <p class="reel-desc">Simple swaps to make your everyday roti more nutritious</p>
+        <div class="reel-label">
+          <h3>The Healthier Roti</h3>
+          <p>Simple swaps for more nutritious rotis</p>
+        </div>
       </div>
     </div>
-  </div>
 
-  <div class="reel-section reel-warm">
     <div class="reel-card">
       <div class="reel-video">
         <iframe src="https://www.youtube.com/embed/oQPZyqFDFJc" allowfullscreen loading="lazy"></iframe>
-      </div>
-      <div class="reel-info">
-        <h3 class="reel-title">Nutrition Made Simple</h3>
-        <p class="reel-desc">Quick tips that pack a punch</p>
-      </div>
-    </div>
-  </div>
-
-  <!-- Connect card woven into the scroll -->
-  <div class="reel-section reel-connect">
-    <div class="reel-card connect-card">
-      <img src="/assets/images/rotitales_roti_on_fire_logo.png" alt="Roti Tales" class="connect-logo" />
-      <h3 class="connect-title">Join the Family</h3>
-      <p class="connect-desc">Follow Roti Tales everywhere</p>
-      <div class="connect-grid">
-        <a href="https://www.youtube.com/@rotitales" class="connect-link">
-          <img src="/assets/icons/youtube-clay.svg" alt="YouTube" />
-          <span>YouTube</span>
-        </a>
-        <a href="https://instagram.com/rotitales" class="connect-link">
-          <img src="/assets/icons/instagram-clay.svg" alt="Instagram" />
-          <span>Instagram</span>
-        </a>
-        <a href="https://www.facebook.com/rotitales" class="connect-link">
-          <img src="/assets/icons/facebook-clay.svg" alt="Facebook" />
-          <span>Facebook</span>
-        </a>
-        <a href="https://www.linkedin.com/showcase/rotitales" class="connect-link">
-          <img src="/assets/icons/linkedin-clay.svg" alt="LinkedIn" />
-          <span>LinkedIn</span>
-        </a>
+        <div class="reel-label">
+          <h3>Nutrition Made Simple</h3>
+          <p>Quick tips that pack a punch</p>
+        </div>
       </div>
     </div>
-  </div>
 
-  <div class="reel-section reel-dark">
+    <!-- Connect card woven into the carousel -->
+    <div class="reel-card reel-card-connect">
+      <div class="connect-card">
+        <img src="/assets/images/rotitales_roti_on_fire_logo.png" alt="Roti Tales" class="connect-logo" />
+        <h3 class="connect-title">Join the Family</h3>
+        <p class="connect-desc">Follow Roti Tales everywhere</p>
+        <div class="connect-grid">
+          <a href="https://www.youtube.com/@rotitales" class="connect-link">
+            <img src="/assets/icons/youtube-clay.svg" alt="YouTube" />
+            <span>YouTube</span>
+          </a>
+          <a href="https://instagram.com/rotitales" class="connect-link">
+            <img src="/assets/icons/instagram-clay.svg" alt="Instagram" />
+            <span>Instagram</span>
+          </a>
+          <a href="https://www.facebook.com/rotitales" class="connect-link">
+            <img src="/assets/icons/facebook-clay.svg" alt="Facebook" />
+            <span>Facebook</span>
+          </a>
+          <a href="https://www.linkedin.com/showcase/rotitales" class="connect-link">
+            <img src="/assets/icons/linkedin-clay.svg" alt="LinkedIn" />
+            <span>LinkedIn</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
     <div class="reel-card">
       <div class="reel-video">
         <iframe src="https://www.youtube.com/embed/ef1_NUR4aig" allowfullscreen loading="lazy"></iframe>
-      </div>
-      <div class="reel-info">
-        <h3 class="reel-title">Kitchen Vibes</h3>
-        <p class="reel-desc">Feel-good roti making moments</p>
+        <div class="reel-label">
+          <h3>Kitchen Vibes</h3>
+          <p>Feel-good roti making moments</p>
+        </div>
       </div>
     </div>
-  </div>
 
+  </div>
 </div>
 
-<!-- ====== OUR MISSION (user loves this section) ====== -->
+<!-- ====== OUR MISSION ====== -->
 <div class="mission-section">
   <div class="mission-inner">
     <img src="/assets/images/Poshan_Logo_2Color-Flour.png" alt="Poshan" class="mission-logo" />
@@ -149,6 +145,17 @@ title: Home
       </a>
     </div>
   </div>
+</div>
+
+<!-- ====== FOLLOW NUDGE (appears after 5s) ====== -->
+<div class="follow-nudge" id="follow-nudge">
+  <svg class="follow-nudge-hand" viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M18 11V6a2 2 0 00-4 0v1"/>
+    <path d="M14 10V4a2 2 0 00-4 0v6"/>
+    <path d="M10 10.5V6a2 2 0 00-4 0v8"/>
+    <path d="M18 11a2 2 0 014 0v3a8 8 0 01-8 8h-2c-2.5 0-4.5-1-6.2-2.8L3 16.4a2 2 0 013-2.6l.6.6"/>
+  </svg>
+  <span class="follow-nudge-text">Follow us!</span>
 </div>
 
 <!-- YouTube IFrame API for background hero video -->
@@ -233,6 +240,8 @@ if (soundBtn) {
 
   function openPopup() {
     popup.classList.add('is-open');
+    // Dismiss the follow nudge when popup opens
+    dismissNudge();
   }
   function closePopup() {
     popup.classList.remove('is-open');
@@ -251,16 +260,47 @@ if (soundBtn) {
     closeBtn.addEventListener('click', closePopup);
   }
 
-  // Close on backdrop click
   popup.addEventListener('click', function(e) {
-    if (e.target === popup) {
-      closePopup();
-    }
+    if (e.target === popup) closePopup();
   });
 
-  // Close on Escape
   document.addEventListener('keydown', function(e) {
     if (e.key === 'Escape') closePopup();
+  });
+
+  // Expose openPopup for the nudge
+  window._openPlatformPopup = openPopup;
+})();
+
+// Follow nudge — shows after 5s if user hasn't interacted
+var nudgeDismissed = false;
+function dismissNudge() {
+  nudgeDismissed = true;
+  var nudge = document.getElementById('follow-nudge');
+  if (nudge) nudge.classList.remove('is-visible');
+  try { sessionStorage.setItem('followNudgeDismissed', '1'); } catch(e) {}
+}
+
+(function() {
+  var nudge = document.getElementById('follow-nudge');
+  if (!nudge) return;
+
+  // Don't show if already dismissed this session
+  try {
+    if (sessionStorage.getItem('followNudgeDismissed')) return;
+  } catch(e) {}
+
+  // Show after 5 seconds
+  setTimeout(function() {
+    if (!nudgeDismissed) {
+      nudge.classList.add('is-visible');
+    }
+  }, 5000);
+
+  // Click nudge → open popup and dismiss
+  nudge.addEventListener('click', function() {
+    if (window._openPlatformPopup) window._openPlatformPopup();
+    dismissNudge();
   });
 })();
 </script>
