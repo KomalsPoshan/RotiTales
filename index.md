@@ -6,15 +6,6 @@ title: Home
 <!-- ====== FULL-SCREEN VIDEO CAROUSEL ====== -->
 <div class="hero-carousel">
 
-  <!-- Branding — top left, logo + title inline -->
-  <div class="hero-brand">
-    <img src="/assets/images/rotitales_roti_on_fire_logo.png" alt="Roti Tales" class="hero-brand-logo" />
-    <div class="hero-brand-text">
-      <h1 class="hero-brand-title">Roti Tales</h1>
-      <p class="hero-brand-sub">Helping families eat healthier rotis</p>
-    </div>
-  </div>
-
   <!-- Carousel viewport -->
   <div class="carousel-viewport">
     <div class="carousel-track" id="carousel-track">

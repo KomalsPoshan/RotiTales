@@ -44,42 +44,6 @@ body {
   flex-direction: column;
 }
 
-/* Branding — top left, logo + title inline */
-.hero-brand {
-  position: absolute;
-  top: 20px;
-  left: 28px;
-  z-index: 10;
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-
-.hero-brand-logo {
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 2px solid rgba(245, 184, 89, 0.5);
-  box-shadow: 0 0 20px rgba(245, 184, 89, 0.2);
-}
-
-.hero-brand-title {
-  font-family: 'Kufam', sans-serif;
-  font-size: 22px;
-  font-weight: 1000;
-  color: var(--warmth);
-  margin: 0;
-  letter-spacing: 1px;
-}
-
-.hero-brand-sub {
-  font-family: 'Kufam', sans-serif;
-  font-size: 12px;
-  color: rgba(77, 0, 10, 0.55);
-  margin: 2px 0 0;
-}
-
 /* Carousel viewport — centered with padding for border feel */
 .carousel-viewport {
   flex: 1;
@@ -798,22 +762,6 @@ body.mobile-device {
 .mobile-device .nav-logo img { width: 28px; height: 28px; }
 .mobile-device .nav-logo span { font-size: 14px; }
 .mobile-device .nav-pill { font-size: 10px; padding: 4px 10px; }
-
-/* Mobile: branding */
-.mobile-device .hero-brand {
-  top: 14px;
-  left: 16px;
-  gap: 8px;
-}
-
-.mobile-device .hero-brand-logo {
-  width: 36px;
-  height: 36px;
-  border-color: rgba(245, 184, 89, 0.6);
-}
-
-.mobile-device .hero-brand-title { font-size: 18px; }
-.mobile-device .hero-brand-sub { font-size: 10px; }
 
 /* Mobile: carousel */
 .mobile-device .carousel-viewport {
