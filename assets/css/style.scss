@@ -3,9 +3,28 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Kufam&display=swap');
 
+:root {
+  /* Brand Colors */
+  --flour: #FFF5E8;
+  --flour-light: #FFFDFA;
+  --flour-30: #FFF5E84D;
+  --clay: #AB4F2E;
+  --clay-light: #CF9880;
+  --clay-30: #AB4F2E4D;
+  --wheat: #F6BA59;
+  --wheat-light: #FDE1B9;
+  --wheat-30: #F5B8594D;
+  --warmth: #4D000A;
+  --warmth-dark: #240203;
+  --warmth-30: #4D000A4D;
+  --abundance: #2E6121;
+  --abundance-light: #98B690;
+  --abundance-30: #2E61214D;
+}
+
 body {
-  background-color: #fff5e8;
-  color: #ab4f2e;
+  background-color: var(--flour);
+  color: var(--clay);
   font-family: 'Kufam', sans-serif;
   font-size: 18px;
   margin: 0;
@@ -97,7 +116,7 @@ body {
   font-family: 'Kufam', sans-serif;
   font-size: 48px;
   font-weight: 1000;
-  color: #fff5e8;
+  color: var(--flour);
   margin: 0;
   text-shadow: 0 2px 20px rgba(0,0,0,0.6);
   letter-spacing: 2px;
@@ -116,8 +135,8 @@ body {
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  background: #ab4f2e;
-  color: #fff5e8;
+  background: var(--clay);
+  color: var(--flour);
   font-family: 'Kufam', sans-serif;
   font-size: 18px;
   font-weight: 700;
@@ -134,7 +153,7 @@ body {
   background: #c45a30;
   transform: scale(1.05);
   box-shadow: 0 6px 35px rgba(171, 79, 46, 0.7);
-  color: #fff5e8;
+  color: var(--flour);
   text-decoration: none;
 }
 
@@ -211,7 +230,7 @@ body {
   font-family: 'Kufam', sans-serif;
   font-size: 20px;
   font-weight: 1000;
-  color: #fff5e8;
+  color: var(--flour);
   text-shadow: 0 1px 8px rgba(0,0,0,0.4);
 }
 
@@ -234,13 +253,13 @@ body {
 
 .nav-pill:hover {
   background: rgba(245, 184, 89, 0.35);
-  color: #fff5e8;
+  color: var(--flour);
 }
 
 /* Footer */
 .site-footer {
-  background-color: #ab4f2e;
-  color: #fff5e8;
+  background-color: var(--clay);
+  color: var(--flour);
   font-family: 'Kufam', sans-serif;
   font-size: 14px;
   padding: 12px 0px;
@@ -252,10 +271,32 @@ body {
   justify-content: center;
 }
 
+.footer-poshan {
+  display: block;
+  font-size: 11px;
+  color: var(--flour-30);
+  margin-bottom: 2px;
+}
+
+.footer-copy {
+  display: block;
+}
+
+.footer-link {
+  color: var(--wheat);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.footer-link:hover {
+  color: var(--wheat-light);
+  text-decoration: underline;
+}
+
 /* Center logo inside white box */
 .header-card {
-  background-color: #fff5e8;
-  border: 2px solid #f5b859;
+  background-color: var(--flour);
+  border: 2px solid var(--wheat);
   border-radius: 32px;
   box-shadow: 0px 4px 10.5px -1px rgba(171, 79, 46, 0.41);
   font-family: 'Kufam', sans-serif;
@@ -276,7 +317,7 @@ body {
 
 /* Description text below handle */
 .header-description {
-  color: #4d000a;
+  color: var(--warmth);
   font-size: 18px;
   font-weight: 500;
   margin-top: 16px;
@@ -284,7 +325,7 @@ body {
 
 /* Title text "Roti Tales" */
 .header-title {
-  color: #4d000a;
+  color: var(--warmth);
   font-size: 32px;
   font-weight: 1000;
   margin-top: 48px;
@@ -304,9 +345,9 @@ body {
 
 /* Pills inside header card */
 .pill {
-  background-color: rgba(171, 79, 46, 0.14);
+  background-color: var(--clay-30);
   border-radius: 28px;
-  color: #4d000a;
+  color: var(--warmth);
   font-size: 16px;
   font-weight: 500;
   padding: 8px 16px;
@@ -342,7 +383,7 @@ body {
       rgba(245, 184, 89, 0.1) 100%
     ),
     linear-gradient(0deg, rgba(255, 245, 232, 1), rgba(255, 245, 232, 1));
-  border: 4px solid #f5b859;
+  border: 4px solid var(--wheat);
   border-radius: 20px;
   box-shadow: 0px 4px 10.5px -1px rgba(171, 79, 46, 0.41);
   display: flex;
@@ -360,13 +401,13 @@ body {
       rgba(245, 184, 89, 0.25) 100%
     ),
     linear-gradient(0deg, rgba(171, 79, 46, 1), rgba(171, 79, 46, 1));
-  border-color: #f5b859;
+  border-color: var(--wheat);
   text-decoration: none;
 }
 
 /* Label text for each button */
 .social-button .social-label {
-  color: #4d000a;
+  color: var(--warmth);
   font-size: 20px;
   font-weight: 1000;
   flex: 1;
@@ -374,7 +415,7 @@ body {
 }
 
 .social-button:hover .social-label {
-  color: #fff5e8;
+  color: var(--flour);
 }
 
 .social-button:not(:hover) .social-button-hover {
@@ -406,8 +447,17 @@ body {
   text-align: center;
 }
 
+/* Elevated section variant with subtle card styling */
+.section-elevated {
+  background: var(--flour-light);
+  border-radius: 24px;
+  padding-top: 32px !important;
+  padding-bottom: 32px !important;
+  box-shadow: 0 2px 16px rgba(171, 79, 46, 0.08);
+}
+
 .section-title {
-  color: #4d000a;
+  color: var(--warmth);
   font-family: 'Kufam', sans-serif;
   font-size: 24px;
   font-weight: 1000;
@@ -461,10 +511,10 @@ body {
       rgba(245, 184, 89, 0.1) 100%
     ),
     linear-gradient(0deg, rgba(255, 245, 232, 1), rgba(255, 245, 232, 1));
-  border: 4px solid #f5b859;
+  border: 4px solid var(--wheat);
   border-radius: 20px;
   box-shadow: 0px 4px 10.5px -1px rgba(171, 79, 46, 0.41);
-  color: #4d000a;
+  color: var(--warmth);
   display: flex;
   font-family: 'Kufam', sans-serif;
   font-size: 18px;
@@ -485,8 +535,8 @@ body {
       rgba(245, 184, 89, 0.25) 100%
     ),
     linear-gradient(0deg, rgba(171, 79, 46, 1), rgba(171, 79, 46, 1));
-  border-color: #f5b859;
-  color: #fff5e8;
+  border-color: var(--wheat);
+  color: var(--flour);
   text-decoration: none;
 }
 
@@ -531,6 +581,7 @@ body {
   max-width: 240px !important;
   min-width: 240px !important;
 }
+
 
 /* Main content positioning */
 .site-main {
@@ -644,8 +695,8 @@ body.mobile-device {
 }
 
 .mobile-device .social-button:hover {
-    background: linear-gradient(90deg, rgba(245,184,89,0) 0%, rgba(245,184,89,0.25) 100%),linear-gradient(0deg, #f5b859, #f5b859);
-    border-color: #fff5e8;
+    background: linear-gradient(90deg, rgba(245,184,89,0) 0%, rgba(245,184,89,0.25) 100%),linear-gradient(0deg, var(--wheat), var(--wheat));
+    border-color: var(--flour);
 }
 
 .mobile-device .social-label {
@@ -654,7 +705,7 @@ body.mobile-device {
 }
 
 .mobile-device .social-button:hover .social-label {
-    color: #4d000a
+    color: var(--warmth)
 }
 
 .mobile-device .social-button:hover .social-button-hover {
@@ -710,9 +761,9 @@ body.mobile-device {
 }
 
 .mobile-device .cta-button:hover {
-    background: linear-gradient(90deg, rgba(245,184,89,0) 0%, rgba(245,184,89,0.25) 100%),linear-gradient(0deg, #f5b859, #f5b859);
-    border-color: #fff5e8;
-    color: #4d000a;
+    background: linear-gradient(90deg, rgba(245,184,89,0) 0%, rgba(245,184,89,0.25) 100%),linear-gradient(0deg, var(--wheat), var(--wheat));
+    border-color: var(--flour);
+    color: var(--warmth);
 }
 
 .mobile-device .cta-button:hover .cta-button-hover {
@@ -765,3 +816,4 @@ body.mobile-device {
     bottom: 16px;
     font-size: 11px;
 }
+

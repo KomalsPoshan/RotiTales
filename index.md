@@ -27,7 +27,7 @@ title: Home
 </div>
 
 <!-- ====== WATCH & LEARN ====== -->
-<div class="featured-section">
+<div class="featured-section section-elevated">
   <h2 class="section-title">Watch & Learn</h2>
   <p class="section-subtitle">Quick videos on how to make healthier rotis for your family</p>
 
