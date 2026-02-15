@@ -375,7 +375,7 @@ body {
   background: rgba(255, 245, 232, 0.6);
 }
 
-/* ===== SLIM NAV BAR ===== */
+/* ===== NAV BAR ===== */
 .site-nav {
   position: fixed;
   top: 0;
@@ -384,17 +384,43 @@ body {
   z-index: 100;
   display: flex;
   align-items: center;
-  justify-content: flex-end;
-  padding: 14px 32px;
-  background: rgba(255, 245, 232, 0.65);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border-bottom: 1px solid rgba(245, 184, 89, 0.3);
+  justify-content: space-between;
+  padding: 10px 32px;
+  background: linear-gradient(135deg, var(--warmth) 0%, var(--warmth-dark) 100%);
+  border-bottom: 2px solid var(--wheat);
+  box-shadow: 0 2px 16px color-mix(in srgb, black 30%, transparent);
   box-sizing: border-box;
 }
 
 .nav-logo {
-  display: none;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: var(--flour);
+  transition: opacity 0.2s;
+}
+
+.nav-logo:hover {
+  opacity: 0.85;
+  color: var(--flour);
+  text-decoration: none;
+}
+
+.nav-logo img {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 2px solid var(--wheat);
+  object-fit: cover;
+}
+
+.nav-logo span {
+  font-family: 'Kufam', sans-serif;
+  font-size: 18px;
+  font-weight: 900;
+  color: var(--wheat);
+  letter-spacing: 0.5px;
 }
 
 .nav-pills {
@@ -405,21 +431,23 @@ body {
 
 .nav-pill {
   font-family: 'Kufam', sans-serif;
-  font-size: 14px;
-  font-weight: 600;
-  color: var(--warmth);
-  background: rgba(77, 0, 10, 0.08);
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--flour);
+  background: color-mix(in srgb, var(--flour) 12%, transparent);
   padding: 6px 16px;
   border-radius: 20px;
+  border: 1px solid var(--wheat-30);
   text-decoration: none;
-  transition: background 0.2s, color 0.2s;
-  border: none;
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
   cursor: pointer;
 }
 
 .nav-pill:hover {
-  background: rgba(245, 184, 89, 0.4);
+  background: var(--wheat);
   color: var(--warmth);
+  border-color: var(--wheat);
+  text-decoration: none;
 }
 
 /* ===== FOOTER ===== */
@@ -767,8 +795,10 @@ body.mobile-device {
 .mobile-device .site-footer { font-size: 10px; }
 
 /* Mobile: nav */
-.mobile-device .site-nav { padding: 10px 16px; }
-.mobile-device .nav-pill { font-size: 11px; padding: 5px 10px; }
+.mobile-device .site-nav { padding: 8px 14px; }
+.mobile-device .nav-logo img { width: 28px; height: 28px; }
+.mobile-device .nav-logo span { font-size: 14px; }
+.mobile-device .nav-pill { font-size: 10px; padding: 4px 10px; }
 
 /* Mobile: branding */
 .mobile-device .hero-brand {
