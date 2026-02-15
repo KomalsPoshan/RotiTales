@@ -3,108 +3,121 @@ layout: home
 title: Home
 ---
 
-<!-- ====== CINEMATIC HERO ====== -->
-<div class="hero">
-  <div class="hero-video-wrap">
-    <div id="hero-player"></div>
+<!-- ====== FULL-SCREEN VIDEO CAROUSEL ====== -->
+<div class="hero-carousel">
+
+  <!-- Branding — top left, logo + title inline -->
+  <div class="hero-brand">
+    <img src="/assets/images/rotitales_roti_on_fire_logo.png" alt="Roti Tales" class="hero-brand-logo" />
+    <div class="hero-brand-text">
+      <h1 class="hero-brand-title">Roti Tales</h1>
+      <p class="hero-brand-sub">Helping families eat healthier rotis</p>
+    </div>
   </div>
 
-  <!-- Mobile fallback: roti-on-flame when autoplay is blocked -->
-  <img src="/assets/images/rotitales_roti_on_fire_logo.png" alt="Roti Tales" class="hero-mobile-poster" />
+  <!-- Carousel viewport -->
+  <div class="carousel-viewport">
+    <div class="carousel-track" id="carousel-track">
 
-  <div class="hero-overlay"></div>
-
-  <!-- Sound toggle — top left -->
-  <button class="hero-sound-btn is-muted" id="hero-sound-btn" aria-label="Toggle sound">
-    <svg class="sound-icon-muted" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-      <path d="M11 5L6 9H2v6h4l5 4V5z"/>
-      <line x1="23" y1="9" x2="17" y2="15"/>
-      <line x1="17" y1="9" x2="23" y2="15"/>
-    </svg>
-    <svg class="sound-icon-on" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-      <path d="M11 5L6 9H2v6h4l5 4V5z"/>
-      <path d="M19.07 4.93a10 10 0 010 14.14"/>
-      <path d="M15.54 8.46a5 5 0 010 7.07"/>
-    </svg>
-  </button>
-
-  <div class="hero-content">
-    <img src="/assets/images/rotitales_roti_on_fire_logo.png" alt="Roti Tales" class="hero-logo" />
-    <h1 class="hero-title">Roti Tales</h1>
-    <p class="hero-tagline">Helping families eat healthier rotis</p>
-    <a class="hero-cta" href="#reels" target="_self" id="hero-explore-btn">
-      <span class="hero-cta-icon">&#9654;</span> Explore
-    </a>
-  </div>
-
-  <div class="hero-scroll-hint" id="scroll-hint">
-    <span>Scroll to explore</span>
-    <div class="scroll-arrow"></div>
-  </div>
-</div>
-
-<!-- ====== HORIZONTAL VIDEO FEED ====== -->
-<div class="reel-feed" id="reels">
-  <div class="reel-track">
-
-    <div class="reel-card">
-      <div class="reel-video">
-        <iframe src="https://www.youtube.com/embed/pPo5bd8tm2Y" allowfullscreen loading="lazy"></iframe>
-        <div class="reel-label">
-          <h3>The Healthier Roti</h3>
+      <!-- Slide 1: API-controlled autoplay video -->
+      <div class="carousel-slide" data-index="0">
+        <div class="slide-video slide-video-api">
+          <div id="hero-player"></div>
+        </div>
+        <div class="slide-label">
+          <h3>Are all carbs bad?</h3>
           <p>Simple swaps for more nutritious rotis</p>
         </div>
       </div>
-    </div>
 
-    <div class="reel-card">
-      <div class="reel-video">
-        <iframe src="https://www.youtube.com/embed/oQPZyqFDFJc" allowfullscreen loading="lazy"></iframe>
-        <div class="reel-label">
+      <!-- Slide 2 -->
+      <div class="carousel-slide" data-index="1">
+        <div class="slide-video">
+          <iframe src="https://www.youtube.com/embed/oQPZyqFDFJc" allowfullscreen loading="lazy"></iframe>
+        </div>
+        <div class="slide-label">
           <h3>Nutrition Made Simple</h3>
           <p>Quick tips that pack a punch</p>
         </div>
       </div>
-    </div>
 
-    <!-- Connect card woven into the carousel -->
-    <div class="reel-card reel-card-connect">
-      <div class="connect-card">
-        <img src="/assets/images/rotitales_roti_on_fire_logo.png" alt="Roti Tales" class="connect-logo" />
-        <h3 class="connect-title">Join the Family</h3>
-        <p class="connect-desc">Follow Roti Tales everywhere</p>
-        <div class="connect-grid">
-          <a href="https://www.youtube.com/@rotitales" class="connect-link">
-            <img src="/assets/icons/youtube-clay.svg" alt="YouTube" />
-            <span>YouTube</span>
-          </a>
-          <a href="https://instagram.com/rotitales" class="connect-link">
-            <img src="/assets/icons/instagram-clay.svg" alt="Instagram" />
-            <span>Instagram</span>
-          </a>
-          <a href="https://www.facebook.com/rotitales" class="connect-link">
-            <img src="/assets/icons/facebook-clay.svg" alt="Facebook" />
-            <span>Facebook</span>
-          </a>
-          <a href="https://www.linkedin.com/showcase/rotitales" class="connect-link">
-            <img src="/assets/icons/linkedin-clay.svg" alt="LinkedIn" />
-            <span>LinkedIn</span>
-          </a>
+      <!-- Slide 3: Connect card -->
+      <div class="carousel-slide" data-index="2">
+        <div class="slide-connect">
+          <img src="/assets/images/rotitales_roti_on_fire_logo.png" alt="Roti Tales" class="connect-logo" />
+          <h3 class="connect-title">Join the Family</h3>
+          <p class="connect-desc">Follow Roti Tales everywhere</p>
+          <div class="connect-grid">
+            <a href="https://www.youtube.com/@rotitales" class="connect-link">
+              <img src="/assets/icons/youtube-clay.svg" alt="YouTube" />
+              <span>YouTube</span>
+            </a>
+            <a href="https://instagram.com/rotitales" class="connect-link">
+              <img src="/assets/icons/instagram-clay.svg" alt="Instagram" />
+              <span>Instagram</span>
+            </a>
+            <a href="https://www.facebook.com/rotitales" class="connect-link">
+              <img src="/assets/icons/facebook-clay.svg" alt="Facebook" />
+              <span>Facebook</span>
+            </a>
+            <a href="https://www.linkedin.com/showcase/rotitales" class="connect-link">
+              <img src="/assets/icons/linkedin-clay.svg" alt="LinkedIn" />
+              <span>LinkedIn</span>
+            </a>
+          </div>
         </div>
       </div>
-    </div>
 
-    <div class="reel-card">
-      <div class="reel-video">
-        <iframe src="https://www.youtube.com/embed/ef1_NUR4aig" allowfullscreen loading="lazy"></iframe>
-        <div class="reel-label">
+      <!-- Slide 4 -->
+      <div class="carousel-slide" data-index="3">
+        <div class="slide-video">
+          <iframe src="https://www.youtube.com/embed/ef1_NUR4aig" allowfullscreen loading="lazy"></iframe>
+        </div>
+        <div class="slide-label">
           <h3>Kitchen Vibes</h3>
           <p>Feel-good roti making moments</p>
         </div>
       </div>
+
+    </div>
+  </div>
+
+  <!-- Controls — bottom center -->
+  <div class="hero-controls">
+    <button class="ctrl-btn" id="ctrl-prev" aria-label="Previous">
+      <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+    </button>
+
+    <button class="ctrl-btn ctrl-mute is-muted" id="ctrl-mute" aria-label="Toggle sound">
+      <svg class="sound-icon-muted" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M11 5L6 9H2v6h4l5 4V5z"/>
+        <line x1="23" y1="9" x2="17" y2="15"/>
+        <line x1="17" y1="9" x2="23" y2="15"/>
+      </svg>
+      <svg class="sound-icon-on" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M11 5L6 9H2v6h4l5 4V5z"/>
+        <path d="M19.07 4.93a10 10 0 010 14.14"/>
+        <path d="M15.54 8.46a5 5 0 010 7.07"/>
+      </svg>
+    </button>
+
+    <button class="ctrl-btn ctrl-playpause" id="ctrl-playpause" aria-label="Play/Pause">
+      <svg class="pp-pause" viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg>
+      <svg class="pp-play" viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><polygon points="5,3 19,12 5,21"/></svg>
+    </button>
+
+    <div class="hero-dots" id="hero-dots">
+      <span class="dot active" data-slide="0"></span>
+      <span class="dot" data-slide="1"></span>
+      <span class="dot" data-slide="2"></span>
+      <span class="dot" data-slide="3"></span>
     </div>
 
+    <button class="ctrl-btn" id="ctrl-next" aria-label="Next">
+      <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+    </button>
   </div>
+
 </div>
 
 <!-- ====== OUR MISSION ====== -->
@@ -158,7 +171,7 @@ title: Home
   <span class="follow-nudge-text">Follow us!</span>
 </div>
 
-<!-- YouTube IFrame API for background hero video -->
+<!-- YouTube IFrame API -->
 <script>
 var tag = document.createElement('script');
 tag.src = "https://www.youtube.com/iframe_api";
@@ -166,6 +179,8 @@ var firstScriptTag = document.getElementsByTagName('script')[0];
 firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
 var heroPlayer;
+var isPlaying = true;
+
 function onYouTubeIframeAPIReady() {
   heroPlayer = new YT.Player('hero-player', {
     videoId: 'pPo5bd8tm2Y',
@@ -184,55 +199,97 @@ function onYouTubeIframeAPIReady() {
       playsinline: 1
     },
     events: {
-      onReady: function(e) {
-        e.target.playVideo();
-      },
+      onReady: function(e) { e.target.playVideo(); },
       onStateChange: function(e) {
-        if (e.data === YT.PlayerState.ENDED) {
-          heroPlayer.playVideo();
-        }
+        if (e.data === YT.PlayerState.ENDED) heroPlayer.playVideo();
       }
     }
   });
 }
 
-// Smooth scroll for Explore button
-var exploreBtn = document.getElementById('hero-explore-btn');
-if (exploreBtn) {
-  exploreBtn.addEventListener('click', function(e) {
-    e.preventDefault();
-    var target = document.getElementById('reels');
-    if (target) {
-      target.scrollIntoView({ behavior: 'smooth' });
+// ===== Carousel =====
+(function() {
+  var track = document.getElementById('carousel-track');
+  var dots = document.querySelectorAll('#hero-dots .dot');
+  var totalSlides = dots.length;
+  var current = 0;
+
+  function goTo(idx) {
+    if (idx < 0) idx = totalSlides - 1;
+    if (idx >= totalSlides) idx = 0;
+    current = idx;
+    track.style.transform = 'translateX(-' + (current * 100) + '%)';
+    dots.forEach(function(d, i) {
+      d.classList.toggle('active', i === current);
+    });
+    // Pause hero player when not on slide 0, resume when back
+    if (heroPlayer && heroPlayer.pauseVideo) {
+      if (current === 0 && isPlaying) {
+        heroPlayer.playVideo();
+      } else {
+        heroPlayer.pauseVideo();
+      }
+    }
+  }
+
+  document.getElementById('ctrl-prev').addEventListener('click', function() { goTo(current - 1); });
+  document.getElementById('ctrl-next').addEventListener('click', function() { goTo(current + 1); });
+
+  // Dot click navigation
+  dots.forEach(function(dot) {
+    dot.addEventListener('click', function() {
+      goTo(parseInt(this.getAttribute('data-slide')));
+    });
+  });
+
+  // Swipe support
+  var startX = 0;
+  var viewport = document.querySelector('.carousel-viewport');
+  viewport.addEventListener('touchstart', function(e) { startX = e.touches[0].clientX; }, { passive: true });
+  viewport.addEventListener('touchend', function(e) {
+    var diff = startX - e.changedTouches[0].clientX;
+    if (Math.abs(diff) > 50) {
+      goTo(diff > 0 ? current + 1 : current - 1);
     }
   });
-}
 
-// Fade out scroll hint on scroll
-window.addEventListener('scroll', function() {
-  var hint = document.getElementById('scroll-hint');
-  if (hint) {
-    hint.style.opacity = window.scrollY > 80 ? '0' : '1';
+  // Keyboard arrows
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'ArrowRight') goTo(current + 1);
+    if (e.key === 'ArrowLeft') goTo(current - 1);
+  });
+})();
+
+// ===== Mute toggle =====
+var muteBtn = document.getElementById('ctrl-mute');
+muteBtn.addEventListener('click', function() {
+  if (!heroPlayer || !heroPlayer.isMuted) return;
+  if (heroPlayer.isMuted()) {
+    heroPlayer.unMute();
+    muteBtn.classList.remove('is-muted');
+  } else {
+    heroPlayer.mute();
+    muteBtn.classList.add('is-muted');
   }
 });
 
-// Sound toggle for hero video
-var soundBtn = document.getElementById('hero-sound-btn');
-if (soundBtn) {
-  soundBtn.addEventListener('click', function(e) {
-    e.stopPropagation();
-    if (!heroPlayer || !heroPlayer.isMuted) return;
-    if (heroPlayer.isMuted()) {
-      heroPlayer.unMute();
-      soundBtn.classList.remove('is-muted');
-    } else {
-      heroPlayer.mute();
-      soundBtn.classList.add('is-muted');
-    }
-  });
-}
+// ===== Play/Pause toggle =====
+var ppBtn = document.getElementById('ctrl-playpause');
+ppBtn.addEventListener('click', function() {
+  if (!heroPlayer || !heroPlayer.getPlayerState) return;
+  var state = heroPlayer.getPlayerState();
+  if (state === YT.PlayerState.PLAYING) {
+    heroPlayer.pauseVideo();
+    isPlaying = false;
+    ppBtn.classList.add('is-paused');
+  } else {
+    heroPlayer.playVideo();
+    isPlaying = true;
+    ppBtn.classList.remove('is-paused');
+  }
+});
 
-// Platform chooser popup
+// ===== Platform chooser popup =====
 (function() {
   var popup = document.getElementById('platform-popup');
   var closeBtn = document.getElementById('platform-close');
@@ -240,14 +297,12 @@ if (soundBtn) {
 
   function openPopup() {
     popup.classList.add('is-open');
-    // Dismiss the follow nudge when popup opens
     dismissNudge();
   }
   function closePopup() {
     popup.classList.remove('is-open');
   }
 
-  // Any element with .platform-trigger opens the popup
   document.querySelectorAll('.platform-trigger').forEach(function(el) {
     el.addEventListener('click', function(e) {
       e.preventDefault();
@@ -256,23 +311,13 @@ if (soundBtn) {
     });
   });
 
-  if (closeBtn) {
-    closeBtn.addEventListener('click', closePopup);
-  }
-
-  popup.addEventListener('click', function(e) {
-    if (e.target === popup) closePopup();
-  });
-
-  document.addEventListener('keydown', function(e) {
-    if (e.key === 'Escape') closePopup();
-  });
-
-  // Expose openPopup for the nudge
+  if (closeBtn) closeBtn.addEventListener('click', closePopup);
+  popup.addEventListener('click', function(e) { if (e.target === popup) closePopup(); });
+  document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closePopup(); });
   window._openPlatformPopup = openPopup;
 })();
 
-// Follow nudge — shows after 5s if user hasn't interacted
+// ===== Follow nudge =====
 var nudgeDismissed = false;
 function dismissNudge() {
   nudgeDismissed = true;
@@ -284,20 +329,10 @@ function dismissNudge() {
 (function() {
   var nudge = document.getElementById('follow-nudge');
   if (!nudge) return;
-
-  // Don't show if already dismissed this session
-  try {
-    if (sessionStorage.getItem('followNudgeDismissed')) return;
-  } catch(e) {}
-
-  // Show after 5 seconds
+  try { if (sessionStorage.getItem('followNudgeDismissed')) return; } catch(e) {}
   setTimeout(function() {
-    if (!nudgeDismissed) {
-      nudge.classList.add('is-visible');
-    }
+    if (!nudgeDismissed) nudge.classList.add('is-visible');
   }, 5000);
-
-  // Click nudge → open popup and dismiss
   nudge.addEventListener('click', function() {
     if (window._openPlatformPopup) window._openPlatformPopup();
     dismissNudge();
