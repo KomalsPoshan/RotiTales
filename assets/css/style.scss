@@ -422,18 +422,6 @@ body {
   color: var(--warmth);
 }
 
-/* Follow pill — accented */
-.nav-pill.platform-trigger {
-  background: var(--clay);
-  color: var(--flour);
-  font-weight: 700;
-}
-
-.nav-pill.platform-trigger:hover {
-  background: #c45a30;
-  color: var(--flour);
-}
-
 /* ===== FOOTER ===== */
 .site-footer {
   background: linear-gradient(135deg, var(--warmth) 0%, var(--warmth-dark) 100%);

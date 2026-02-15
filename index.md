@@ -350,9 +350,7 @@ function dismissNudge() {
   var nudge = document.getElementById('follow-nudge');
   if (!nudge) return;
   try { if (sessionStorage.getItem('followNudgeDismissed')) return; } catch(e) {}
-  setTimeout(function() {
-    if (!nudgeDismissed) nudge.classList.add('is-visible');
-  }, 5000);
+  if (!nudgeDismissed) nudge.classList.add('is-visible');
   nudge.addEventListener('click', function() {
     if (window._openPlatformPopup) window._openPlatformPopup();
     dismissNudge();
