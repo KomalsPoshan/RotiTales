@@ -419,11 +419,12 @@ body {
   gap: 10px;
   text-decoration: none;
   color: var(--flour);
-  transition: opacity 0.2s;
+  transition: transform 0.2s, filter 0.2s;
 }
 
 .nav-logo:hover {
-  opacity: 0.85;
+  transform: translateY(-2px);
+  filter: brightness(1.25);
   color: var(--flour);
   text-decoration: none;
 }
@@ -456,7 +457,7 @@ body {
   font-weight: 700;
   color: var(--flour);
   background: color-mix(in srgb, var(--flour) 12%, transparent);
-  padding: 6px 16px;
+  padding: 10px 16px 6px;
   border-radius: 20px;
   border: 1px solid var(--wheat-30);
   text-decoration: none;
