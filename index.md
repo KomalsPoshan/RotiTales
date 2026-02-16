@@ -17,7 +17,7 @@ title: Home
             <div id="hero-player"></div>
           </div>
           <div class="card-header">
-            <span class="card-header-brand">Roti Tales</span>
+            <h3 class="card-header-title">Are all carbs bad?</h3>
             <div class="card-header-controls">
               <button class="card-ctrl ctrl-playpause" id="ctrl-playpause" aria-label="Play/Pause">
                 <svg class="pp-pause" viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg>
@@ -38,8 +38,8 @@ title: Home
             </div>
           </div>
           <div class="card-footer">
-            <h3>Are all carbs bad?</h3>
-            <p>Simple swaps for more nutritious rotis</p>
+            <p class="card-footer-subtitle">Simple swaps for more nutritious rotis</p>
+            <span class="card-footer-brand">Roti Tales</span>
           </div>
         </div>
       </div>
@@ -51,11 +51,11 @@ title: Home
             <iframe src="https://www.youtube.com/embed/oQPZyqFDFJc" allowfullscreen loading="lazy"></iframe>
           </div>
           <div class="card-header">
-            <span class="card-header-brand">Roti Tales</span>
+            <h3 class="card-header-title">Nutrition Made Simple</h3>
           </div>
           <div class="card-footer">
-            <h3>Nutrition Made Simple</h3>
-            <p>Quick tips that pack a punch</p>
+            <p class="card-footer-subtitle">Quick tips that pack a punch</p>
+            <span class="card-footer-brand">Roti Tales</span>
           </div>
         </div>
       </div>
@@ -96,11 +96,11 @@ title: Home
             <iframe src="https://www.youtube.com/embed/ef1_NUR4aig" allowfullscreen loading="lazy"></iframe>
           </div>
           <div class="card-header">
-            <span class="card-header-brand">Roti Tales</span>
+            <h3 class="card-header-title">Kitchen Vibes</h3>
           </div>
           <div class="card-footer">
-            <h3>Kitchen Vibes</h3>
-            <p>Feel-good roti making moments</p>
+            <p class="card-footer-subtitle">Feel-good roti making moments</p>
+            <span class="card-footer-brand">Roti Tales</span>
           </div>
         </div>
       </div>

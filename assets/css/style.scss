@@ -144,12 +144,13 @@ body {
   pointer-events: none;
 }
 
-.card-header-brand {
+/* Title in card header — top left */
+.card-header-title {
   font-family: 'Kufam', sans-serif;
-  font-size: 14px;
-  font-weight: 900;
-  color: var(--wheat);
-  letter-spacing: 0.5px;
+  font-size: 16px;
+  font-weight: 1000;
+  color: var(--flour);
+  margin: 0;
   text-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
 }
 
@@ -231,25 +232,29 @@ body {
   border-top: 3px solid var(--wheat);
   border-radius: 0;
   z-index: 2;
-  text-align: left;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   pointer-events: none;
 }
 
-.card-footer h3 {
-  font-family: 'Kufam', sans-serif;
-  font-size: 16px;
-  font-weight: 1000;
-  color: var(--flour);
-  margin: 0 0 2px;
-  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.5);
-}
-
-.card-footer p {
+/* Subtitle — bottom left */
+.card-footer-subtitle {
   font-family: 'Kufam', sans-serif;
   font-size: 11px;
   color: rgba(255, 245, 232, 0.7);
   margin: 0;
   text-shadow: 0 1px 6px rgba(0, 0, 0, 0.4);
+}
+
+/* Brand stamp — bottom right */
+.card-footer-brand {
+  font-family: 'Kufam', sans-serif;
+  font-size: 14px;
+  font-weight: 900;
+  color: var(--wheat);
+  letter-spacing: 0.5px;
+  white-space: nowrap;
 }
 
 /* Connect slide — fills the card wrapper */
@@ -614,7 +619,7 @@ body {
 
 .mission-title {
   font-family: 'Kufam', sans-serif;
-  font-size: 26px;
+  font-size: 32px;
   font-weight: 1000;
   color: var(--flour);
   margin: 0 0 12px;
@@ -626,7 +631,7 @@ body {
   color: rgba(255, 245, 232, 0.85);
   line-height: 1.6;
   margin: 0 0 24px;
-  text-shadow: 0px 1px 0px var(--wheat);
+  text-shadow: none;
 }
 
 .mission-cta {
@@ -907,13 +912,13 @@ body.mobile-device {
 }
 
 .mobile-device .card-header { padding: 8px 10px; }
-.mobile-device .card-header-brand { font-size: 12px; }
+.mobile-device .card-header-title { font-size: 13px; }
 .mobile-device .card-header-controls { gap: 6px; }
 .mobile-device .card-ctrl { width: 32px; height: 32px; }
 .mobile-device .card-ctrl svg { width: 14px; height: 14px; }
-.mobile-device .card-footer { padding: 24px 10px 10px; }
-.mobile-device .card-footer h3 { font-size: 13px; }
-.mobile-device .card-footer p { font-size: 10px; }
+.mobile-device .card-footer { padding: 8px 10px; }
+.mobile-device .card-footer-subtitle { font-size: 10px; }
+.mobile-device .card-footer-brand { font-size: 11px; }
 
 /* Mobile: controls */
 .mobile-device .hero-controls {
