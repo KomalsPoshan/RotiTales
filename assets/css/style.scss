@@ -351,13 +351,14 @@ body {
   z-index: 1;
 }
 
-/* Pulse glow behind button — draws attention without changing button fill */
+/* Pulse glow around button — draws attention without changing button fill */
 .social-link::before {
   content: '';
   position: absolute;
-  inset: -4px;
-  border-radius: 22px;
-  background: var(--clay);
+  inset: -6px;
+  border-radius: 24px;
+  background: transparent;
+  box-shadow: 0 0 0 0 var(--abundance);
   opacity: 0;
   z-index: -1;
 }
@@ -894,12 +895,12 @@ body {
   justify-content: center;
 }
 
-/* Pulse glow animation behind social buttons */
+/* Pulse glow animation around social buttons */
 @keyframes socialPulse {
-  0%        { opacity: 0; transform: scale(1); }
-  6%        { opacity: 0.5; transform: scale(1.06); }
-  14%       { opacity: 0.5; transform: scale(1.06); }
-  22%, 100% { opacity: 0; transform: scale(1); }
+  0%        { opacity: 0; box-shadow: 0 0 0 0 var(--abundance); }
+  6%        { opacity: 0.6; box-shadow: 0 0 12px 6px var(--abundance); }
+  14%       { opacity: 0.6; box-shadow: 0 0 12px 6px var(--abundance); }
+  22%, 100% { opacity: 0; box-shadow: 0 0 0 0 var(--abundance); }
 }
 
 .platform-overlay.is-open .social-link:nth-child(1)::before { animation: socialPulse 8s ease-in-out 0.5s infinite; }
