@@ -330,24 +330,43 @@ body {
 }
 
 .social-link {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 10px;
   padding: 18px 12px;
-  background: rgba(255, 255, 255, 0.85);
+  background: var(--flour);
   border: 2px solid var(--wheat);
   border-radius: 18px;
   text-decoration: none;
-  color: var(--warmth);
+  color: var(--clay);
   font-family: 'Kufam', sans-serif;
   font-size: 13px;
   font-weight: 700;
   flex: 1;
   min-width: 0;
-  transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease, color 0.25s ease;
   box-shadow: 0 2px 8px rgba(171, 79, 46, 0.1);
+  z-index: 1;
 }
+
+/* Pulse glow around button — draws attention without changing button fill */
+.social-link::before {
+  content: '';
+  position: absolute;
+  inset: -6px;
+  border-radius: 24px;
+  background: transparent;
+  box-shadow: 0 0 0 0 var(--abundance);
+  opacity: 0;
+  z-index: -1;
+}
+
+.is-active .social-link:nth-child(1)::before { animation: socialPulse 8s ease-in-out 0.5s infinite; }
+.is-active .social-link:nth-child(2)::before { animation: socialPulse 8s ease-in-out 2.5s infinite; }
+.is-active .social-link:nth-child(3)::before { animation: socialPulse 8s ease-in-out 4.5s infinite; }
+.is-active .social-link:nth-child(4)::before { animation: socialPulse 8s ease-in-out 6.5s infinite; }
 
 .social-link:hover {
   background: var(--clay);
@@ -366,19 +385,13 @@ body {
   width: 36px;
   height: 36px;
   object-fit: contain;
-  transition: transform 0.25s ease;
+  transition: transform 0.25s ease, filter 0.25s ease;
 }
 
 .social-link:hover img {
   transform: scale(1.15) rotate(-5deg);
   filter: brightness(0) invert(1);
 }
-
-/* Reuse platformSpotlight rotation on active Connect slide */
-.is-active .social-link:nth-child(1) { animation: platformSpotlight 8s ease-in-out 0.5s infinite; }
-.is-active .social-link:nth-child(2) { animation: platformSpotlight 8s ease-in-out 2.5s infinite; }
-.is-active .social-link:nth-child(3) { animation: platformSpotlight 8s ease-in-out 4.5s infinite; }
-.is-active .social-link:nth-child(4) { animation: platformSpotlight 8s ease-in-out 6.5s infinite; }
 
 /* ===== CONTROLS BAR — bottom center ===== */
 .hero-controls {
@@ -616,7 +629,7 @@ body {
 .cookie-banner {
   display: none;
   position: fixed;
-  top: 0;
+  bottom: 0;
   left: 0;
   right: 0;
   background: rgba(0, 0, 0, 0.85);
@@ -625,8 +638,8 @@ body {
   color: var(--flour);
   font-family: 'Kufam', sans-serif;
   font-size: 13px;
-  padding: 10px 16px;
-  border-radius: 0;
+  padding: 12px 16px;
+  border-radius: 14px 14px 0 0;
   z-index: 9999;
   align-items: center;
   justify-content: center;
@@ -882,38 +895,18 @@ body {
   justify-content: center;
 }
 
-/* Rotating spotlight animation */
-@keyframes platformSpotlight {
-  0% {
-    transform: translateY(0) scale(1);
-    background: color-mix(in srgb, var(--flour-light) 75%, transparent);
-    border-color: var(--wheat);
-    box-shadow: none;
-  }
-  6% {
-    transform: translateY(-4px) scale(1.12);
-    background: var(--wheat);
-    border-color: var(--clay);
-    box-shadow: 0 6px 24px var(--wheat-30);
-  }
-  14% {
-    transform: translateY(-4px) scale(1.12);
-    background: var(--wheat);
-    border-color: var(--clay);
-    box-shadow: 0 6px 24px var(--wheat-30);
-  }
-  22%, 100% {
-    transform: translateY(0) scale(1);
-    background: color-mix(in srgb, var(--flour-light) 75%, transparent);
-    border-color: var(--wheat);
-    box-shadow: none;
-  }
+/* Pulse glow animation around social buttons */
+@keyframes socialPulse {
+  0%        { opacity: 0; box-shadow: 0 0 0 0 var(--abundance); }
+  6%        { opacity: 0.6; box-shadow: 0 0 12px 6px var(--abundance); }
+  14%       { opacity: 0.6; box-shadow: 0 0 12px 6px var(--abundance); }
+  22%, 100% { opacity: 0; box-shadow: 0 0 0 0 var(--abundance); }
 }
 
-.platform-overlay.is-open .social-link:nth-child(1) { animation: platformSpotlight 8s ease-in-out 0.5s infinite; }
-.platform-overlay.is-open .social-link:nth-child(2) { animation: platformSpotlight 8s ease-in-out 2.5s infinite; }
-.platform-overlay.is-open .social-link:nth-child(3) { animation: platformSpotlight 8s ease-in-out 4.5s infinite; }
-.platform-overlay.is-open .social-link:nth-child(4) { animation: platformSpotlight 8s ease-in-out 6.5s infinite; }
+.platform-overlay.is-open .social-link:nth-child(1)::before { animation: socialPulse 8s ease-in-out 0.5s infinite; }
+.platform-overlay.is-open .social-link:nth-child(2)::before { animation: socialPulse 8s ease-in-out 2.5s infinite; }
+.platform-overlay.is-open .social-link:nth-child(3)::before { animation: socialPulse 8s ease-in-out 4.5s infinite; }
+.platform-overlay.is-open .social-link:nth-child(4)::before { animation: socialPulse 8s ease-in-out 6.5s infinite; }
 
 /* ===== FOLLOW NUDGE ===== */
 .follow-nudge {
