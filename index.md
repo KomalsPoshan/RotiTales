@@ -439,6 +439,13 @@ function onYouTubeIframeAPIReady() {
           if (e.data === YT.PlayerState.ENDED) {
             players[idx].playVideo();
           }
+          // Trigger pulse when playback actually starts or pauses
+          if (e.data === YT.PlayerState.PLAYING || e.data === YT.PlayerState.PAUSED) {
+            slidePlaying[idx] = (e.data === YT.PlayerState.PLAYING);
+            if (idx === currentSlide && window._updatePulse) {
+              window._updatePulse(idx);
+            }
+          }
         }
       }
     });
@@ -483,7 +490,12 @@ function onYouTubeIframeAPIReady() {
     if (ppBtn && !ppBtn.disabled && !slidePlaying[idx]) {
       ppBtn.classList.add('ctrl-pulse');
     } else if (muteBtn && globalMuted && slidePlaying[idx]) {
-      muteBtn.classList.add('ctrl-pulse');
+      // Only pulse mute after video is actually playing (not just buffering)
+      var p = players[idx];
+      var actuallyPlaying = !isVideoSlide || (p && p.getPlayerState && p.getPlayerState() === YT.PlayerState.PLAYING);
+      if (actuallyPlaying) {
+        muteBtn.classList.add('ctrl-pulse');
+      }
     }
   }
 
