@@ -569,9 +569,9 @@ body {
 .cookie-banner {
   display: none;
   position: fixed;
-  bottom: 16px;
-  left: 50%;
-  transform: translateX(-50%);
+  top: 0;
+  left: 0;
+  right: 0;
   background: rgba(0, 0, 0, 0.85);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
@@ -579,9 +579,10 @@ body {
   font-family: 'Kufam', sans-serif;
   font-size: 13px;
   padding: 10px 16px;
-  border-radius: 12px;
+  border-radius: 0;
   z-index: 9999;
   align-items: center;
+  justify-content: center;
   gap: 12px;
 }
 
