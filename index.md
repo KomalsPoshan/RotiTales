@@ -121,7 +121,7 @@ title: Home
             <div class="connect-bg-anim"></div>
             <img src="/assets/images/rotitales_roti_on_fire_logo.png" alt="Roti Tales" class="connect-logo" />
             <h3 class="connect-title">Join the Family</h3>
-            <p class="connect-desc">Follow Roti Tales everywhere</p>
+            <p class="connect-desc">More roti goodness awaits</p>
             <div class="connect-grid">
               <a href="https://www.youtube.com/@rotitales" class="connect-link">
                 <img src="/assets/icons/youtube-clay.svg" alt="YouTube" />

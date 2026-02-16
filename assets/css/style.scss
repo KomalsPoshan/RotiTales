@@ -325,7 +325,7 @@ body {
 .connect-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 10px;
+  gap: 12px;
   width: 100%;
 }
 
@@ -333,32 +333,42 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 8px;
-  padding: 14px 10px;
-  background: var(--flour-light);
+  gap: 10px;
+  padding: 18px 12px;
+  background: rgba(255, 255, 255, 0.85);
   border: 2px solid var(--wheat);
-  border-radius: 14px;
+  border-radius: 18px;
   text-decoration: none;
   color: var(--warmth);
   font-family: 'Kufam', sans-serif;
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 700;
-  transition: all 0.2s;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+  box-shadow: 0 2px 8px rgba(171, 79, 46, 0.1);
 }
 
 .connect-link:hover {
   background: var(--wheat);
   border-color: var(--wheat);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 16px rgba(171, 79, 46, 0.2);
+  transform: translateY(-4px) scale(1.04);
+  box-shadow: 0 8px 24px rgba(171, 79, 46, 0.3);
   color: var(--warmth);
   text-decoration: none;
 }
 
+.connect-link:active {
+  transform: translateY(0) scale(0.97);
+}
+
 .connect-link img {
-  width: 28px;
-  height: 28px;
+  width: 36px;
+  height: 36px;
   object-fit: contain;
+  transition: transform 0.25s ease;
+}
+
+.connect-link:hover img {
+  transform: scale(1.15) rotate(-5deg);
 }
 
 /* ===== CONTROLS BAR — bottom center ===== */
@@ -1015,8 +1025,8 @@ body.mobile-device {
 .mobile-device .connect-title { font-size: 17px; }
 .mobile-device .connect-desc { font-size: 11px; margin-bottom: 14px; }
 .mobile-device .connect-grid { gap: 8px; }
-.mobile-device .connect-link { padding: 10px 8px; font-size: 11px; border-radius: 12px; }
-.mobile-device .connect-link img { width: 22px; height: 22px; }
+.mobile-device .connect-link { padding: 14px 8px; font-size: 12px; border-radius: 14px; }
+.mobile-device .connect-link img { width: 28px; height: 28px; }
 
 /* Mobile: mission */
 .mobile-device .mission-section { padding: 36px 20px; padding-top: 56px; margin-top: -24px; }
