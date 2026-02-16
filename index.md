@@ -395,6 +395,7 @@ var players = {};
 var globalMuted = true;
 var currentSlide = 0;
 var slidePlaying = {};  // per-slide play state
+var playerReady = {};  // per-slide player readiness
 var globalSpeed = 1;
 var speedOptions = [1, 1.25, 1.5, 1.75, 2];
 
@@ -423,10 +424,15 @@ function onYouTubeIframeAPIReady() {
       },
       events: {
         onReady: function(e) {
+          playerReady[idx] = true;
           if (isFirst) {
             e.target.setPlaybackRate(globalSpeed);
             e.target.playVideo();
             slidePlaying[idx] = true;
+          }
+          // Trigger pulse now that player is ready
+          if (idx === currentSlide && window._updatePulse) {
+            window._updatePulse(idx);
           }
         },
         onStateChange: function(e) {
@@ -470,6 +476,9 @@ function onYouTubeIframeAPIReady() {
     // Clear existing pulses (reflow to restart animation)
     if (ppBtn) { ppBtn.classList.remove('ctrl-pulse'); ppBtn.offsetHeight; }
     if (muteBtn) { muteBtn.classList.remove('ctrl-pulse'); muteBtn.offsetHeight; }
+    // Don't pulse until video player is ready
+    var isVideoSlide = slide.hasAttribute('data-video-id');
+    if (isVideoSlide && !playerReady[idx]) return;
     // Priority: pulse play/pause if paused, else pulse mute if muted
     if (ppBtn && !ppBtn.disabled && !slidePlaying[idx]) {
       ppBtn.classList.add('ctrl-pulse');
@@ -635,8 +644,9 @@ function onYouTubeIframeAPIReady() {
     });
   });
 
-  // Expose goTo for external use
+  // Expose for external use
   window._carouselGoTo = goTo;
+  window._updatePulse = updatePulse;
 })();
 
 // ===== Platform chooser popup =====
