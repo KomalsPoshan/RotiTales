@@ -184,12 +184,11 @@ body {
   transform: scale(1.12);
 }
 
-.card-mute.is-muted {
+.card-ctrl.ctrl-pulse {
   animation: ctrlPulse 2.5s ease-in-out 5;
 }
 
-.card-mute:not(.is-muted),
-.card-mute:hover {
+.card-ctrl.ctrl-pulse:hover {
   animation: none;
 }
 
