@@ -429,6 +429,22 @@ function onYouTubeIframeAPIReady() {
     });
   }
 
+  function updatePulse(idx) {
+    var slide = slides[idx];
+    if (!slide) return;
+    var ppBtn = slide.querySelector('.ctrl-playpause');
+    var muteBtn = slide.querySelector('.card-mute');
+    // Clear existing pulses (reflow to restart animation)
+    if (ppBtn) { ppBtn.classList.remove('ctrl-pulse'); ppBtn.offsetHeight; }
+    if (muteBtn) { muteBtn.classList.remove('ctrl-pulse'); muteBtn.offsetHeight; }
+    // Priority: pulse play/pause if paused, else pulse mute if muted
+    if (ppBtn && !ppBtn.disabled && !slidePlaying[idx]) {
+      ppBtn.classList.add('ctrl-pulse');
+    } else if (muteBtn && globalMuted && slidePlaying[idx]) {
+      muteBtn.classList.add('ctrl-pulse');
+    }
+  }
+
   function goTo(idx) {
     if (idx < 0) idx = totalSlides - 1;
     if (idx >= totalSlides) idx = 0;
@@ -473,14 +489,7 @@ function onYouTubeIframeAPIReady() {
     }
 
     syncControls(currentSlide);
-
-    // Restart mute button pulse on slide change
-    var curMuteBtn = slides[currentSlide] && slides[currentSlide].querySelector('.card-mute');
-    if (curMuteBtn && globalMuted) {
-      curMuteBtn.style.animation = 'none';
-      curMuteBtn.offsetHeight;
-      curMuteBtn.style.animation = '';
-    }
+    updatePulse(currentSlide);
   }
 
   goTo(0);
@@ -527,6 +536,7 @@ function onYouTubeIframeAPIReady() {
         slidePlaying[idx] = true;
         this.classList.remove('is-paused');
       }
+      updatePulse(idx);
     });
   });
 
@@ -550,17 +560,13 @@ function onYouTubeIframeAPIReady() {
         return;
       }
 
-      // Sync all mute buttons + restart pulse animation on re-mute
+      // Sync all mute buttons
       document.querySelectorAll('.card-mute').forEach(function(m) {
         m.classList.toggle('is-muted', globalMuted);
-        if (globalMuted) {
-          m.style.animation = 'none';
-          m.offsetHeight;
-          m.style.animation = '';
-        }
       });
       // Sync all connect audio elements mute state
       document.querySelectorAll('.connect-audio').forEach(function(a) { a.muted = globalMuted; });
+      updatePulse(currentSlide);
     });
   });
 
