@@ -36,14 +36,14 @@ title: Home
         </div>
       </div>
 
-      <!-- Slide 2: Fiber -->
+      <!-- Slide 2: Fiber thru Roti -->
       <div class="carousel-slide" data-index="1" data-video-id="k1Tt-mMHyd0">
         <div class="slide-card">
           <div class="slide-video slide-video-api">
             <div id="player-1"></div>
           </div>
           <div class="card-header">
-            <h3 class="card-header-title">Fiber</h3>
+            <h3 class="card-header-title">Fiber thru Roti</h3>
             <div class="card-header-controls">
               <button class="card-ctrl ctrl-playpause" data-slide="1" aria-label="Play/Pause">
                 <svg class="pp-pause" viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg>
@@ -56,20 +56,20 @@ title: Home
             </div>
           </div>
           <div class="card-footer">
-            <p class="card-footer-subtitle">Fiber</p>
+            <p class="card-footer-subtitle">Fiber thru Roti</p>
             <span class="card-footer-brand">Roti Tales</span>
           </div>
         </div>
       </div>
 
-      <!-- Slide 3: Gluten -->
+      <!-- Slide 3: Roti's Gluten -->
       <div class="carousel-slide" data-index="2" data-video-id="tLSUnNDu1kM">
         <div class="slide-card">
           <div class="slide-video slide-video-api">
             <div id="player-2"></div>
           </div>
           <div class="card-header">
-            <h3 class="card-header-title">Gluten</h3>
+            <h3 class="card-header-title">Roti's Gluten</h3>
             <div class="card-header-controls">
               <button class="card-ctrl ctrl-playpause" data-slide="2" aria-label="Play/Pause">
                 <svg class="pp-pause" viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg>
@@ -82,7 +82,7 @@ title: Home
             </div>
           </div>
           <div class="card-footer">
-            <p class="card-footer-subtitle">Gluten</p>
+            <p class="card-footer-subtitle">Roti's Gluten</p>
             <span class="card-footer-brand">Roti Tales</span>
           </div>
         </div>
