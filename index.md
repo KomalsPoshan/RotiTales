@@ -222,14 +222,14 @@ title: Home
         </div>
       </div>
 
-      <!-- Slide 9: Roti or Preservatives? -->
+      <!-- Slide 9: Roti or Preservatives -->
       <div class="carousel-slide" data-index="8" data-video-id="oQPZyqFDFJc">
         <div class="slide-card">
           <div class="slide-video slide-video-api">
             <div id="player-8"></div>
           </div>
           <div class="card-header">
-            <h3 class="card-header-title">Roti or Preservatives?</h3>
+            <h3 class="card-header-title">Roti or Preservatives</h3>
             <div class="card-header-controls">
               <button class="card-ctrl ctrl-playpause" data-slide="8" aria-label="Play/Pause">
                 <svg class="pp-pause" viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg>
@@ -242,7 +242,7 @@ title: Home
             </div>
           </div>
           <div class="card-footer">
-            <p class="card-footer-subtitle">Roti or Preservatives?</p>
+            <p class="card-footer-subtitle">Roti or Preservatives</p>
             <span class="card-footer-brand">Roti Tales</span>
           </div>
         </div>
