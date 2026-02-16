@@ -1,0 +1,6 @@
+{% for social in site.data.socials %}
+<a href="{{ social.url }}" class="{{ include.class }}">
+  <img src="/assets/icons/{{ social.icon }}" alt="{{ social.name }}" />
+  <span>{{ social.name }}</span>
+</a>
+{% endfor %}

@@ -124,22 +124,7 @@ title: Home
             <h3 class="connect-title">Join the Family</h3>
             <p class="connect-desc">Eating roti? Follow us to make sure it's a healthy one.</p>
             <div class="connect-grid">
-              <a href="https://www.youtube.com/@rotitales" class="connect-link">
-                <img src="/assets/icons/youtube-clay.svg" alt="YouTube" />
-                <span>YouTube</span>
-              </a>
-              <a href="https://instagram.com/rotitales" class="connect-link">
-                <img src="/assets/icons/instagram-clay.svg" alt="Instagram" />
-                <span>Instagram</span>
-              </a>
-              <a href="https://www.facebook.com/rotitales" class="connect-link">
-                <img src="/assets/icons/facebook-clay.svg" alt="Facebook" />
-                <span>Facebook</span>
-              </a>
-              <a href="https://www.linkedin.com/showcase/rotitales" class="connect-link">
-                <img src="/assets/icons/linkedin-clay.svg" alt="LinkedIn" />
-                <span>LinkedIn</span>
-              </a>
+              {% include social-links.html class="connect-link" %}
             </div>
           </div>
           <div class="card-header">
@@ -319,22 +304,7 @@ title: Home
       </div>
     </div>
     <div class="platform-row">
-      <a href="https://instagram.com/rotitales" class="platform-option">
-        <img src="/assets/icons/instagram-clay.svg" alt="Instagram" />
-        <span>Instagram</span>
-      </a>
-      <a href="https://www.youtube.com/@rotitales" class="platform-option">
-        <img src="/assets/icons/youtube-clay.svg" alt="YouTube" />
-        <span>YouTube</span>
-      </a>
-      <a href="https://www.facebook.com/rotitales" class="platform-option">
-        <img src="/assets/icons/facebook-clay.svg" alt="Facebook" />
-        <span>Facebook</span>
-      </a>
-      <a href="https://www.linkedin.com/showcase/rotitales" class="platform-option">
-        <img src="/assets/icons/linkedin-clay.svg" alt="LinkedIn" />
-        <span>LinkedIn</span>
-      </a>
+      {% include social-links.html class="platform-option" %}
     </div>
   </div>
 </div>
