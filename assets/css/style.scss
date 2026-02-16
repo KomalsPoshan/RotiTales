@@ -228,6 +228,8 @@ body {
   right: 0;
   padding: 10px 12px;
   background: black;
+  border-top: 3px solid var(--wheat);
+  border-radius: 0;
   z-index: 2;
   text-align: left;
   pointer-events: none;
