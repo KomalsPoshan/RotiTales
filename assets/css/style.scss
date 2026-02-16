@@ -89,6 +89,11 @@ body {
   opacity: 0.5;
 }
 
+/* Inactive slides are clickable to navigate */
+.carousel-slide:not(.is-active) .slide-card {
+  cursor: pointer;
+}
+
 .carousel-slide.is-active .slide-card {
   transform: scale(1);
   opacity: 1;
@@ -396,7 +401,7 @@ body {
 /* ===== CONTROLS BAR — bottom center ===== */
 .hero-controls {
   position: absolute;
-  bottom: -4px;
+  bottom: 0px;
   left: 50%;
   transform: translateX(-50%);
   z-index: 10;
@@ -406,7 +411,7 @@ body {
   background: rgba(77, 0, 10, 0.65);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  padding: 10px 20px;
+  padding: 8px;
   border-radius: 40px;
   border: 1px solid rgba(245, 184, 89, 0.25);
 }
@@ -438,6 +443,27 @@ body {
 .ctrl-playpause .pp-pause { display: inline; }
 .ctrl-playpause.is-paused .pp-play { display: inline; }
 .ctrl-playpause.is-paused .pp-pause { display: none; }
+
+/* Speed control button — pill shape with text label */
+.ctrl-speed {
+  border-radius: 20px;
+  width: auto;
+  min-width: 40px;
+  padding: 0 10px;
+}
+
+.speed-label {
+  font-family: 'Kufam', sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--flour);
+  white-space: nowrap;
+  line-height: 1;
+}
+
+.ctrl-speed.is-fast .speed-label {
+  color: var(--wheat);
+}
 
 .card-ctrl:disabled {
   opacity: 0.3;
@@ -954,6 +980,26 @@ body {
 .site-main { margin: 0; padding: 0; }
 .site-header { display: none; }
 
+/* ===== RESPONSIVE CAROUSEL SPACING ===== */
+/* Narrow desktop / tablet: push side-peek cards apart to avoid crowding */
+@media screen and (max-width: 600px) {
+  :root { --slide-pct: 80; }
+  .carousel-viewport { padding-left: 16px; padding-right: 16px; }
+}
+
+/* Wide screens: shrink slide % so side-peek cards stay visible */
+@media screen and (min-width: 1000px) {
+  :root { --slide-pct: 56; }
+}
+
+@media screen and (min-width: 1200px) {
+  :root { --slide-pct: 48; }
+}
+
+@media screen and (min-width: 1400px) {
+  :root { --slide-pct: 42; }
+}
+
 /* ===== MOBILE OVERRIDES ===== */
 body.mobile-device {
   --slide-pct: 92;
@@ -994,6 +1040,8 @@ body.mobile-device {
 .mobile-device .card-header-controls { gap: 6px; }
 .mobile-device .card-ctrl { width: 32px; height: 32px; }
 .mobile-device .card-ctrl svg { width: 14px; height: 14px; }
+.mobile-device .ctrl-speed { width: auto; min-width: 32px; padding: 0 7px; }
+.mobile-device .speed-label { font-size: 10px; }
 .mobile-device .card-footer { padding: 8px 10px; }
 .mobile-device .card-footer-subtitle { font-size: 12px; }
 .mobile-device .card-footer-brand { font-size: 10px; }

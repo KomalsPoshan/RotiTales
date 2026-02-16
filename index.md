@@ -23,6 +23,9 @@ title: Home
                 <svg class="pp-pause" viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg>
                 <svg class="pp-play" viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><polygon points="5,3 19,12 5,21"/></svg>
               </button>
+              <button class="card-ctrl ctrl-speed" data-slide="0" aria-label="Playback speed">
+                <span class="speed-label">1x</span>
+              </button>
               <button class="card-ctrl card-mute is-muted" data-slide="0" aria-label="Toggle sound">
                 <svg class="sound-icon-muted" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5L6 9H2v6h4l5 4V5z"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/></svg>
                 <svg class="sound-icon-on" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5L6 9H2v6h4l5 4V5z"/><path d="M19.07 4.93a10 10 0 010 14.14"/><path d="M15.54 8.46a5 5 0 010 7.07"/></svg>
@@ -48,6 +51,9 @@ title: Home
               <button class="card-ctrl ctrl-playpause" data-slide="1" aria-label="Play/Pause">
                 <svg class="pp-pause" viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg>
                 <svg class="pp-play" viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><polygon points="5,3 19,12 5,21"/></svg>
+              </button>
+              <button class="card-ctrl ctrl-speed" data-slide="1" aria-label="Playback speed">
+                <span class="speed-label">1x</span>
               </button>
               <button class="card-ctrl card-mute is-muted" data-slide="1" aria-label="Toggle sound">
                 <svg class="sound-icon-muted" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5L6 9H2v6h4l5 4V5z"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/></svg>
@@ -75,6 +81,9 @@ title: Home
                 <svg class="pp-pause" viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg>
                 <svg class="pp-play" viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><polygon points="5,3 19,12 5,21"/></svg>
               </button>
+              <button class="card-ctrl ctrl-speed" data-slide="2" aria-label="Playback speed">
+                <span class="speed-label">1x</span>
+              </button>
               <button class="card-ctrl card-mute is-muted" data-slide="2" aria-label="Toggle sound">
                 <svg class="sound-icon-muted" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5L6 9H2v6h4l5 4V5z"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/></svg>
                 <svg class="sound-icon-on" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5L6 9H2v6h4l5 4V5z"/><path d="M19.07 4.93a10 10 0 010 14.14"/><path d="M15.54 8.46a5 5 0 010 7.07"/></svg>
@@ -100,6 +109,9 @@ title: Home
               <button class="card-ctrl ctrl-playpause" data-slide="3" aria-label="Play/Pause">
                 <svg class="pp-pause" viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg>
                 <svg class="pp-play" viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><polygon points="5,3 19,12 5,21"/></svg>
+              </button>
+              <button class="card-ctrl ctrl-speed" data-slide="3" aria-label="Playback speed">
+                <span class="speed-label">1x</span>
               </button>
               <button class="card-ctrl card-mute is-muted" data-slide="3" aria-label="Toggle sound">
                 <svg class="sound-icon-muted" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5L6 9H2v6h4l5 4V5z"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/></svg>
@@ -134,6 +146,9 @@ title: Home
                 <svg class="pp-pause" viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg>
                 <svg class="pp-play" viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><polygon points="5,3 19,12 5,21"/></svg>
               </button>
+              <button class="card-ctrl ctrl-speed" disabled aria-label="Playback speed">
+                <span class="speed-label">1x</span>
+              </button>
               <button class="card-ctrl card-mute is-muted" data-slide="4" aria-label="Toggle sound">
                 <svg class="sound-icon-muted" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5L6 9H2v6h4l5 4V5z"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/></svg>
                 <svg class="sound-icon-on" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5L6 9H2v6h4l5 4V5z"/><path d="M19.07 4.93a10 10 0 010 14.14"/><path d="M15.54 8.46a5 5 0 010 7.07"/></svg>
@@ -159,6 +174,9 @@ title: Home
               <button class="card-ctrl ctrl-playpause" data-slide="5" aria-label="Play/Pause">
                 <svg class="pp-pause" viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg>
                 <svg class="pp-play" viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><polygon points="5,3 19,12 5,21"/></svg>
+              </button>
+              <button class="card-ctrl ctrl-speed" data-slide="5" aria-label="Playback speed">
+                <span class="speed-label">1x</span>
               </button>
               <button class="card-ctrl card-mute is-muted" data-slide="5" aria-label="Toggle sound">
                 <svg class="sound-icon-muted" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5L6 9H2v6h4l5 4V5z"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/></svg>
@@ -186,6 +204,9 @@ title: Home
                 <svg class="pp-pause" viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg>
                 <svg class="pp-play" viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><polygon points="5,3 19,12 5,21"/></svg>
               </button>
+              <button class="card-ctrl ctrl-speed" data-slide="6" aria-label="Playback speed">
+                <span class="speed-label">1x</span>
+              </button>
               <button class="card-ctrl card-mute is-muted" data-slide="6" aria-label="Toggle sound">
                 <svg class="sound-icon-muted" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5L6 9H2v6h4l5 4V5z"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/></svg>
                 <svg class="sound-icon-on" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5L6 9H2v6h4l5 4V5z"/><path d="M19.07 4.93a10 10 0 010 14.14"/><path d="M15.54 8.46a5 5 0 010 7.07"/></svg>
@@ -212,6 +233,9 @@ title: Home
                 <svg class="pp-pause" viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg>
                 <svg class="pp-play" viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><polygon points="5,3 19,12 5,21"/></svg>
               </button>
+              <button class="card-ctrl ctrl-speed" data-slide="7" aria-label="Playback speed">
+                <span class="speed-label">1x</span>
+              </button>
               <button class="card-ctrl card-mute is-muted" data-slide="7" aria-label="Toggle sound">
                 <svg class="sound-icon-muted" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5L6 9H2v6h4l5 4V5z"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/></svg>
                 <svg class="sound-icon-on" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5L6 9H2v6h4l5 4V5z"/><path d="M19.07 4.93a10 10 0 010 14.14"/><path d="M15.54 8.46a5 5 0 010 7.07"/></svg>
@@ -237,6 +261,9 @@ title: Home
               <button class="card-ctrl ctrl-playpause" data-slide="8" aria-label="Play/Pause">
                 <svg class="pp-pause" viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg>
                 <svg class="pp-play" viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><polygon points="5,3 19,12 5,21"/></svg>
+              </button>
+              <button class="card-ctrl ctrl-speed" data-slide="8" aria-label="Playback speed">
+                <span class="speed-label">1x</span>
               </button>
               <button class="card-ctrl card-mute is-muted" data-slide="8" aria-label="Toggle sound">
                 <svg class="sound-icon-muted" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5L6 9H2v6h4l5 4V5z"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/></svg>
@@ -270,6 +297,9 @@ title: Home
               <button class="card-ctrl ctrl-playpause is-paused" disabled aria-label="Play/Pause">
                 <svg class="pp-pause" viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg>
                 <svg class="pp-play" viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><polygon points="5,3 19,12 5,21"/></svg>
+              </button>
+              <button class="card-ctrl ctrl-speed" disabled aria-label="Playback speed">
+                <span class="speed-label">1x</span>
               </button>
               <button class="card-ctrl card-mute is-muted" data-slide="9" aria-label="Toggle sound">
                 <svg class="sound-icon-muted" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5L6 9H2v6h4l5 4V5z"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/></svg>
@@ -365,6 +395,9 @@ var players = {};
 var globalMuted = true;
 var currentSlide = 0;
 var slidePlaying = {};  // per-slide play state
+var playerReady = {};  // per-slide player readiness
+var globalSpeed = 1;
+var speedOptions = [1, 1.25, 1.5, 1.75, 2];
 
 function onYouTubeIframeAPIReady() {
   var videoSlides = document.querySelectorAll('.carousel-slide[data-video-id]');
@@ -391,14 +424,27 @@ function onYouTubeIframeAPIReady() {
       },
       events: {
         onReady: function(e) {
+          playerReady[idx] = true;
           if (isFirst) {
+            e.target.setPlaybackRate(globalSpeed);
             e.target.playVideo();
             slidePlaying[idx] = true;
+          }
+          // Trigger pulse now that player is ready
+          if (idx === currentSlide && window._updatePulse) {
+            window._updatePulse(idx);
           }
         },
         onStateChange: function(e) {
           if (e.data === YT.PlayerState.ENDED) {
             players[idx].playVideo();
+          }
+          // Trigger pulse when playback actually starts or pauses
+          if (e.data === YT.PlayerState.PLAYING || e.data === YT.PlayerState.PAUSED) {
+            slidePlaying[idx] = (e.data === YT.PlayerState.PLAYING);
+            if (idx === currentSlide && window._updatePulse) {
+              window._updatePulse(idx);
+            }
           }
         }
       }
@@ -437,11 +483,19 @@ function onYouTubeIframeAPIReady() {
     // Clear existing pulses (reflow to restart animation)
     if (ppBtn) { ppBtn.classList.remove('ctrl-pulse'); ppBtn.offsetHeight; }
     if (muteBtn) { muteBtn.classList.remove('ctrl-pulse'); muteBtn.offsetHeight; }
+    // Don't pulse until video player is ready
+    var isVideoSlide = slide.hasAttribute('data-video-id');
+    if (isVideoSlide && !playerReady[idx]) return;
     // Priority: pulse play/pause if paused, else pulse mute if muted
     if (ppBtn && !ppBtn.disabled && !slidePlaying[idx]) {
       ppBtn.classList.add('ctrl-pulse');
     } else if (muteBtn && globalMuted && slidePlaying[idx]) {
-      muteBtn.classList.add('ctrl-pulse');
+      // Only pulse mute after video is actually playing (not just buffering)
+      var p = players[idx];
+      var actuallyPlaying = !isVideoSlide || (p && p.getPlayerState && p.getPlayerState() === YT.PlayerState.PLAYING);
+      if (actuallyPlaying) {
+        muteBtn.classList.add('ctrl-pulse');
+      }
     }
   }
 
@@ -474,6 +528,7 @@ function onYouTubeIframeAPIReady() {
     if (players[currentSlide] && players[currentSlide].playVideo) {
       try {
         if (globalMuted) { players[currentSlide].mute(); } else { players[currentSlide].unMute(); }
+        players[currentSlide].setPlaybackRate(globalSpeed);
         players[currentSlide].playVideo();
         slidePlaying[currentSlide] = true;
       } catch(e) {}
@@ -500,6 +555,14 @@ function onYouTubeIframeAPIReady() {
   dots.forEach(function(dot) {
     dot.addEventListener('click', function() {
       goTo(parseInt(this.getAttribute('data-slide')));
+    });
+  });
+
+  // Click a side-peek slide to bring it into focus
+  slides.forEach(function(slide) {
+    slide.addEventListener('click', function() {
+      var idx = parseInt(this.getAttribute('data-index'));
+      if (idx !== currentSlide) goTo(idx);
     });
   });
 
@@ -570,8 +633,47 @@ function onYouTubeIframeAPIReady() {
     });
   });
 
-  // Expose goTo for external use
+  // ===== Playback speed control =====
+  function formatSpeed(s) {
+    return s % 1 === 0 ? s + 'x' : s + 'x';
+  }
+
+  function syncSpeedLabels() {
+    var label = formatSpeed(globalSpeed);
+    document.querySelectorAll('.ctrl-speed').forEach(function(btn) {
+      var span = btn.querySelector('.speed-label');
+      if (span) span.textContent = label;
+      btn.classList.toggle('is-fast', globalSpeed !== 1);
+    });
+  }
+
+  document.querySelectorAll('.ctrl-speed').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      var currentIdx = speedOptions.indexOf(globalSpeed);
+      globalSpeed = speedOptions[(currentIdx + 1) % speedOptions.length];
+
+      // Apply to all active YouTube players
+      Object.keys(players).forEach(function(key) {
+        var p = players[key];
+        if (p && p.setPlaybackRate) {
+          try { p.setPlaybackRate(globalSpeed); } catch(e) {}
+        }
+      });
+
+      syncSpeedLabels();
+    });
+  });
+
+  // Reposition carousel on resize (picks up responsive --slide-pct changes)
+  var resizeTimer;
+  window.addEventListener('resize', function() {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(function() { goTo(currentSlide); }, 150);
+  });
+
+  // Expose for external use
   window._carouselGoTo = goTo;
+  window._updatePulse = updatePulse;
 })();
 
 // ===== Platform chooser popup =====
