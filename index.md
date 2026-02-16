@@ -114,8 +114,112 @@ title: Home
         </div>
       </div>
 
-      <!-- Slide 5: Connect card -->
-      <div class="carousel-slide" data-index="4">
+      <!-- Slide 5: Wheat Variety -->
+      <div class="carousel-slide" data-index="4" data-video-id="TvMdYHopJNg">
+        <div class="slide-card">
+          <div class="slide-video slide-video-api">
+            <div id="player-4"></div>
+          </div>
+          <div class="card-header">
+            <h3 class="card-header-title">Wheat Variety</h3>
+            <div class="card-header-controls">
+              <button class="card-ctrl ctrl-playpause" data-slide="4" aria-label="Play/Pause">
+                <svg class="pp-pause" viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg>
+                <svg class="pp-play" viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><polygon points="5,3 19,12 5,21"/></svg>
+              </button>
+              <button class="card-ctrl card-mute is-muted" data-slide="4" aria-label="Toggle sound">
+                <svg class="sound-icon-muted" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5L6 9H2v6h4l5 4V5z"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/></svg>
+                <svg class="sound-icon-on" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5L6 9H2v6h4l5 4V5z"/><path d="M19.07 4.93a10 10 0 010 14.14"/><path d="M15.54 8.46a5 5 0 010 7.07"/></svg>
+              </button>
+            </div>
+          </div>
+          <div class="card-footer">
+            <p class="card-footer-subtitle">Wheat Variety</p>
+            <span class="card-footer-brand">Roti Tales</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 6: Packaged Tortillas -->
+      <div class="carousel-slide" data-index="5" data-video-id="UmADIP7Eneo">
+        <div class="slide-card">
+          <div class="slide-video slide-video-api">
+            <div id="player-5"></div>
+          </div>
+          <div class="card-header">
+            <h3 class="card-header-title">Packaged Tortillas</h3>
+            <div class="card-header-controls">
+              <button class="card-ctrl ctrl-playpause" data-slide="5" aria-label="Play/Pause">
+                <svg class="pp-pause" viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg>
+                <svg class="pp-play" viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><polygon points="5,3 19,12 5,21"/></svg>
+              </button>
+              <button class="card-ctrl card-mute is-muted" data-slide="5" aria-label="Toggle sound">
+                <svg class="sound-icon-muted" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5L6 9H2v6h4l5 4V5z"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/></svg>
+                <svg class="sound-icon-on" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5L6 9H2v6h4l5 4V5z"/><path d="M19.07 4.93a10 10 0 010 14.14"/><path d="M15.54 8.46a5 5 0 010 7.07"/></svg>
+              </button>
+            </div>
+          </div>
+          <div class="card-footer">
+            <p class="card-footer-subtitle">Packaged Tortillas</p>
+            <span class="card-footer-brand">Roti Tales</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 7: Dough Quality -->
+      <div class="carousel-slide" data-index="6" data-video-id="bKHeCYNw9bY">
+        <div class="slide-card">
+          <div class="slide-video slide-video-api">
+            <div id="player-6"></div>
+          </div>
+          <div class="card-header">
+            <h3 class="card-header-title">Dough Quality</h3>
+            <div class="card-header-controls">
+              <button class="card-ctrl ctrl-playpause" data-slide="6" aria-label="Play/Pause">
+                <svg class="pp-pause" viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg>
+                <svg class="pp-play" viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><polygon points="5,3 19,12 5,21"/></svg>
+              </button>
+              <button class="card-ctrl card-mute is-muted" data-slide="6" aria-label="Toggle sound">
+                <svg class="sound-icon-muted" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5L6 9H2v6h4l5 4V5z"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/></svg>
+                <svg class="sound-icon-on" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5L6 9H2v6h4l5 4V5z"/><path d="M19.07 4.93a10 10 0 010 14.14"/><path d="M15.54 8.46a5 5 0 010 7.07"/></svg>
+              </button>
+            </div>
+          </div>
+          <div class="card-footer">
+            <p class="card-footer-subtitle">Dough Quality</p>
+            <span class="card-footer-brand">Roti Tales</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 8: Roti or Preservatives -->
+      <div class="carousel-slide" data-index="7" data-video-id="oQPZyqFDFJc">
+        <div class="slide-card">
+          <div class="slide-video slide-video-api">
+            <div id="player-7"></div>
+          </div>
+          <div class="card-header">
+            <h3 class="card-header-title">Roti or Preservatives</h3>
+            <div class="card-header-controls">
+              <button class="card-ctrl ctrl-playpause" data-slide="7" aria-label="Play/Pause">
+                <svg class="pp-pause" viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg>
+                <svg class="pp-play" viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><polygon points="5,3 19,12 5,21"/></svg>
+              </button>
+              <button class="card-ctrl card-mute is-muted" data-slide="7" aria-label="Toggle sound">
+                <svg class="sound-icon-muted" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5L6 9H2v6h4l5 4V5z"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/></svg>
+                <svg class="sound-icon-on" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5L6 9H2v6h4l5 4V5z"/><path d="M19.07 4.93a10 10 0 010 14.14"/><path d="M15.54 8.46a5 5 0 010 7.07"/></svg>
+              </button>
+            </div>
+          </div>
+          <div class="card-footer">
+            <p class="card-footer-subtitle">Roti or Preservatives</p>
+            <span class="card-footer-brand">Roti Tales</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 9: Connect card -->
+      <div class="carousel-slide" data-index="8">
         <div class="slide-card">
           <audio id="connect-audio" src="/assets/audio/bounce-bay-records-bollywood-4-437919.mp3" loop preload="auto"></audio>
           <div class="slide-connect">
@@ -134,110 +238,6 @@ title: Home
                 <svg class="pp-pause" viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg>
                 <svg class="pp-play" viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><polygon points="5,3 19,12 5,21"/></svg>
               </button>
-              <button class="card-ctrl card-mute is-muted" data-slide="4" aria-label="Toggle sound">
-                <svg class="sound-icon-muted" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5L6 9H2v6h4l5 4V5z"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/></svg>
-                <svg class="sound-icon-on" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5L6 9H2v6h4l5 4V5z"/><path d="M19.07 4.93a10 10 0 010 14.14"/><path d="M15.54 8.46a5 5 0 010 7.07"/></svg>
-              </button>
-            </div>
-          </div>
-          <div class="card-footer">
-            <p class="card-footer-subtitle">Eating roti? Follow us to make sure it's a healthy one.</p>
-            <span class="card-footer-brand">Roti Tales</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- Slide 6: Wheat Variety -->
-      <div class="carousel-slide" data-index="5" data-video-id="TvMdYHopJNg">
-        <div class="slide-card">
-          <div class="slide-video slide-video-api">
-            <div id="player-5"></div>
-          </div>
-          <div class="card-header">
-            <h3 class="card-header-title">Wheat Variety</h3>
-            <div class="card-header-controls">
-              <button class="card-ctrl ctrl-playpause" data-slide="5" aria-label="Play/Pause">
-                <svg class="pp-pause" viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg>
-                <svg class="pp-play" viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><polygon points="5,3 19,12 5,21"/></svg>
-              </button>
-              <button class="card-ctrl card-mute is-muted" data-slide="5" aria-label="Toggle sound">
-                <svg class="sound-icon-muted" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5L6 9H2v6h4l5 4V5z"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/></svg>
-                <svg class="sound-icon-on" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5L6 9H2v6h4l5 4V5z"/><path d="M19.07 4.93a10 10 0 010 14.14"/><path d="M15.54 8.46a5 5 0 010 7.07"/></svg>
-              </button>
-            </div>
-          </div>
-          <div class="card-footer">
-            <p class="card-footer-subtitle">Wheat Variety</p>
-            <span class="card-footer-brand">Roti Tales</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- Slide 7: Packaged Tortillas -->
-      <div class="carousel-slide" data-index="6" data-video-id="UmADIP7Eneo">
-        <div class="slide-card">
-          <div class="slide-video slide-video-api">
-            <div id="player-6"></div>
-          </div>
-          <div class="card-header">
-            <h3 class="card-header-title">Packaged Tortillas</h3>
-            <div class="card-header-controls">
-              <button class="card-ctrl ctrl-playpause" data-slide="6" aria-label="Play/Pause">
-                <svg class="pp-pause" viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg>
-                <svg class="pp-play" viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><polygon points="5,3 19,12 5,21"/></svg>
-              </button>
-              <button class="card-ctrl card-mute is-muted" data-slide="6" aria-label="Toggle sound">
-                <svg class="sound-icon-muted" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5L6 9H2v6h4l5 4V5z"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/></svg>
-                <svg class="sound-icon-on" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5L6 9H2v6h4l5 4V5z"/><path d="M19.07 4.93a10 10 0 010 14.14"/><path d="M15.54 8.46a5 5 0 010 7.07"/></svg>
-              </button>
-            </div>
-          </div>
-          <div class="card-footer">
-            <p class="card-footer-subtitle">Packaged Tortillas</p>
-            <span class="card-footer-brand">Roti Tales</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- Slide 8: Dough Quality -->
-      <div class="carousel-slide" data-index="7" data-video-id="bKHeCYNw9bY">
-        <div class="slide-card">
-          <div class="slide-video slide-video-api">
-            <div id="player-7"></div>
-          </div>
-          <div class="card-header">
-            <h3 class="card-header-title">Dough Quality</h3>
-            <div class="card-header-controls">
-              <button class="card-ctrl ctrl-playpause" data-slide="7" aria-label="Play/Pause">
-                <svg class="pp-pause" viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg>
-                <svg class="pp-play" viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><polygon points="5,3 19,12 5,21"/></svg>
-              </button>
-              <button class="card-ctrl card-mute is-muted" data-slide="7" aria-label="Toggle sound">
-                <svg class="sound-icon-muted" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5L6 9H2v6h4l5 4V5z"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/></svg>
-                <svg class="sound-icon-on" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5L6 9H2v6h4l5 4V5z"/><path d="M19.07 4.93a10 10 0 010 14.14"/><path d="M15.54 8.46a5 5 0 010 7.07"/></svg>
-              </button>
-            </div>
-          </div>
-          <div class="card-footer">
-            <p class="card-footer-subtitle">Dough Quality</p>
-            <span class="card-footer-brand">Roti Tales</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- Slide 9: Roti or Preservatives -->
-      <div class="carousel-slide" data-index="8" data-video-id="oQPZyqFDFJc">
-        <div class="slide-card">
-          <div class="slide-video slide-video-api">
-            <div id="player-8"></div>
-          </div>
-          <div class="card-header">
-            <h3 class="card-header-title">Roti or Preservatives</h3>
-            <div class="card-header-controls">
-              <button class="card-ctrl ctrl-playpause" data-slide="8" aria-label="Play/Pause">
-                <svg class="pp-pause" viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg>
-                <svg class="pp-play" viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><polygon points="5,3 19,12 5,21"/></svg>
-              </button>
               <button class="card-ctrl card-mute is-muted" data-slide="8" aria-label="Toggle sound">
                 <svg class="sound-icon-muted" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5L6 9H2v6h4l5 4V5z"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/></svg>
                 <svg class="sound-icon-on" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5L6 9H2v6h4l5 4V5z"/><path d="M19.07 4.93a10 10 0 010 14.14"/><path d="M15.54 8.46a5 5 0 010 7.07"/></svg>
@@ -245,7 +245,7 @@ title: Home
             </div>
           </div>
           <div class="card-footer">
-            <p class="card-footer-subtitle">Roti or Preservatives</p>
+            <p class="card-footer-subtitle">Eating roti? Follow us to make sure it's a healthy one.</p>
             <span class="card-footer-brand">Roti Tales</span>
           </div>
         </div>
@@ -413,9 +413,9 @@ function onYouTubeIframeAPIReady() {
     if (players[prevSlide] && players[prevSlide].pauseVideo) {
       try { players[prevSlide].pauseVideo(); } catch(e) {}
     }
-    // Pause connect audio when leaving slide 4
+    // Pause connect audio when leaving slide 8
     var ca = document.getElementById('connect-audio');
-    if (prevSlide === 4 && ca) { ca.pause(); }
+    if (prevSlide === 8 && ca) { ca.pause(); }
 
     // Play new video (if it's a video slide)
     if (players[currentSlide] && players[currentSlide].playVideo) {
@@ -425,8 +425,8 @@ function onYouTubeIframeAPIReady() {
         slidePlaying[currentSlide] = true;
       } catch(e) {}
     }
-    // Play connect audio when arriving at slide 4
-    if (currentSlide === 4 && ca) {
+    // Play connect audio when arriving at slide 8
+    if (currentSlide === 8 && ca) {
       ca.muted = globalMuted;
       ca.play().catch(function(){});
     }
@@ -491,7 +491,7 @@ function onYouTubeIframeAPIReady() {
         // YouTube player slide
         if (p.isMuted()) { p.unMute(); globalMuted = false; }
         else { p.mute(); globalMuted = true; }
-      } else if (idx === 4 && ca) {
+      } else if (idx === 8 && ca) {
         // Connect card audio
         globalMuted = !globalMuted;
         ca.muted = globalMuted;
