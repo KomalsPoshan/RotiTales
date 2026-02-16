@@ -369,6 +369,7 @@ body {
 
 .connect-link:hover img {
   transform: scale(1.15) rotate(-5deg);
+  filter: brightness(0) invert(1);
 }
 
 /* ===== CONTROLS BAR — bottom center ===== */
