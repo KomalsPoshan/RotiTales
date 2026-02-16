@@ -16,25 +16,28 @@ title: Home
           <div class="slide-video slide-video-api">
             <div id="hero-player"></div>
           </div>
-          <div class="card-overlay-controls">
-          <button class="card-ctrl ctrl-playpause" id="ctrl-playpause" aria-label="Play/Pause">
-            <svg class="pp-pause" viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg>
-            <svg class="pp-play" viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><polygon points="5,3 19,12 5,21"/></svg>
-          </button>
-          <button class="card-ctrl card-mute is-muted" id="ctrl-mute" aria-label="Toggle sound">
-            <svg class="sound-icon-muted" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M11 5L6 9H2v6h4l5 4V5z"/>
-              <line x1="23" y1="9" x2="17" y2="15"/>
-              <line x1="17" y1="9" x2="23" y2="15"/>
-            </svg>
-            <svg class="sound-icon-on" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M11 5L6 9H2v6h4l5 4V5z"/>
-              <path d="M19.07 4.93a10 10 0 010 14.14"/>
-              <path d="M15.54 8.46a5 5 0 010 7.07"/>
-            </svg>
-          </button>
+          <div class="card-header">
+            <span class="card-header-brand">Roti Tales</span>
+            <div class="card-header-controls">
+              <button class="card-ctrl ctrl-playpause" id="ctrl-playpause" aria-label="Play/Pause">
+                <svg class="pp-pause" viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg>
+                <svg class="pp-play" viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><polygon points="5,3 19,12 5,21"/></svg>
+              </button>
+              <button class="card-ctrl card-mute is-muted" id="ctrl-mute" aria-label="Toggle sound">
+                <svg class="sound-icon-muted" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M11 5L6 9H2v6h4l5 4V5z"/>
+                  <line x1="23" y1="9" x2="17" y2="15"/>
+                  <line x1="17" y1="9" x2="23" y2="15"/>
+                </svg>
+                <svg class="sound-icon-on" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M11 5L6 9H2v6h4l5 4V5z"/>
+                  <path d="M19.07 4.93a10 10 0 010 14.14"/>
+                  <path d="M15.54 8.46a5 5 0 010 7.07"/>
+                </svg>
+              </button>
+            </div>
           </div>
-          <div class="slide-label">
+          <div class="card-footer">
             <h3>Are all carbs bad?</h3>
             <p>Simple swaps for more nutritious rotis</p>
           </div>
@@ -47,7 +50,10 @@ title: Home
           <div class="slide-video">
             <iframe src="https://www.youtube.com/embed/oQPZyqFDFJc" allowfullscreen loading="lazy"></iframe>
           </div>
-          <div class="slide-label">
+          <div class="card-header">
+            <span class="card-header-brand">Roti Tales</span>
+          </div>
+          <div class="card-footer">
             <h3>Nutrition Made Simple</h3>
             <p>Quick tips that pack a punch</p>
           </div>
@@ -89,7 +95,10 @@ title: Home
           <div class="slide-video">
             <iframe src="https://www.youtube.com/embed/ef1_NUR4aig" allowfullscreen loading="lazy"></iframe>
           </div>
-          <div class="slide-label">
+          <div class="card-header">
+            <span class="card-header-brand">Roti Tales</span>
+          </div>
+          <div class="card-footer">
             <h3>Kitchen Vibes</h3>
             <p>Feel-good roti making moments</p>
           </div>

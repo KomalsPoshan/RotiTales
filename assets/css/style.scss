@@ -48,7 +48,7 @@ body {
 .carousel-viewport {
   flex: 1;
   overflow: hidden;
-  padding: 100px 32px 100px;
+  padding: 110px 32px 80px;
   box-sizing: border-box;
   display: flex;
   align-items: center;
@@ -127,15 +127,35 @@ body {
   transform: translate(-50%, -50%);
 }
 
-/* Overlay controls — play/pause + mute on video card */
-.card-overlay-controls {
+/* Card header — top bar across all slides */
+.card-header {
   position: absolute;
-  top: 12px;
-  right: 12px;
+  top: 0;
+  left: 0;
+  right: 0;
   z-index: 6;
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  padding: 10px 12px;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7) 0%, transparent 100%);
+  pointer-events: none;
+}
+
+.card-header-brand {
+  font-family: 'Kufam', sans-serif;
+  font-size: 14px;
+  font-weight: 900;
+  color: var(--wheat);
+  letter-spacing: 0.5px;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
+}
+
+.card-header-controls {
+  display: flex;
+  align-items: center;
   gap: 8px;
+  pointer-events: auto;
 }
 
 .card-ctrl {
@@ -198,31 +218,31 @@ body {
 .card-mute:not(.is-muted) .sound-icon-muted { display: none; }
 .card-mute:not(.is-muted) .sound-icon-on { display: inline; }
 
-/* Title label — bottom of card */
-.slide-label {
+/* Card footer — bottom bar across all slides */
+.card-footer {
   position: absolute;
   bottom: 0;
   left: 0;
   right: 0;
-  padding: 36px 16px 16px;
+  padding: 32px 12px 12px;
   background: linear-gradient(to top, rgba(0, 0, 0, 0.75) 0%, transparent 100%);
   z-index: 2;
   text-align: left;
   pointer-events: none;
 }
 
-.slide-label h3 {
+.card-footer h3 {
   font-family: 'Kufam', sans-serif;
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 1000;
   color: var(--flour);
-  margin: 0 0 4px;
+  margin: 0 0 2px;
   text-shadow: 0 1px 8px rgba(0, 0, 0, 0.5);
 }
 
-.slide-label p {
+.card-footer p {
   font-family: 'Kufam', sans-serif;
-  font-size: 12px;
+  font-size: 11px;
   color: rgba(255, 245, 232, 0.7);
   margin: 0;
   text-shadow: 0 1px 6px rgba(0, 0, 0, 0.4);
@@ -800,11 +820,14 @@ body.mobile-device {
   padding: 64px 8px 72px;
 }
 
-.mobile-device .slide-label h3 { font-size: 15px; }
-.mobile-device .slide-label p { font-size: 11px; }
-.mobile-device .card-overlay-controls { top: 8px; right: 8px; gap: 6px; }
+.mobile-device .card-header { padding: 8px 10px; }
+.mobile-device .card-header-brand { font-size: 12px; }
+.mobile-device .card-header-controls { gap: 6px; }
 .mobile-device .card-ctrl { width: 32px; height: 32px; }
 .mobile-device .card-ctrl svg { width: 14px; height: 14px; }
+.mobile-device .card-footer { padding: 24px 10px 10px; }
+.mobile-device .card-footer h3 { font-size: 13px; }
+.mobile-device .card-footer p { font-size: 10px; }
 
 /* Mobile: controls */
 .mobile-device .hero-controls {
