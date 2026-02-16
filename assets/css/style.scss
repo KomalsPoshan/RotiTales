@@ -115,12 +115,12 @@ body {
   border: none;
 }
 
-/* API-controlled video (first slide) — fill the card */
+/* API-controlled video — fill the card */
 .slide-video-api {
   pointer-events: none;
 }
 
-.slide-video-api #hero-player {
+.slide-video-api iframe {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -259,15 +259,36 @@ body {
 
 /* Connect slide — fills the card wrapper */
 .slide-connect {
+  position: relative;
   width: 100%;
   height: 100%;
-  background: radial-gradient(ellipse at 50% 30%, var(--wheat-light) 0%, var(--flour) 70%);
+  overflow: hidden;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   padding: 32px 20px;
   box-sizing: border-box;
+}
+
+.connect-bg-anim {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, var(--wheat-light), var(--flour), var(--wheat), var(--flour-light), var(--wheat-light));
+  background-size: 400% 400%;
+  animation: connectShift 8s ease infinite;
+  z-index: 0;
+}
+
+.slide-connect > *:not(.connect-bg-anim) {
+  position: relative;
+  z-index: 1;
+}
+
+@keyframes connectShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
 @keyframes connect-glow {

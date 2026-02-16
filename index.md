@@ -10,30 +10,22 @@ title: Home
   <div class="carousel-viewport">
     <div class="carousel-track" id="carousel-track">
 
-      <!-- Slide 1: Ghee (API-controlled autoplay) -->
-      <div class="carousel-slide is-active" data-index="0">
+      <!-- Slide 1: Ghee -->
+      <div class="carousel-slide is-active" data-index="0" data-video-id="Q2SRAu9FiqQ">
         <div class="slide-card">
           <div class="slide-video slide-video-api">
-            <div id="hero-player"></div>
+            <div id="player-0"></div>
           </div>
           <div class="card-header">
             <h3 class="card-header-title">Ghee</h3>
             <div class="card-header-controls">
-              <button class="card-ctrl ctrl-playpause" id="ctrl-playpause" aria-label="Play/Pause">
+              <button class="card-ctrl ctrl-playpause" data-slide="0" aria-label="Play/Pause">
                 <svg class="pp-pause" viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg>
                 <svg class="pp-play" viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><polygon points="5,3 19,12 5,21"/></svg>
               </button>
-              <button class="card-ctrl card-mute is-muted" id="ctrl-mute" aria-label="Toggle sound">
-                <svg class="sound-icon-muted" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M11 5L6 9H2v6h4l5 4V5z"/>
-                  <line x1="23" y1="9" x2="17" y2="15"/>
-                  <line x1="17" y1="9" x2="23" y2="15"/>
-                </svg>
-                <svg class="sound-icon-on" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M11 5L6 9H2v6h4l5 4V5z"/>
-                  <path d="M19.07 4.93a10 10 0 010 14.14"/>
-                  <path d="M15.54 8.46a5 5 0 010 7.07"/>
-                </svg>
+              <button class="card-ctrl card-mute is-muted" data-slide="0" aria-label="Toggle sound">
+                <svg class="sound-icon-muted" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5L6 9H2v6h4l5 4V5z"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/></svg>
+                <svg class="sound-icon-on" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5L6 9H2v6h4l5 4V5z"/><path d="M19.07 4.93a10 10 0 010 14.14"/><path d="M15.54 8.46a5 5 0 010 7.07"/></svg>
               </button>
             </div>
           </div>
@@ -45,13 +37,23 @@ title: Home
       </div>
 
       <!-- Slide 2: Fiber -->
-      <div class="carousel-slide" data-index="1">
+      <div class="carousel-slide" data-index="1" data-video-id="k1Tt-mMHyd0">
         <div class="slide-card">
-          <div class="slide-video">
-            <iframe src="https://www.youtube-nocookie.com/embed/k1Tt-mMHyd0?modestbranding=1&iv_load_policy=3&rel=0&showinfo=0" allowfullscreen loading="lazy"></iframe>
+          <div class="slide-video slide-video-api">
+            <div id="player-1"></div>
           </div>
           <div class="card-header">
             <h3 class="card-header-title">Fiber</h3>
+            <div class="card-header-controls">
+              <button class="card-ctrl ctrl-playpause" data-slide="1" aria-label="Play/Pause">
+                <svg class="pp-pause" viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg>
+                <svg class="pp-play" viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><polygon points="5,3 19,12 5,21"/></svg>
+              </button>
+              <button class="card-ctrl card-mute is-muted" data-slide="1" aria-label="Toggle sound">
+                <svg class="sound-icon-muted" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5L6 9H2v6h4l5 4V5z"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/></svg>
+                <svg class="sound-icon-on" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5L6 9H2v6h4l5 4V5z"/><path d="M19.07 4.93a10 10 0 010 14.14"/><path d="M15.54 8.46a5 5 0 010 7.07"/></svg>
+              </button>
+            </div>
           </div>
           <div class="card-footer">
             <p class="card-footer-subtitle">Fiber</p>
@@ -61,13 +63,23 @@ title: Home
       </div>
 
       <!-- Slide 3: Gluten -->
-      <div class="carousel-slide" data-index="2">
+      <div class="carousel-slide" data-index="2" data-video-id="tLSUnNDu1kM">
         <div class="slide-card">
-          <div class="slide-video">
-            <iframe src="https://www.youtube-nocookie.com/embed/tLSUnNDu1kM?modestbranding=1&iv_load_policy=3&rel=0&showinfo=0" allowfullscreen loading="lazy"></iframe>
+          <div class="slide-video slide-video-api">
+            <div id="player-2"></div>
           </div>
           <div class="card-header">
             <h3 class="card-header-title">Gluten</h3>
+            <div class="card-header-controls">
+              <button class="card-ctrl ctrl-playpause" data-slide="2" aria-label="Play/Pause">
+                <svg class="pp-pause" viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg>
+                <svg class="pp-play" viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><polygon points="5,3 19,12 5,21"/></svg>
+              </button>
+              <button class="card-ctrl card-mute is-muted" data-slide="2" aria-label="Toggle sound">
+                <svg class="sound-icon-muted" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5L6 9H2v6h4l5 4V5z"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/></svg>
+                <svg class="sound-icon-on" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5L6 9H2v6h4l5 4V5z"/><path d="M19.07 4.93a10 10 0 010 14.14"/><path d="M15.54 8.46a5 5 0 010 7.07"/></svg>
+              </button>
+            </div>
           </div>
           <div class="card-footer">
             <p class="card-footer-subtitle">Gluten</p>
@@ -77,13 +89,23 @@ title: Home
       </div>
 
       <!-- Slide 4: Taco with Rotis -->
-      <div class="carousel-slide" data-index="3">
+      <div class="carousel-slide" data-index="3" data-video-id="45Cvzh2U818">
         <div class="slide-card">
-          <div class="slide-video">
-            <iframe src="https://www.youtube-nocookie.com/embed/45Cvzh2U818?modestbranding=1&iv_load_policy=3&rel=0&showinfo=0" allowfullscreen loading="lazy"></iframe>
+          <div class="slide-video slide-video-api">
+            <div id="player-3"></div>
           </div>
           <div class="card-header">
             <h3 class="card-header-title">Taco with Rotis</h3>
+            <div class="card-header-controls">
+              <button class="card-ctrl ctrl-playpause" data-slide="3" aria-label="Play/Pause">
+                <svg class="pp-pause" viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg>
+                <svg class="pp-play" viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><polygon points="5,3 19,12 5,21"/></svg>
+              </button>
+              <button class="card-ctrl card-mute is-muted" data-slide="3" aria-label="Toggle sound">
+                <svg class="sound-icon-muted" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5L6 9H2v6h4l5 4V5z"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/></svg>
+                <svg class="sound-icon-on" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5L6 9H2v6h4l5 4V5z"/><path d="M19.07 4.93a10 10 0 010 14.14"/><path d="M15.54 8.46a5 5 0 010 7.07"/></svg>
+              </button>
+            </div>
           </div>
           <div class="card-footer">
             <p class="card-footer-subtitle">Taco with Rotis</p>
@@ -96,6 +118,7 @@ title: Home
       <div class="carousel-slide" data-index="4">
         <div class="slide-card">
           <div class="slide-connect">
+            <div class="connect-bg-anim"></div>
             <img src="/assets/images/rotitales_roti_on_fire_logo.png" alt="Roti Tales" class="connect-logo" />
             <h3 class="connect-title">Join the Family</h3>
             <p class="connect-desc">Follow Roti Tales everywhere</p>
@@ -122,13 +145,23 @@ title: Home
       </div>
 
       <!-- Slide 6: Wheat Variety -->
-      <div class="carousel-slide" data-index="5">
+      <div class="carousel-slide" data-index="5" data-video-id="TvMdYHopJNg">
         <div class="slide-card">
-          <div class="slide-video">
-            <iframe src="https://www.youtube-nocookie.com/embed/TvMdYHopJNg?modestbranding=1&iv_load_policy=3&rel=0&showinfo=0" allowfullscreen loading="lazy"></iframe>
+          <div class="slide-video slide-video-api">
+            <div id="player-5"></div>
           </div>
           <div class="card-header">
             <h3 class="card-header-title">Wheat Variety</h3>
+            <div class="card-header-controls">
+              <button class="card-ctrl ctrl-playpause" data-slide="5" aria-label="Play/Pause">
+                <svg class="pp-pause" viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg>
+                <svg class="pp-play" viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><polygon points="5,3 19,12 5,21"/></svg>
+              </button>
+              <button class="card-ctrl card-mute is-muted" data-slide="5" aria-label="Toggle sound">
+                <svg class="sound-icon-muted" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5L6 9H2v6h4l5 4V5z"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/></svg>
+                <svg class="sound-icon-on" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5L6 9H2v6h4l5 4V5z"/><path d="M19.07 4.93a10 10 0 010 14.14"/><path d="M15.54 8.46a5 5 0 010 7.07"/></svg>
+              </button>
+            </div>
           </div>
           <div class="card-footer">
             <p class="card-footer-subtitle">Wheat Variety</p>
@@ -138,13 +171,23 @@ title: Home
       </div>
 
       <!-- Slide 7: Packaged Tortillas -->
-      <div class="carousel-slide" data-index="6">
+      <div class="carousel-slide" data-index="6" data-video-id="UmADIP7Eneo">
         <div class="slide-card">
-          <div class="slide-video">
-            <iframe src="https://www.youtube-nocookie.com/embed/UmADIP7Eneo?modestbranding=1&iv_load_policy=3&rel=0&showinfo=0" allowfullscreen loading="lazy"></iframe>
+          <div class="slide-video slide-video-api">
+            <div id="player-6"></div>
           </div>
           <div class="card-header">
             <h3 class="card-header-title">Packaged Tortillas</h3>
+            <div class="card-header-controls">
+              <button class="card-ctrl ctrl-playpause" data-slide="6" aria-label="Play/Pause">
+                <svg class="pp-pause" viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg>
+                <svg class="pp-play" viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><polygon points="5,3 19,12 5,21"/></svg>
+              </button>
+              <button class="card-ctrl card-mute is-muted" data-slide="6" aria-label="Toggle sound">
+                <svg class="sound-icon-muted" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5L6 9H2v6h4l5 4V5z"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/></svg>
+                <svg class="sound-icon-on" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5L6 9H2v6h4l5 4V5z"/><path d="M19.07 4.93a10 10 0 010 14.14"/><path d="M15.54 8.46a5 5 0 010 7.07"/></svg>
+              </button>
+            </div>
           </div>
           <div class="card-footer">
             <p class="card-footer-subtitle">Packaged Tortillas</p>
@@ -154,13 +197,23 @@ title: Home
       </div>
 
       <!-- Slide 8: Dough Quality -->
-      <div class="carousel-slide" data-index="7">
+      <div class="carousel-slide" data-index="7" data-video-id="bKHeCYNw9bY">
         <div class="slide-card">
-          <div class="slide-video">
-            <iframe src="https://www.youtube-nocookie.com/embed/bKHeCYNw9bY?modestbranding=1&iv_load_policy=3&rel=0&showinfo=0" allowfullscreen loading="lazy"></iframe>
+          <div class="slide-video slide-video-api">
+            <div id="player-7"></div>
           </div>
           <div class="card-header">
             <h3 class="card-header-title">Dough Quality</h3>
+            <div class="card-header-controls">
+              <button class="card-ctrl ctrl-playpause" data-slide="7" aria-label="Play/Pause">
+                <svg class="pp-pause" viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg>
+                <svg class="pp-play" viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><polygon points="5,3 19,12 5,21"/></svg>
+              </button>
+              <button class="card-ctrl card-mute is-muted" data-slide="7" aria-label="Toggle sound">
+                <svg class="sound-icon-muted" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5L6 9H2v6h4l5 4V5z"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/></svg>
+                <svg class="sound-icon-on" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5L6 9H2v6h4l5 4V5z"/><path d="M19.07 4.93a10 10 0 010 14.14"/><path d="M15.54 8.46a5 5 0 010 7.07"/></svg>
+              </button>
+            </div>
           </div>
           <div class="card-footer">
             <p class="card-footer-subtitle">Dough Quality</p>
@@ -170,13 +223,23 @@ title: Home
       </div>
 
       <!-- Slide 9: Preservatives in Packaged Rotis -->
-      <div class="carousel-slide" data-index="8">
+      <div class="carousel-slide" data-index="8" data-video-id="oQPZyqFDFJc">
         <div class="slide-card">
-          <div class="slide-video">
-            <iframe src="https://www.youtube-nocookie.com/embed/oQPZyqFDFJc?modestbranding=1&iv_load_policy=3&rel=0&showinfo=0" allowfullscreen loading="lazy"></iframe>
+          <div class="slide-video slide-video-api">
+            <div id="player-8"></div>
           </div>
           <div class="card-header">
             <h3 class="card-header-title">Preservatives in Packaged Rotis</h3>
+            <div class="card-header-controls">
+              <button class="card-ctrl ctrl-playpause" data-slide="8" aria-label="Play/Pause">
+                <svg class="pp-pause" viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg>
+                <svg class="pp-play" viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><polygon points="5,3 19,12 5,21"/></svg>
+              </button>
+              <button class="card-ctrl card-mute is-muted" data-slide="8" aria-label="Toggle sound">
+                <svg class="sound-icon-muted" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5L6 9H2v6h4l5 4V5z"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/></svg>
+                <svg class="sound-icon-on" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5L6 9H2v6h4l5 4V5z"/><path d="M19.07 4.93a10 10 0 010 14.14"/><path d="M15.54 8.46a5 5 0 010 7.07"/></svg>
+              </button>
+            </div>
           </div>
           <div class="card-footer">
             <p class="card-footer-subtitle">Preservatives in Packaged Rotis</p>
@@ -276,32 +339,50 @@ tag.src = "https://www.youtube.com/iframe_api";
 var firstScriptTag = document.getElementsByTagName('script')[0];
 firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
-var heroPlayer;
-var isPlaying = true;
+var players = {};
+var globalMuted = true;
+var currentSlide = 0;
+var slidePlaying = {};  // per-slide play state
 
 function onYouTubeIframeAPIReady() {
-  heroPlayer = new YT.Player('hero-player', {
-    videoId: 'Q2SRAu9FiqQ',
-    playerVars: {
-      autoplay: 1,
-      mute: 1,
-      controls: 0,
-      showinfo: 0,
-      rel: 0,
-      loop: 1,
-      playlist: 'Q2SRAu9FiqQ',
-      modestbranding: 1,
-      iv_load_policy: 3,
-      disablekb: 1,
-      fs: 0,
-      playsinline: 1
-    },
-    events: {
-      onReady: function(e) { e.target.playVideo(); },
-      onStateChange: function(e) {
-        if (e.data === YT.PlayerState.ENDED) heroPlayer.playVideo();
+  var videoSlides = document.querySelectorAll('.carousel-slide[data-video-id]');
+  videoSlides.forEach(function(slide) {
+    var idx = parseInt(slide.getAttribute('data-index'));
+    var videoId = slide.getAttribute('data-video-id');
+    var isFirst = (idx === 0);
+
+    players[idx] = new YT.Player('player-' + idx, {
+      videoId: videoId,
+      playerVars: {
+        autoplay: isFirst ? 1 : 0,
+        mute: 1,
+        controls: 0,
+        showinfo: 0,
+        rel: 0,
+        loop: 1,
+        playlist: videoId,
+        modestbranding: 1,
+        iv_load_policy: 3,
+        disablekb: 1,
+        fs: 0,
+        playsinline: 1
+      },
+      events: {
+        onReady: function(e) {
+          if (isFirst) {
+            e.target.playVideo();
+            slidePlaying[idx] = true;
+          }
+        },
+        onStateChange: function(e) {
+          if (e.data === YT.PlayerState.ENDED) {
+            players[idx].playVideo();
+          }
+        }
       }
-    }
+    });
+
+    slidePlaying[idx] = isFirst;
   });
 }
 
@@ -310,39 +391,58 @@ function onYouTubeIframeAPIReady() {
   var track = document.getElementById('carousel-track');
   var dots = document.querySelectorAll('#hero-dots .dot');
   var totalSlides = dots.length;
-  var current = 0;
-
   var slides = document.querySelectorAll('.carousel-slide');
+
+  function syncControls(idx) {
+    slides.forEach(function(s) {
+      var sIdx = parseInt(s.getAttribute('data-index'));
+      var ppBtn = s.querySelector('.ctrl-playpause');
+      var muteBtn = s.querySelector('.card-mute');
+      if (ppBtn) {
+        ppBtn.classList.toggle('is-paused', !slidePlaying[sIdx]);
+      }
+      if (muteBtn) {
+        muteBtn.classList.toggle('is-muted', globalMuted);
+      }
+    });
+  }
 
   function goTo(idx) {
     if (idx < 0) idx = totalSlides - 1;
     if (idx >= totalSlides) idx = 0;
-    current = idx;
+
+    var prevSlide = currentSlide;
+    currentSlide = idx;
+
     var slidePct = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--slide-pct')) || 70;
     var offset = (100 - slidePct) / 2;
-    track.style.transform = 'translateX(' + (offset - current * slidePct) + '%)';
-    dots.forEach(function(d, i) {
-      d.classList.toggle('active', i === current);
-    });
-    slides.forEach(function(s, i) {
-      s.classList.toggle('is-active', i === current);
-    });
-    // Pause hero player when not on slide 0, resume when back
-    if (heroPlayer && heroPlayer.pauseVideo) {
-      if (current === 0 && isPlaying) {
-        heroPlayer.playVideo();
-      } else {
-        heroPlayer.pauseVideo();
-      }
+    track.style.transform = 'translateX(' + (offset - currentSlide * slidePct) + '%)';
+
+    dots.forEach(function(d, i) { d.classList.toggle('active', i === currentSlide); });
+    slides.forEach(function(s, i) { s.classList.toggle('is-active', i === currentSlide); });
+
+    // Pause previous video
+    if (players[prevSlide] && players[prevSlide].pauseVideo) {
+      try { players[prevSlide].pauseVideo(); } catch(e) {}
     }
+
+    // Play new video (if it's a video slide)
+    if (players[currentSlide] && players[currentSlide].playVideo) {
+      try {
+        if (globalMuted) { players[currentSlide].mute(); } else { players[currentSlide].unMute(); }
+        players[currentSlide].playVideo();
+        slidePlaying[currentSlide] = true;
+      } catch(e) {}
+    }
+
+    syncControls(currentSlide);
   }
 
   goTo(0);
 
-  document.getElementById('ctrl-prev').addEventListener('click', function() { goTo(current - 1); });
-  document.getElementById('ctrl-next').addEventListener('click', function() { goTo(current + 1); });
+  document.getElementById('ctrl-prev').addEventListener('click', function() { goTo(currentSlide - 1); });
+  document.getElementById('ctrl-next').addEventListener('click', function() { goTo(currentSlide + 1); });
 
-  // Dot click navigation
   dots.forEach(function(dot) {
     dot.addEventListener('click', function() {
       goTo(parseInt(this.getAttribute('data-slide')));
@@ -356,45 +456,57 @@ function onYouTubeIframeAPIReady() {
   viewport.addEventListener('touchend', function(e) {
     var diff = startX - e.changedTouches[0].clientX;
     if (Math.abs(diff) > 50) {
-      goTo(diff > 0 ? current + 1 : current - 1);
+      goTo(diff > 0 ? currentSlide + 1 : currentSlide - 1);
     }
   });
 
   // Keyboard arrows
   document.addEventListener('keydown', function(e) {
-    if (e.key === 'ArrowRight') goTo(current + 1);
-    if (e.key === 'ArrowLeft') goTo(current - 1);
+    if (e.key === 'ArrowRight') goTo(currentSlide + 1);
+    if (e.key === 'ArrowLeft') goTo(currentSlide - 1);
   });
+
+  // ===== Per-slide play/pause and mute =====
+  document.querySelectorAll('.ctrl-playpause').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      var idx = parseInt(this.getAttribute('data-slide'));
+      var p = players[idx];
+      if (!p || !p.getPlayerState) return;
+      var state = p.getPlayerState();
+      if (state === YT.PlayerState.PLAYING) {
+        p.pauseVideo();
+        slidePlaying[idx] = false;
+        this.classList.add('is-paused');
+      } else {
+        p.playVideo();
+        slidePlaying[idx] = true;
+        this.classList.remove('is-paused');
+      }
+    });
+  });
+
+  document.querySelectorAll('.card-mute').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      var idx = parseInt(this.getAttribute('data-slide'));
+      var p = players[idx];
+      if (!p || !p.isMuted) return;
+      if (p.isMuted()) {
+        p.unMute();
+        globalMuted = false;
+      } else {
+        p.mute();
+        globalMuted = true;
+      }
+      // Sync all mute buttons
+      document.querySelectorAll('.card-mute').forEach(function(m) {
+        m.classList.toggle('is-muted', globalMuted);
+      });
+    });
+  });
+
+  // Expose goTo for external use
+  window._carouselGoTo = goTo;
 })();
-
-// ===== Mute toggle =====
-var muteBtn = document.getElementById('ctrl-mute');
-muteBtn.addEventListener('click', function() {
-  if (!heroPlayer || !heroPlayer.isMuted) return;
-  if (heroPlayer.isMuted()) {
-    heroPlayer.unMute();
-    muteBtn.classList.remove('is-muted');
-  } else {
-    heroPlayer.mute();
-    muteBtn.classList.add('is-muted');
-  }
-});
-
-// ===== Play/Pause toggle =====
-var ppBtn = document.getElementById('ctrl-playpause');
-ppBtn.addEventListener('click', function() {
-  if (!heroPlayer || !heroPlayer.getPlayerState) return;
-  var state = heroPlayer.getPlayerState();
-  if (state === YT.PlayerState.PLAYING) {
-    heroPlayer.pauseVideo();
-    isPlaying = false;
-    ppBtn.classList.add('is-paused');
-  } else {
-    heroPlayer.playVideo();
-    isPlaying = true;
-    ppBtn.classList.remove('is-paused');
-  }
-});
 
 // ===== Platform chooser popup =====
 (function() {
