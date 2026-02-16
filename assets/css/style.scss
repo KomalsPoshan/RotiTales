@@ -343,6 +343,8 @@ body {
   font-family: 'Kufam', sans-serif;
   font-size: 13px;
   font-weight: 700;
+  flex: 1;
+  min-width: 0;
   transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
   box-shadow: 0 2px 8px rgba(171, 79, 46, 0.1);
 }
@@ -798,7 +800,7 @@ body {
   border-radius: 28px;
   padding: 36px 28px 32px;
   text-align: center;
-  max-width: 420px;
+  max-width: 480px;
   width: 92%;
   position: relative;
   overflow: hidden;
