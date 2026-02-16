@@ -1,0 +1,30 @@
+# ============================================================
+# RotiTales Video Registry
+# ============================================================
+# Each video entry tracks where it's used on the site.
+# Categories: health-bites, roti-101, fun
+#
+# used_in options:
+#   carousel   — homepage video carousel slide
+#   (future)   — category page, etc.
+# ============================================================
+
+# --- Videos currently on the homepage carousel ---
+
+- youtube_id: pPo5bd8tm2Y
+  title: "Are all carbs bad?"
+  subtitle: "Simple swaps for more nutritious rotis"
+  category: health-bites
+  used_in: carousel
+
+- youtube_id: oQPZyqFDFJc
+  title: "Nutrition Made Simple"
+  subtitle: "Quick tips that pack a punch"
+  category: health-bites
+  used_in: carousel
+
+- youtube_id: ef1_NUR4aig
+  title: "Kitchen Vibes"
+  subtitle: "Feel-good roti making moments"
+  category: fun
+  used_in: carousel

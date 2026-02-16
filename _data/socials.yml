@@ -1,0 +1,20 @@
+# ============================================================
+# Social platform links — single source of truth
+# Used by: connect card, platform modal
+# ============================================================
+
+- name: Instagram
+  url: https://instagram.com/rotitales
+  icon: instagram-clay.svg
+
+- name: YouTube
+  url: https://www.youtube.com/@rotitales
+  icon: youtube-clay.svg
+
+- name: Facebook
+  url: https://www.facebook.com/rotitales
+  icon: facebook-clay.svg
+
+- name: LinkedIn
+  url: https://www.linkedin.com/showcase/rotitales
+  icon: linkedin-clay.svg
