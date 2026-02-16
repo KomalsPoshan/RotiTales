@@ -965,7 +965,7 @@ body.mobile-device {
 .mobile-device .site-nav { padding: 8px 14px; }
 .mobile-device .nav-logo img { width: 28px; height: 28px; }
 .mobile-device .nav-logo span { font-size: 16px; padding-top: 6px; }
-.mobile-device .nav-pill { font-size: 12px; padding: 4px 6px; }
+.mobile-device .nav-pill { font-size: 12px; padding: 4px 8px; }
 .mobile-device .pill-dropdown { width: 105px; padding: 8px 0 6px; }
 .mobile-device .pill-dd-link { font-size: 11px; padding: 5px 10px; }
 .mobile-device .pill-dd-link img { width: 16px; height: 16px; }
@@ -984,6 +984,7 @@ body.mobile-device {
   height: auto;
   width: 100%;
   max-height: 100%;
+  margin-top: 32px;
 }
 
 .mobile-device .card-header { padding: 8px 10px; }
@@ -997,7 +998,6 @@ body.mobile-device {
 
 /* Mobile: controls */
 .mobile-device .hero-controls {
-  bottom: 16px;
   gap: 8px;
   padding: 8px 14px;
 }
