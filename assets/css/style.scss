@@ -242,8 +242,8 @@ body {
 /* Subtitle — bottom left */
 .card-footer-subtitle {
   font-family: 'Kufam', sans-serif;
-  font-size: 11px;
-  color: rgba(255, 245, 232, 0.7);
+  font-size: 13px;
+  color: var(--flour);
   margin: 0;
   text-shadow: 0 1px 6px rgba(0, 0, 0, 0.4);
 }
@@ -251,7 +251,7 @@ body {
 /* Brand stamp — bottom right */
 .card-footer-brand {
   font-family: 'Kufam', sans-serif;
-  font-size: 14px;
+  font-size: 11px;
   font-weight: 900;
   color: var(--wheat);
   letter-spacing: 0.5px;
@@ -1013,8 +1013,8 @@ body.mobile-device {
 .mobile-device .card-ctrl { width: 32px; height: 32px; }
 .mobile-device .card-ctrl svg { width: 14px; height: 14px; }
 .mobile-device .card-footer { padding: 8px 10px; }
-.mobile-device .card-footer-subtitle { font-size: 10px; }
-.mobile-device .card-footer-brand { font-size: 11px; }
+.mobile-device .card-footer-subtitle { font-size: 12px; }
+.mobile-device .card-footer-brand { font-size: 10px; }
 
 /* Mobile: controls */
 .mobile-device .hero-controls {
