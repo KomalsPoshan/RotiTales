@@ -975,6 +975,26 @@ body {
 .site-main { margin: 0; padding: 0; }
 .site-header { display: none; }
 
+/* ===== RESPONSIVE CAROUSEL SPACING ===== */
+/* Narrow desktop / tablet: push side-peek cards apart to avoid crowding */
+@media screen and (max-width: 600px) {
+  :root { --slide-pct: 80; }
+  .carousel-viewport { padding-left: 16px; padding-right: 16px; }
+}
+
+/* Wide screens: shrink slide % so side-peek cards stay visible */
+@media screen and (min-width: 1000px) {
+  :root { --slide-pct: 56; }
+}
+
+@media screen and (min-width: 1200px) {
+  :root { --slide-pct: 48; }
+}
+
+@media screen and (min-width: 1400px) {
+  :root { --slide-pct: 42; }
+}
+
 /* ===== MOBILE OVERRIDES ===== */
 body.mobile-device {
   --slide-pct: 92;

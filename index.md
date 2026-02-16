@@ -644,6 +644,13 @@ function onYouTubeIframeAPIReady() {
     });
   });
 
+  // Reposition carousel on resize (picks up responsive --slide-pct changes)
+  var resizeTimer;
+  window.addEventListener('resize', function() {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(function() { goTo(currentSlide); }, 150);
+  });
+
   // Expose for external use
   window._carouselGoTo = goTo;
   window._updatePulse = updatePulse;
