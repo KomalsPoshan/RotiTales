@@ -155,13 +155,19 @@ body {
   color: var(--flour);
   transition: background 0.2s, transform 0.2s, border-color 0.2s;
   padding: 0;
-  animation: ctrlPulse 2.5s ease-in-out 3;
 }
 
 .card-ctrl:hover {
   background: rgba(0, 0, 0, 0.7);
   border-color: var(--flour);
   transform: scale(1.12);
+}
+
+.card-mute {
+  animation: ctrlPulse 2.5s ease-in-out 3;
+}
+
+.card-mute:hover {
   animation: none;
 }
 
