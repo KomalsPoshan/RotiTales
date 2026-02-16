@@ -243,6 +243,8 @@ function onYouTubeIframeAPIReady() {
     }
   }
 
+  goTo(0);
+
   document.getElementById('ctrl-prev').addEventListener('click', function() { goTo(current - 1); });
   document.getElementById('ctrl-next').addEventListener('click', function() { goTo(current + 1); });
 
