@@ -396,7 +396,7 @@ body {
 /* ===== CONTROLS BAR — bottom center ===== */
 .hero-controls {
   position: absolute;
-  bottom: -4px;
+  bottom: 0px;
   left: 50%;
   transform: translateX(-50%);
   z-index: 10;
@@ -406,7 +406,7 @@ body {
   background: rgba(77, 0, 10, 0.65);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  padding: 10px 20px;
+  padding: 8px;
   border-radius: 40px;
   border: 1px solid rgba(245, 184, 89, 0.25);
 }
