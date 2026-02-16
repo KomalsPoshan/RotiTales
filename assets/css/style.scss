@@ -588,9 +588,8 @@ body {
 
 .cookie-banner.is-visible { display: flex; }
 
-.cookie-ok {
-  background: var(--wheat);
-  color: var(--warmth);
+.cookie-ok,
+.cookie-decline {
   border: none;
   font-family: 'Kufam', sans-serif;
   font-size: 13px;
@@ -599,6 +598,17 @@ body {
   border-radius: 8px;
   cursor: pointer;
   white-space: nowrap;
+}
+
+.cookie-ok {
+  background: var(--wheat);
+  color: var(--warmth);
+}
+
+.cookie-decline {
+  background: transparent;
+  color: var(--flour);
+  border: 1px solid var(--flour);
 }
 
 /* ===== FOOTER ===== */

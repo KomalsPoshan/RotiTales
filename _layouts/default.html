@@ -40,7 +40,8 @@
 <!-- Cookie consent banner -->
 <div class="cookie-banner" id="cookie-banner">
     <span>We use cookies to make this site better for you.</span>
-    <button class="cookie-ok" id="cookie-ok">OK</button>
+    <button class="cookie-ok" id="cookie-ok">Accept</button>
+    <button class="cookie-decline" id="cookie-decline">Decline</button>
 </div>
 
 <script>
@@ -53,15 +54,20 @@
         document.head.appendChild(s);
     }
 
-    if (localStorage.getItem('cookie-ok')) {
+    var consent = localStorage.getItem('cookie-ok');
+    if (consent === '1') {
         loadStatsig();
-    } else {
+    } else if (!consent) {
         var banner = document.getElementById('cookie-banner');
         banner.classList.add('is-visible');
         document.getElementById('cookie-ok').addEventListener('click', function() {
             localStorage.setItem('cookie-ok', '1');
             banner.classList.remove('is-visible');
             loadStatsig();
+        });
+        document.getElementById('cookie-decline').addEventListener('click', function() {
+            localStorage.setItem('cookie-ok', 'declined');
+            banner.classList.remove('is-visible');
         });
     }
 })();
