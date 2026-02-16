@@ -508,6 +508,96 @@ function onYouTubeIframeAPIReady() {
   window._carouselGoTo = goTo;
 })();
 
+// ===== Connect card jingle (Web Audio API — no files, no copyright) =====
+(function() {
+  var audioCtx = null;
+  var jingleGain = null;
+  var jinglePlaying = false;
+  var CONNECT_SLIDE = 4;
+
+  // Warm pentatonic melody: C5 E5 G5 A5 C6 — feels inviting
+  var melody = [523, 659, 784, 880, 1047];
+  var noteDur = 0.22;
+  var noteGap = 0.18;
+
+  function initAudio() {
+    if (audioCtx) return;
+    audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+    jingleGain = audioCtx.createGain();
+    jingleGain.gain.value = 0;
+    jingleGain.connect(audioCtx.destination);
+  }
+
+  function playJingle() {
+    if (jinglePlaying || globalMuted) return;
+    initAudio();
+    if (audioCtx.state === 'suspended') audioCtx.resume();
+    jinglePlaying = true;
+
+    var now = audioCtx.currentTime;
+    melody.forEach(function(freq, i) {
+      var start = now + i * (noteDur + noteGap);
+
+      // Main tone — soft sine
+      var osc = audioCtx.createOscillator();
+      osc.type = 'sine';
+      osc.frequency.value = freq;
+
+      // Shimmer overtone
+      var osc2 = audioCtx.createOscillator();
+      osc2.type = 'sine';
+      osc2.frequency.value = freq * 2.01;
+
+      var g = audioCtx.createGain();
+      g.gain.setValueAtTime(0, start);
+      g.gain.linearRampToValueAtTime(0.15, start + 0.04);
+      g.gain.exponentialRampToValueAtTime(0.001, start + noteDur + 0.3);
+
+      var g2 = audioCtx.createGain();
+      g2.gain.setValueAtTime(0, start);
+      g2.gain.linearRampToValueAtTime(0.04, start + 0.04);
+      g2.gain.exponentialRampToValueAtTime(0.001, start + noteDur + 0.2);
+
+      osc.connect(g);
+      osc2.connect(g2);
+      g.connect(audioCtx.destination);
+      g2.connect(audioCtx.destination);
+
+      osc.start(start);
+      osc.stop(start + noteDur + 0.35);
+      osc2.start(start);
+      osc2.stop(start + noteDur + 0.25);
+    });
+
+    var totalDur = melody.length * (noteDur + noteGap) + 0.4;
+    setTimeout(function() { jinglePlaying = false; }, totalDur * 1000);
+  }
+
+  function stopJingle() {
+    jinglePlaying = false;
+  }
+
+  // Hook into carousel navigation
+  var origGoTo = window._carouselGoTo;
+  if (origGoTo) {
+    // Already handled by goTo — we just need slide-change awareness
+    // Use a MutationObserver on the connect slide
+  }
+
+  // Poll active slide (simple, reliable)
+  var lastSlide = -1;
+  setInterval(function() {
+    if (typeof currentSlide === 'undefined') return;
+    if (currentSlide === CONNECT_SLIDE && lastSlide !== CONNECT_SLIDE) {
+      playJingle();
+    }
+    if (currentSlide !== CONNECT_SLIDE && lastSlide === CONNECT_SLIDE) {
+      stopJingle();
+    }
+    lastSlide = currentSlide;
+  }, 200);
+})();
+
 // ===== Platform chooser popup =====
 (function() {
   var popup = document.getElementById('platform-popup');
