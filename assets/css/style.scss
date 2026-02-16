@@ -971,6 +971,9 @@ body.mobile-device {
 .mobile-device .pill-dd-link img { width: 16px; height: 16px; }
 
 /* Mobile: carousel */
+.mobile-device .hero-carousel {
+  height: 80vh;
+}
 .mobile-device .carousel-viewport {
   padding: 32px 8px 36px;
 }
