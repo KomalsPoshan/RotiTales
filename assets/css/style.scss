@@ -139,6 +139,8 @@ body {
   justify-content: space-between;
   padding: 10px 12px;
   background: black;
+  border-bottom: 3px solid var(--wheat);
+  border-radius: 0;
   pointer-events: none;
 }
 
