@@ -565,41 +565,6 @@ body {
   height: 20px;
 }
 
-/* ===== PAGE CONTENT (privacy, terms) ===== */
-.page-content {
-  max-width: 680px;
-  margin: 0 auto;
-  padding: 48px 24px 64px;
-  font-family: 'Kufam', sans-serif;
-  color: var(--flour);
-  line-height: 1.7;
-}
-
-.page-title {
-  font-size: 28px;
-  font-weight: 1000;
-  color: var(--wheat);
-  margin: 0 0 24px;
-}
-
-.page-content h2 {
-  font-size: 18px;
-  font-weight: 900;
-  color: var(--wheat);
-  margin: 28px 0 8px;
-}
-
-.page-content p {
-  font-size: 14px;
-  margin: 0 0 14px;
-  color: rgba(255, 245, 232, 0.85);
-}
-
-.page-content a {
-  color: var(--wheat);
-  text-decoration: underline;
-}
-
 /* ===== FOOTER ===== */
 .site-footer {
   background: linear-gradient(135deg, var(--warmth) 0%, var(--warmth-dark) 100%);
@@ -621,16 +586,6 @@ body {
   display: block;
 }
 
-.footer-legal {
-  display: block;
-  margin-top: 6px;
-  font-size: 12px;
-}
-
-.footer-sep {
-  margin: 0 6px;
-  opacity: 0.5;
-}
 
 .footer-link {
   color: var(--wheat);
