@@ -89,6 +89,11 @@ body {
   opacity: 0.5;
 }
 
+/* Inactive slides are clickable to navigate */
+.carousel-slide:not(.is-active) .slide-card {
+  cursor: pointer;
+}
+
 .carousel-slide.is-active .slide-card {
   transform: scale(1);
   opacity: 1;

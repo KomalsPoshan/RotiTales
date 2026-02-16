@@ -546,6 +546,14 @@ function onYouTubeIframeAPIReady() {
     });
   });
 
+  // Click a side-peek slide to bring it into focus
+  slides.forEach(function(slide) {
+    slide.addEventListener('click', function() {
+      var idx = parseInt(this.getAttribute('data-index'));
+      if (idx !== currentSlide) goTo(idx);
+    });
+  });
+
   // Swipe support
   var startX = 0;
   var viewport = document.querySelector('.carousel-viewport');
