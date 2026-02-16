@@ -117,6 +117,7 @@ title: Home
       <!-- Slide 5: Connect card -->
       <div class="carousel-slide" data-index="4">
         <div class="slide-card">
+          <audio id="connect-audio" src="/assets/audio/bounce-bay-records-bollywood-4-437919.mp3" loop preload="auto"></audio>
           <div class="slide-connect">
             <div class="connect-bg-anim"></div>
             <img src="/assets/images/rotitales_roti_on_fire_logo.png" alt="Roti Tales" class="connect-logo" />
@@ -442,6 +443,9 @@ function onYouTubeIframeAPIReady() {
     if (players[prevSlide] && players[prevSlide].pauseVideo) {
       try { players[prevSlide].pauseVideo(); } catch(e) {}
     }
+    // Pause connect audio when leaving slide 4
+    var ca = document.getElementById('connect-audio');
+    if (prevSlide === 4 && ca) { ca.pause(); }
 
     // Play new video (if it's a video slide)
     if (players[currentSlide] && players[currentSlide].playVideo) {
@@ -450,6 +454,11 @@ function onYouTubeIframeAPIReady() {
         players[currentSlide].playVideo();
         slidePlaying[currentSlide] = true;
       } catch(e) {}
+    }
+    // Play connect audio when arriving at slide 4
+    if (currentSlide === 4 && ca) {
+      ca.muted = globalMuted;
+      ca.play().catch(function(){});
     }
 
     syncControls(currentSlide);
@@ -506,14 +515,20 @@ function onYouTubeIframeAPIReady() {
     btn.addEventListener('click', function() {
       var idx = parseInt(this.getAttribute('data-slide'));
       var p = players[idx];
-      if (!p || !p.isMuted) return;
-      if (p.isMuted()) {
-        p.unMute();
-        globalMuted = false;
+      var ca = document.getElementById('connect-audio');
+
+      if (p && p.isMuted) {
+        // YouTube player slide
+        if (p.isMuted()) { p.unMute(); globalMuted = false; }
+        else { p.mute(); globalMuted = true; }
+      } else if (idx === 4 && ca) {
+        // Connect card audio
+        globalMuted = !globalMuted;
+        ca.muted = globalMuted;
       } else {
-        p.mute();
-        globalMuted = true;
+        return;
       }
+
       // Sync all mute buttons + restart pulse animation on re-mute
       document.querySelectorAll('.card-mute').forEach(function(m) {
         m.classList.toggle('is-muted', globalMuted);
@@ -523,6 +538,8 @@ function onYouTubeIframeAPIReady() {
           m.style.animation = '';
         }
       });
+      // Sync connect audio mute state
+      if (ca) ca.muted = globalMuted;
     });
   });
 
