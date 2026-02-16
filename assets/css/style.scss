@@ -417,6 +417,12 @@ body {
 .ctrl-playpause.is-paused .pp-play { display: inline; }
 .ctrl-playpause.is-paused .pp-pause { display: none; }
 
+.card-ctrl:disabled {
+  opacity: 0.3;
+  cursor: default;
+  pointer-events: none;
+}
+
 /* Dot indicators */
 .hero-dots {
   display: flex;

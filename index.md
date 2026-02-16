@@ -121,7 +121,7 @@ title: Home
             <div class="connect-bg-anim"></div>
             <img src="/assets/images/rotitales_roti_on_fire_logo.png" alt="Roti Tales" class="connect-logo" />
             <h3 class="connect-title">Join the Family</h3>
-            <p class="connect-desc">More roti goodness awaits</p>
+            <p class="connect-desc">If roti is in your life, make sure it's healthy</p>
             <div class="connect-grid">
               <a href="https://www.youtube.com/@rotitales" class="connect-link">
                 <img src="/assets/icons/youtube-clay.svg" alt="YouTube" />
@@ -140,6 +140,23 @@ title: Home
                 <span>LinkedIn</span>
               </a>
             </div>
+          </div>
+          <div class="card-header">
+            <h3 class="card-header-title">Join the Family</h3>
+            <div class="card-header-controls">
+              <button class="card-ctrl ctrl-playpause is-paused" disabled aria-label="Play/Pause">
+                <svg class="pp-pause" viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg>
+                <svg class="pp-play" viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><polygon points="5,3 19,12 5,21"/></svg>
+              </button>
+              <button class="card-ctrl card-mute is-muted" data-slide="4" aria-label="Toggle sound">
+                <svg class="sound-icon-muted" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5L6 9H2v6h4l5 4V5z"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/></svg>
+                <svg class="sound-icon-on" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5L6 9H2v6h4l5 4V5z"/><path d="M19.07 4.93a10 10 0 010 14.14"/><path d="M15.54 8.46a5 5 0 010 7.07"/></svg>
+              </button>
+            </div>
+          </div>
+          <div class="card-footer">
+            <p class="card-footer-subtitle">If roti is in your life, make sure it's healthy</p>
+            <span class="card-footer-brand">Roti Tales</span>
           </div>
         </div>
       </div>
