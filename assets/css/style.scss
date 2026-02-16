@@ -484,12 +484,11 @@ body {
   background: var(--warmth) url('/assets/images/pattern_illustrations_warmth.png');
   background-size: 300px;
   padding: 56px 24px;
-  padding-top: 96px;
-  margin-top: -48px;
+  padding-top: 66px;
+  margin-top: -32px;
   text-align: center;
   position: relative;
   z-index: 1;
-  border-radius: 32px 32px 0 0;
 }
 
 .mission-inner {
@@ -835,7 +834,7 @@ body.mobile-device {
 .mobile-device .connect-link img { width: 22px; height: 22px; }
 
 /* Mobile: mission */
-.mobile-device .mission-section { padding: 36px 20px; padding-top: 72px; margin-top: -40px; border-radius: 24px 24px 0 0; }
+.mobile-device .mission-section { padding: 36px 20px; padding-top: 56px; margin-top: -24px; }
 .mobile-device .mission-logo { width: 60px; }
 .mobile-device .mission-title { font-size: 22px; }
 .mobile-device .mission-text { font-size: 14px; }
