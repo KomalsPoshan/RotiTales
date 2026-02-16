@@ -10,14 +10,14 @@ title: Home
   <div class="carousel-viewport">
     <div class="carousel-track" id="carousel-track">
 
-      <!-- Slide 1: Ghee -->
+      <!-- Slide 1: Ghee on Roti -->
       <div class="carousel-slide is-active" data-index="0" data-video-id="Q2SRAu9FiqQ">
         <div class="slide-card">
           <div class="slide-video slide-video-api">
             <div id="player-0"></div>
           </div>
           <div class="card-header">
-            <h3 class="card-header-title">Ghee</h3>
+            <h3 class="card-header-title">Ghee on Roti</h3>
             <div class="card-header-controls">
               <button class="card-ctrl ctrl-playpause" data-slide="0" aria-label="Play/Pause">
                 <svg class="pp-pause" viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg>
@@ -30,7 +30,7 @@ title: Home
             </div>
           </div>
           <div class="card-footer">
-            <p class="card-footer-subtitle">Ghee</p>
+            <p class="card-footer-subtitle">Ghee on Roti</p>
             <span class="card-footer-brand">Roti Tales</span>
           </div>
         </div>
