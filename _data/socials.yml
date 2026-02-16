@@ -3,13 +3,13 @@
 # Used by: connect card, platform modal
 # ============================================================
 
-- name: YouTube
-  url: https://www.youtube.com/@rotitales
-  icon: youtube-clay.svg
-
 - name: Instagram
   url: https://instagram.com/rotitales
   icon: instagram-clay.svg
+
+- name: YouTube
+  url: https://www.youtube.com/@rotitales
+  icon: youtube-clay.svg
 
 - name: Facebook
   url: https://www.facebook.com/rotitales

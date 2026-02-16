@@ -124,7 +124,7 @@ title: Home
             <h3 class="connect-title">Join the Family</h3>
             <p class="connect-desc">Eating roti? Follow us to make sure it's a healthy one.</p>
             <div class="connect-grid">
-              {% include social-links.html class="connect-link" %}
+              {% include social-links.html class="social-link" %}
             </div>
           </div>
           <div class="card-header">
@@ -304,7 +304,7 @@ title: Home
       </div>
     </div>
     <div class="platform-row">
-      {% include social-links.html class="platform-option" %}
+      {% include social-links.html class="social-link" %}
     </div>
   </div>
 </div>
