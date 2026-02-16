@@ -310,7 +310,6 @@ ppBtn.addEventListener('click', function() {
 
   function openPopup() {
     popup.classList.add('is-open');
-    dismissNudge();
   }
   function closePopup() {
     popup.classList.remove('is-open');
@@ -331,20 +330,11 @@ ppBtn.addEventListener('click', function() {
 })();
 
 // ===== Follow nudge =====
-var nudgeDismissed = false;
-function dismissNudge() {
-  nudgeDismissed = true;
-  var nudge = document.getElementById('follow-nudge');
-  if (nudge) nudge.classList.remove('is-visible');
-}
-
 (function() {
   var nudge = document.getElementById('follow-nudge');
   if (!nudge) return;
-  if (!nudgeDismissed) nudge.classList.add('is-visible');
   nudge.addEventListener('click', function() {
     if (window._openPlatformPopup) window._openPlatformPopup();
-    dismissNudge();
   });
 })();
 </script>
