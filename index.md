@@ -122,7 +122,7 @@ title: Home
             <div class="connect-bg-anim"></div>
             <img src="/assets/images/rotitales_roti_on_fire_logo.png" alt="Roti Tales" class="connect-logo" />
             <h3 class="connect-title">Join the Family</h3>
-            <p class="connect-desc">Eating roti? Follow us to make sure it's a healthy one</p>
+            <p class="connect-desc">Eating roti? Follow us to make sure it's a healthy one.</p>
             <div class="connect-grid">
               <a href="https://www.youtube.com/@rotitales" class="connect-link">
                 <img src="/assets/icons/youtube-clay.svg" alt="YouTube" />
@@ -156,7 +156,7 @@ title: Home
             </div>
           </div>
           <div class="card-footer">
-            <p class="card-footer-subtitle">Eating roti? Follow us to make sure it's a healthy one</p>
+            <p class="card-footer-subtitle">Eating roti? Follow us to make sure it's a healthy one.</p>
             <span class="card-footer-brand">Roti Tales</span>
           </div>
         </div>
