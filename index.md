@@ -414,7 +414,7 @@ function onYouTubeIframeAPIReady() {
     var prevSlide = currentSlide;
     currentSlide = idx;
 
-    var slidePct = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--slide-pct')) || 70;
+    var slidePct = parseFloat(getComputedStyle(document.body).getPropertyValue('--slide-pct')) || 70;
     var offset = (100 - slidePct) / 2;
     track.style.transform = 'translateX(' + (offset - currentSlide * slidePct) + '%)';
 
