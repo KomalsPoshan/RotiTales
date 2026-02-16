@@ -284,7 +284,7 @@ title: Home
   <div class="mission-inner">
     <img src="/assets/images/Poshan_Logo_2Color-Flour.png" alt="Poshan" class="mission-logo" />
     <h2 class="mission-title">Healthier Rotis, Happier Families</h2>
-    <p class="mission-text">Roti Tales is a Poshan initiative empowering families with simple ways to make everyday rotis more nutritious — one recipe at a time.</p>
+    <p class="mission-text">Roti Tales is a Poshan initiative empowering families with simple ways to make everyday rotis more nutritious — one reel at a time.</p>
     <a class="mission-cta platform-trigger" href="#">
       Follow RotiTales
       <span class="mission-cta-arrow">&#8594;</span>
