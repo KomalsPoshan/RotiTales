@@ -498,7 +498,7 @@ body {
 }
 
 .mission-inner {
-  max-width: 460px;
+  max-width: 680px;
   margin: 0 auto;
   position: relative;
   z-index: 1;
@@ -521,14 +521,11 @@ body {
 
 .mission-text {
   font-family: 'Kufam', sans-serif;
-  font-size: 14px;
+  font-size: 16px;
   color: rgba(255, 245, 232, 0.85);
   line-height: 1.6;
   margin: 0 0 24px;
   text-shadow: 0 1px 6px rgba(0, 0, 0, 0.6);
-  max-width: 560px;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 .mission-cta {
