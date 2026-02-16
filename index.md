@@ -473,6 +473,14 @@ function onYouTubeIframeAPIReady() {
     }
 
     syncControls(currentSlide);
+
+    // Restart mute button pulse on slide change
+    var curMuteBtn = slides[currentSlide] && slides[currentSlide].querySelector('.card-mute');
+    if (curMuteBtn && globalMuted) {
+      curMuteBtn.style.animation = 'none';
+      curMuteBtn.offsetHeight;
+      curMuteBtn.style.animation = '';
+    }
   }
 
   goTo(0);
