@@ -261,7 +261,7 @@ body {
 .slide-connect {
   width: 100%;
   height: 100%;
-  background: var(--flour);
+  background: radial-gradient(ellipse at 50% 30%, var(--wheat-light) 0%, var(--flour) 70%);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -270,18 +270,24 @@ body {
   box-sizing: border-box;
 }
 
+@keyframes connect-glow {
+  0%, 100% { box-shadow: 0 4px 16px rgba(171, 79, 46, 0.2); }
+  50% { box-shadow: 0 4px 24px rgba(171, 79, 46, 0.45); }
+}
+
 .connect-logo {
-  width: 56px;
-  height: 56px;
+  width: 64px;
+  height: 64px;
   object-fit: cover;
   border-radius: 50%;
   margin-bottom: 14px;
-  box-shadow: 0 4px 16px rgba(171, 79, 46, 0.2);
+  animation: connect-glow 3s ease-in-out infinite;
+  border: 3px solid var(--wheat);
 }
 
 .connect-title {
   font-family: 'Kufam', sans-serif;
-  font-size: 20px;
+  font-size: 22px;
   font-weight: 1000;
   color: var(--warmth);
   margin: 0 0 6px;
@@ -559,6 +565,41 @@ body {
   height: 20px;
 }
 
+/* ===== PAGE CONTENT (privacy, terms) ===== */
+.page-content {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 48px 24px 64px;
+  font-family: 'Kufam', sans-serif;
+  color: var(--flour);
+  line-height: 1.7;
+}
+
+.page-title {
+  font-size: 28px;
+  font-weight: 1000;
+  color: var(--wheat);
+  margin: 0 0 24px;
+}
+
+.page-content h2 {
+  font-size: 18px;
+  font-weight: 900;
+  color: var(--wheat);
+  margin: 28px 0 8px;
+}
+
+.page-content p {
+  font-size: 14px;
+  margin: 0 0 14px;
+  color: rgba(255, 245, 232, 0.85);
+}
+
+.page-content a {
+  color: var(--wheat);
+  text-decoration: underline;
+}
+
 /* ===== FOOTER ===== */
 .site-footer {
   background: linear-gradient(135deg, var(--warmth) 0%, var(--warmth-dark) 100%);
@@ -578,6 +619,17 @@ body {
 
 .footer-copy {
   display: block;
+}
+
+.footer-legal {
+  display: block;
+  margin-top: 6px;
+  font-size: 12px;
+}
+
+.footer-sep {
+  margin: 0 6px;
+  opacity: 0.5;
 }
 
 .footer-link {
@@ -608,6 +660,11 @@ body {
   margin: 0 auto;
   position: relative;
   z-index: 1;
+  background: rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 16px;
+  padding: 32px 28px;
 }
 
 .mission-logo {

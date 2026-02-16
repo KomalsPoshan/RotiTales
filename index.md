@@ -10,14 +10,14 @@ title: Home
   <div class="carousel-viewport">
     <div class="carousel-track" id="carousel-track">
 
-      <!-- Slide 1: API-controlled autoplay video -->
+      <!-- Slide 1: Ghee (API-controlled autoplay) -->
       <div class="carousel-slide is-active" data-index="0">
         <div class="slide-card">
           <div class="slide-video slide-video-api">
             <div id="hero-player"></div>
           </div>
           <div class="card-header">
-            <h3 class="card-header-title">Are all carbs bad?</h3>
+            <h3 class="card-header-title">Ghee</h3>
             <div class="card-header-controls">
               <button class="card-ctrl ctrl-playpause" id="ctrl-playpause" aria-label="Play/Pause">
                 <svg class="pp-pause" viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg>
@@ -38,30 +38,62 @@ title: Home
             </div>
           </div>
           <div class="card-footer">
-            <p class="card-footer-subtitle">Simple swaps for more nutritious rotis</p>
+            <p class="card-footer-subtitle">Ghee</p>
             <span class="card-footer-brand">Roti Tales</span>
           </div>
         </div>
       </div>
 
-      <!-- Slide 2 -->
+      <!-- Slide 2: Fiber -->
       <div class="carousel-slide" data-index="1">
         <div class="slide-card">
           <div class="slide-video">
-            <iframe src="https://www.youtube.com/embed/oQPZyqFDFJc" allowfullscreen loading="lazy"></iframe>
+            <iframe src="https://www.youtube.com/embed/k1Tt-mMHyd0" allowfullscreen loading="lazy"></iframe>
           </div>
           <div class="card-header">
-            <h3 class="card-header-title">Nutrition Made Simple</h3>
+            <h3 class="card-header-title">Fiber</h3>
           </div>
           <div class="card-footer">
-            <p class="card-footer-subtitle">Quick tips that pack a punch</p>
+            <p class="card-footer-subtitle">Fiber</p>
             <span class="card-footer-brand">Roti Tales</span>
           </div>
         </div>
       </div>
 
-      <!-- Slide 3: Connect card -->
+      <!-- Slide 3: Gluten -->
       <div class="carousel-slide" data-index="2">
+        <div class="slide-card">
+          <div class="slide-video">
+            <iframe src="https://www.youtube.com/embed/tLSUnNDu1kM" allowfullscreen loading="lazy"></iframe>
+          </div>
+          <div class="card-header">
+            <h3 class="card-header-title">Gluten</h3>
+          </div>
+          <div class="card-footer">
+            <p class="card-footer-subtitle">Gluten</p>
+            <span class="card-footer-brand">Roti Tales</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 4: Taco with Rotis -->
+      <div class="carousel-slide" data-index="3">
+        <div class="slide-card">
+          <div class="slide-video">
+            <iframe src="https://www.youtube.com/embed/45Cvzh2U818" allowfullscreen loading="lazy"></iframe>
+          </div>
+          <div class="card-header">
+            <h3 class="card-header-title">Taco with Rotis</h3>
+          </div>
+          <div class="card-footer">
+            <p class="card-footer-subtitle">Taco with Rotis</p>
+            <span class="card-footer-brand">Roti Tales</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 5: Connect card -->
+      <div class="carousel-slide" data-index="4">
         <div class="slide-card">
           <div class="slide-connect">
             <img src="/assets/images/rotitales_roti_on_fire_logo.png" alt="Roti Tales" class="connect-logo" />
@@ -89,17 +121,65 @@ title: Home
         </div>
       </div>
 
-      <!-- Slide 4 -->
-      <div class="carousel-slide" data-index="3">
+      <!-- Slide 6: Wheat Variety -->
+      <div class="carousel-slide" data-index="5">
         <div class="slide-card">
           <div class="slide-video">
-            <iframe src="https://www.youtube.com/embed/ef1_NUR4aig" allowfullscreen loading="lazy"></iframe>
+            <iframe src="https://www.youtube.com/embed/TvMdYHopJNg" allowfullscreen loading="lazy"></iframe>
           </div>
           <div class="card-header">
-            <h3 class="card-header-title">Kitchen Vibes</h3>
+            <h3 class="card-header-title">Wheat Variety</h3>
           </div>
           <div class="card-footer">
-            <p class="card-footer-subtitle">Feel-good roti making moments</p>
+            <p class="card-footer-subtitle">Wheat Variety</p>
+            <span class="card-footer-brand">Roti Tales</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 7: Packaged Tortillas -->
+      <div class="carousel-slide" data-index="6">
+        <div class="slide-card">
+          <div class="slide-video">
+            <iframe src="https://www.youtube.com/embed/UmADIP7Eneo" allowfullscreen loading="lazy"></iframe>
+          </div>
+          <div class="card-header">
+            <h3 class="card-header-title">Packaged Tortillas</h3>
+          </div>
+          <div class="card-footer">
+            <p class="card-footer-subtitle">Packaged Tortillas</p>
+            <span class="card-footer-brand">Roti Tales</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 8: Dough Quality -->
+      <div class="carousel-slide" data-index="7">
+        <div class="slide-card">
+          <div class="slide-video">
+            <iframe src="https://www.youtube.com/embed/bKHeCYNw9bY" allowfullscreen loading="lazy"></iframe>
+          </div>
+          <div class="card-header">
+            <h3 class="card-header-title">Dough Quality</h3>
+          </div>
+          <div class="card-footer">
+            <p class="card-footer-subtitle">Dough Quality</p>
+            <span class="card-footer-brand">Roti Tales</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 9: Preservatives in Packaged Rotis -->
+      <div class="carousel-slide" data-index="8">
+        <div class="slide-card">
+          <div class="slide-video">
+            <iframe src="https://www.youtube.com/embed/oQPZyqFDFJc" allowfullscreen loading="lazy"></iframe>
+          </div>
+          <div class="card-header">
+            <h3 class="card-header-title">Preservatives in Packaged Rotis</h3>
+          </div>
+          <div class="card-footer">
+            <p class="card-footer-subtitle">Preservatives in Packaged Rotis</p>
             <span class="card-footer-brand">Roti Tales</span>
           </div>
         </div>
@@ -119,6 +199,11 @@ title: Home
       <span class="dot" data-slide="1"></span>
       <span class="dot" data-slide="2"></span>
       <span class="dot" data-slide="3"></span>
+      <span class="dot" data-slide="4"></span>
+      <span class="dot" data-slide="5"></span>
+      <span class="dot" data-slide="6"></span>
+      <span class="dot" data-slide="7"></span>
+      <span class="dot" data-slide="8"></span>
     </div>
 
     <button class="ctrl-btn" id="ctrl-next" aria-label="Next">
@@ -196,7 +281,7 @@ var isPlaying = true;
 
 function onYouTubeIframeAPIReady() {
   heroPlayer = new YT.Player('hero-player', {
-    videoId: 'pPo5bd8tm2Y',
+    videoId: 'Q2SRAu9FiqQ',
     playerVars: {
       autoplay: 1,
       mute: 1,
@@ -204,7 +289,7 @@ function onYouTubeIframeAPIReady() {
       showinfo: 0,
       rel: 0,
       loop: 1,
-      playlist: 'pPo5bd8tm2Y',
+      playlist: 'Q2SRAu9FiqQ',
       modestbranding: 1,
       iv_load_policy: 3,
       disablekb: 1,
