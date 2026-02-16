@@ -48,7 +48,7 @@ title: Home
       <div class="carousel-slide" data-index="1">
         <div class="slide-card">
           <div class="slide-video">
-            <iframe src="https://www.youtube.com/embed/k1Tt-mMHyd0" allowfullscreen loading="lazy"></iframe>
+            <iframe src="https://www.youtube-nocookie.com/embed/k1Tt-mMHyd0" allowfullscreen loading="lazy"></iframe>
           </div>
           <div class="card-header">
             <h3 class="card-header-title">Fiber</h3>
@@ -64,7 +64,7 @@ title: Home
       <div class="carousel-slide" data-index="2">
         <div class="slide-card">
           <div class="slide-video">
-            <iframe src="https://www.youtube.com/embed/tLSUnNDu1kM" allowfullscreen loading="lazy"></iframe>
+            <iframe src="https://www.youtube-nocookie.com/embed/tLSUnNDu1kM" allowfullscreen loading="lazy"></iframe>
           </div>
           <div class="card-header">
             <h3 class="card-header-title">Gluten</h3>
@@ -80,7 +80,7 @@ title: Home
       <div class="carousel-slide" data-index="3">
         <div class="slide-card">
           <div class="slide-video">
-            <iframe src="https://www.youtube.com/embed/45Cvzh2U818" allowfullscreen loading="lazy"></iframe>
+            <iframe src="https://www.youtube-nocookie.com/embed/45Cvzh2U818" allowfullscreen loading="lazy"></iframe>
           </div>
           <div class="card-header">
             <h3 class="card-header-title">Taco with Rotis</h3>
@@ -125,7 +125,7 @@ title: Home
       <div class="carousel-slide" data-index="5">
         <div class="slide-card">
           <div class="slide-video">
-            <iframe src="https://www.youtube.com/embed/TvMdYHopJNg" allowfullscreen loading="lazy"></iframe>
+            <iframe src="https://www.youtube-nocookie.com/embed/TvMdYHopJNg" allowfullscreen loading="lazy"></iframe>
           </div>
           <div class="card-header">
             <h3 class="card-header-title">Wheat Variety</h3>
@@ -141,7 +141,7 @@ title: Home
       <div class="carousel-slide" data-index="6">
         <div class="slide-card">
           <div class="slide-video">
-            <iframe src="https://www.youtube.com/embed/UmADIP7Eneo" allowfullscreen loading="lazy"></iframe>
+            <iframe src="https://www.youtube-nocookie.com/embed/UmADIP7Eneo" allowfullscreen loading="lazy"></iframe>
           </div>
           <div class="card-header">
             <h3 class="card-header-title">Packaged Tortillas</h3>
@@ -157,7 +157,7 @@ title: Home
       <div class="carousel-slide" data-index="7">
         <div class="slide-card">
           <div class="slide-video">
-            <iframe src="https://www.youtube.com/embed/bKHeCYNw9bY" allowfullscreen loading="lazy"></iframe>
+            <iframe src="https://www.youtube-nocookie.com/embed/bKHeCYNw9bY" allowfullscreen loading="lazy"></iframe>
           </div>
           <div class="card-header">
             <h3 class="card-header-title">Dough Quality</h3>
@@ -173,7 +173,7 @@ title: Home
       <div class="carousel-slide" data-index="8">
         <div class="slide-card">
           <div class="slide-video">
-            <iframe src="https://www.youtube.com/embed/oQPZyqFDFJc" allowfullscreen loading="lazy"></iframe>
+            <iframe src="https://www.youtube-nocookie.com/embed/oQPZyqFDFJc" allowfullscreen loading="lazy"></iframe>
           </div>
           <div class="card-header">
             <h3 class="card-header-title">Preservatives in Packaged Rotis</h3>

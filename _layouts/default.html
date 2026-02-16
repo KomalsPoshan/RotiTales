@@ -12,8 +12,7 @@
     <!-- Custom stylesheet -->
     <link rel="stylesheet" href="/assets/css/style.css">
 
-    <!-- Statsig Web Analytics + Session Replay (replace YOUR_CLIENT_KEY with your Statsig client SDK key) -->
-    <script src="https://cdn.jsdelivr.net/npm/@statsig/js-client@3/build/statsig-js-client+session-replay+web-analytics.min.js?apikey=client-XBaeJ6hvk0nI45w5ERTiznvlzNfA2QcYdXAC6VFg29e"></script>
+    <!-- Statsig: loaded only after cookie consent -->
 </head>
 
 <body>
@@ -36,6 +35,36 @@
         document.body.classList.add("mobile-device");
     }
 })(navigator.userAgent||navigator.vendor||window.opera,'');
+</script>
+
+<!-- Cookie consent banner -->
+<div class="cookie-banner" id="cookie-banner">
+    <span>We use cookies for analytics.</span>
+    <button class="cookie-ok" id="cookie-ok">OK</button>
+</div>
+
+<script>
+(function() {
+    var STATSIG_SRC = 'https://cdn.jsdelivr.net/npm/@statsig/js-client@3/build/statsig-js-client+session-replay+web-analytics.min.js?apikey=client-XBaeJ6hvk0nI45w5ERTiznvlzNfA2QcYdXAC6VFg29e';
+
+    function loadStatsig() {
+        var s = document.createElement('script');
+        s.src = STATSIG_SRC;
+        document.head.appendChild(s);
+    }
+
+    if (localStorage.getItem('cookie-ok')) {
+        loadStatsig();
+    } else {
+        var banner = document.getElementById('cookie-banner');
+        banner.classList.add('is-visible');
+        document.getElementById('cookie-ok').addEventListener('click', function() {
+            localStorage.setItem('cookie-ok', '1');
+            banner.classList.remove('is-visible');
+            loadStatsig();
+        });
+    }
+})();
 </script>
 
 </body>
