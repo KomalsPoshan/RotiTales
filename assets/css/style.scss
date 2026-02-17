@@ -651,39 +651,85 @@ body {
   height: 20px;
 }
 
-/* ===== COOKIE BANNER ===== */
-.cookie-banner {
+/* ===== COOKIE CONSENT MODAL ===== */
+.cookie-overlay {
   display: none;
   position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background: rgba(0, 0, 0, 0.85);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  color: var(--flour);
-  font-family: 'Kufam', sans-serif;
-  font-size: 13px;
-  padding: 12px 16px;
-  border-radius: 14px 14px 0 0;
-  z-index: 9999;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  z-index: 10000;
   align-items: center;
   justify-content: center;
-  gap: 12px;
 }
 
-.cookie-banner.is-visible { display: flex; }
+.cookie-overlay.is-visible {
+  display: flex;
+}
+
+.cookie-modal {
+  background: var(--warmth);
+  border: 1px solid var(--wheat-30);
+  border-radius: 18px;
+  padding: 32px 28px;
+  max-width: 380px;
+  width: 90%;
+  text-align: center;
+  color: var(--flour);
+  font-family: 'Kufam', sans-serif;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5);
+  animation: cookieSlideUp 0.35s ease-out;
+}
+
+@keyframes cookieSlideUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.cookie-modal-icon {
+  font-size: 40px;
+  margin-bottom: 8px;
+}
+
+.cookie-modal-title {
+  font-family: 'Kufam', sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--wheat);
+  margin: 0 0 10px;
+}
+
+.cookie-modal-text {
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--flour);
+  margin: 0 0 20px;
+  opacity: 0.9;
+}
+
+.cookie-modal-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
 
 .cookie-ok,
 .cookie-decline {
   border: none;
   font-family: 'Kufam', sans-serif;
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 700;
-  padding: 6px 16px;
-  border-radius: 8px;
+  padding: 10px 20px;
+  border-radius: 10px;
   cursor: pointer;
   white-space: nowrap;
+  transition: opacity 0.2s;
+}
+
+.cookie-ok:hover,
+.cookie-decline:hover {
+  opacity: 0.85;
 }
 
 .cookie-ok {
@@ -734,6 +780,7 @@ body {
 .mission-section {
   background: var(--warmth) url('/assets/images/pattern_illustrations_warmth.png');
   background-size: 300px;
+  background-position: 0px 58px;
   padding: 56px 24px;
   padding-top: 66px;
   padding-bottom: 52px;
@@ -1020,7 +1067,7 @@ body.mobile-device {
 
 /* Mobile: carousel */
 .mobile-device .hero-carousel {
-  height: 84vh;
+  height: 86vh;
 }
 .mobile-device .carousel-viewport {
   padding: 24px 8px 26px;
@@ -1065,7 +1112,7 @@ body.mobile-device {
 .mobile-device .social-link img { width: 28px; height: 28px; }
 
 /* Mobile: mission */
-.mobile-device .mission-section { padding: 36px 20px; padding-top: 56px; margin-top: -24px; background-position-y: -58px; }
+.mobile-device .mission-section { padding: 36px 20px; padding-top: 56px; margin-top: -24px; background-position-y: -12px; }
 .mobile-device .mission-logo { width: 60px; }
 .mobile-device .mission-title { font-size: 22px; }
 .mobile-device .mission-text { font-size: 14px; }

@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ page.title }} | {{ site.title }}</title>
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
 
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Kufam&display=swap" rel="stylesheet">
@@ -37,11 +38,17 @@
 
     {% include footer.html %}
 
-<!-- Cookie consent banner -->
-<div class="cookie-banner" id="cookie-banner">
-    <span>We use cookies to make this site better for you.</span>
-    <button class="cookie-ok" id="cookie-ok">Accept</button>
-    <button class="cookie-decline" id="cookie-decline">Decline</button>
+<!-- Cookie consent modal -->
+<div class="cookie-overlay" id="cookie-overlay">
+    <div class="cookie-modal" id="cookie-modal">
+        <div class="cookie-modal-icon">&#127850;</div>
+        <h2 class="cookie-modal-title">Before you dig in&hellip;</h2>
+        <p class="cookie-modal-text">We use cookies and analytics to understand how visitors enjoy RotiTales and to keep improving the experience. <br>No personal data is sold&mdash;ever.</p>
+        <div class="cookie-modal-buttons">
+            <button class="cookie-ok" id="cookie-ok">Accept Cookies</button>
+            <button class="cookie-decline" id="cookie-decline">No Thanks</button>
+        </div>
+    </div>
 </div>
 
 <script>
@@ -54,20 +61,28 @@
         document.head.appendChild(s);
     }
 
+    function closeModal() {
+        var overlay = document.getElementById('cookie-overlay');
+        overlay.classList.remove('is-visible');
+        document.body.style.overflow = '';
+    }
+
     var consent = localStorage.getItem('cookie-ok');
     if (consent === '1') {
         loadStatsig();
-    } else if (!consent) {
-        var banner = document.getElementById('cookie-banner');
-        banner.classList.add('is-visible');
+    } else if (consent !== 'declined') {
+        var overlay = document.getElementById('cookie-overlay');
+        overlay.classList.add('is-visible');
+        document.body.style.overflow = 'hidden';
+
         document.getElementById('cookie-ok').addEventListener('click', function() {
             localStorage.setItem('cookie-ok', '1');
-            banner.classList.remove('is-visible');
+            closeModal();
             loadStatsig();
         });
         document.getElementById('cookie-decline').addEventListener('click', function() {
             localStorage.setItem('cookie-ok', 'declined');
-            banner.classList.remove('is-visible');
+            closeModal();
         });
     }
 })();
