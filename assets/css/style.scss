@@ -1034,7 +1034,7 @@ body {
 }
 
 .nav-follow:hover {
-  background: #c45a30;
+  background: var(--clay);
   animation: none;
   transform: scale(1.05);
 }
