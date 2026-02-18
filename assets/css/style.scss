@@ -41,7 +41,7 @@ body {
   z-index: 7;                         /* above carousel (6) but below nav (100) */
   text-align: center;
   font-family: 'Kufam', sans-serif;
-  font-size: 1.1rem;
+  font-size: 1rem;
   color: var(--warmth);
   margin: 0;
   padding: .4rem 1.2rem;
@@ -53,14 +53,14 @@ body {
   white-space: nowrap;
 }
 .mobile-device .carousel-tagline {
-  top: 58px;                          /* same row as Follow button */
+  top: 54px;
   left: 12px;
   transform: none;
   text-align: left;
   font-size: .78rem;
-  padding: .35rem .9rem;
+  padding: 0.2rem;
   white-space: normal;
-  max-width: 55vw;                    /* leave room for Follow button on the right */
+  max-width: 50vw;
 }
 
 /* ===== FULL-SCREEN CAROUSEL ===== */
@@ -1015,7 +1015,7 @@ body {
 /* ===== FOLLOW BUTTON (floats over nav, not inside it) ===== */
 .nav-follow {
   position: fixed;
-  top: 10px;
+  top: 92px;
   right: 32px;
   z-index: 100;                       /* same layer as nav */
   display: flex;
