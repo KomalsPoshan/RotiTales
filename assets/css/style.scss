@@ -32,6 +32,18 @@ body {
   margin: 0;
 }
 
+/* ===== CAROUSEL TAGLINE ===== */
+.carousel-tagline {
+  text-align: center;
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  color: var(--crust);
+  margin: 0;
+  padding: .6rem 1rem;
+  background: var(--flour);
+  letter-spacing: .02em;
+}
+
 /* ===== FULL-SCREEN CAROUSEL ===== */
 .hero-carousel {
   position: relative;

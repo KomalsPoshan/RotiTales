@@ -3,6 +3,8 @@ layout: home
 title: Home
 ---
 
+<p class="carousel-tagline">Taste a little sample of our content through these reels</p>
+
 <!-- ====== FULL-SCREEN VIDEO CAROUSEL ====== -->
 <div class="hero-carousel">
 
