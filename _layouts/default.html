@@ -147,11 +147,14 @@
 
     function loadStatsig() {
         var s = document.createElement('script');
-        s.src = 'https://cdn.jsdelivr.net/npm/@statsig/js-client@3/build/statsig-js-client+web-analytics.min.js';
-        s.setAttribute('data-client-key', STATSIG_KEY);
+        s.src = 'https://cdn.jsdelivr.net/npm/@statsig/js-client@3/build/statsig-js-client.min.js';
         s.onload = function() {
-            // v3 SDK exposes the auto-initialized singleton via window.Statsig.instance()
-            try { window.__STATSIG_CLIENT__ = window.Statsig.instance(); } catch(e) {}
+            try {
+                var SC = window.Statsig.StatsigClient;
+                var client = new SC(STATSIG_KEY, {});
+                client.initializeAsync();
+                window.__STATSIG_CLIENT__ = client;
+            } catch(e) {}
             if (window.__STATSIG_CLIENT__ && window.__rtAnalytics) {
                 window.__rtAnalytics.flushQueue();
             }
