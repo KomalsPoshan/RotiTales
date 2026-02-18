@@ -1099,10 +1099,10 @@ body.mobile-device {
 
 /* Mobile: carousel */
 .mobile-device .hero-carousel {
-  max-height: calc((100vw - 32px) * 16 / 9 + 170px);
+  max-height: calc((100vw - 48px) * 16 / 9 + 120px);
 }
 .mobile-device .carousel-viewport {
-  padding: 90px 16px 26px;
+  padding: 56px 24px 12px;
 }
 .mobile-device .slide-card {
   height: auto;
