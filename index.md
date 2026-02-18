@@ -6,6 +6,8 @@ title: Home
 <!-- ====== FULL-SCREEN VIDEO CAROUSEL ====== -->
 <div class="hero-carousel">
 
+  <p class="carousel-tagline">Taste a little sample of our content through these reels</p>
+
   <!-- Carousel viewport -->
   <div class="carousel-viewport">
     <div class="carousel-track" id="carousel-track">
@@ -403,8 +405,7 @@ function onYouTubeIframeAPIReady() {
         controls: 0,
         showinfo: 0,
         rel: 0,
-        loop: 1,
-        playlist: videoId,
+        loop: 0,
         modestbranding: 1,
         iv_load_policy: 3,
         disablekb: 1,
@@ -426,7 +427,10 @@ function onYouTubeIframeAPIReady() {
         },
         onStateChange: function(e) {
           if (e.data === YT.PlayerState.ENDED) {
-            players[idx].playVideo();
+            // Auto-advance to next slide when video finishes
+            if (idx === currentSlide && window._carouselGoTo) {
+              window._carouselGoTo(currentSlide + 1);
+            }
           }
           // Trigger pulse when playback actually starts or pauses
           if (e.data === YT.PlayerState.PLAYING || e.data === YT.PlayerState.PAUSED) {
