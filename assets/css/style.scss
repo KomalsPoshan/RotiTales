@@ -1017,7 +1017,7 @@ body {
   position: fixed;
   top: 92px;
   right: 32px;
-  z-index: 100;                       /* same layer as nav */
+  z-index: 99;                        /* below nav (100) so pill dropdowns aren't hidden */
   display: flex;
   align-items: center;
   gap: 8px;
@@ -1170,7 +1170,7 @@ body.mobile-device {
   padding: 8px 16px 7px 12px;
   box-shadow: 0 4px 16px rgba(171, 79, 46, 0.5);
   animation: nudgeBounceMobile 2s ease-in-out infinite 0.5s;
-  z-index: 50;
+  z-index: 50; /* below pill-dropdown (z-index: 100) so dropdowns aren't hidden */
 }
 .mobile-device .nav-follow:hover {
   animation: none;

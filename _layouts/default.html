@@ -30,6 +30,96 @@
 })(navigator.userAgent||navigator.vendor||window.opera,'');
 </script>
 
+<!-- Analytics layer — queues events until Statsig is ready -->
+<script>
+(function() {
+  var pageLoadedAt = Date.now();
+  var popupOpenedAt = 0;
+  var linkClickedInSession = false;
+  var eventQueue = [];
+  var statsigReady = false;
+
+  function logEvent(name, metadata) {
+    metadata = metadata || {};
+    if (statsigReady && window.__STATSIG_CLIENT__) {
+      window.__STATSIG_CLIENT__.logEvent(name, null, metadata);
+    } else {
+      eventQueue.push({ name: name, metadata: metadata });
+    }
+  }
+
+  function flushQueue() {
+    statsigReady = true;
+    var client = window.__STATSIG_CLIENT__;
+    if (client) {
+      eventQueue.forEach(function(evt) {
+        client.logEvent(evt.name, null, evt.metadata);
+      });
+    }
+    eventQueue = [];
+  }
+
+  function timeSinceLoad() {
+    return Date.now() - pageLoadedAt;
+  }
+
+  window.__rtAnalytics = {
+    logEvent: logEvent,
+    flushQueue: flushQueue,
+    timeSinceLoad: timeSinceLoad,
+    pageLoadedAt: pageLoadedAt,
+    popupOpenedAt: function(t) { if (t !== undefined) popupOpenedAt = t; return popupOpenedAt; },
+    linkClicked: function() { linkClickedInSession = true; },
+    wasLinkClicked: function() { return linkClickedInSession; }
+  };
+
+  // page_loaded
+  logEvent('page_loaded', { timestamp: new Date().toISOString() });
+
+  // Delegated link_clicked for any <a data-source>
+  document.addEventListener('click', function(e) {
+    var link = e.target.closest('a[data-source]');
+    if (!link) return;
+    linkClickedInSession = true;
+    logEvent('link_clicked', {
+      platform: link.getAttribute('data-platform') || '',
+      source: link.getAttribute('data-source') || '',
+      url: link.href || '',
+      time_on_site_ms: String(timeSinceLoad())
+    });
+  });
+
+  // nav_dropdown_opened — fires once per hover into a pill wrapper
+  var lastDropdown = '';
+  document.addEventListener('mouseover', function(e) {
+    var wrap = e.target.closest('.nav-pill-wrap');
+    if (!wrap) { lastDropdown = ''; return; }
+    var pill = wrap.querySelector('.nav-pill');
+    if (!pill) return;
+    var name = pill.textContent.trim().toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/-$/, '');
+    if (name === lastDropdown) return;
+    lastDropdown = name;
+    logEvent('nav_dropdown_opened', {
+      dropdown: name,
+      time_on_site_ms: String(timeSinceLoad())
+    });
+  });
+
+  // page_exited via visibilitychange (reliable on mobile + desktop)
+  document.addEventListener('visibilitychange', function() {
+    if (document.visibilityState === 'hidden') {
+      logEvent('page_exited', {
+        time_on_site_ms: String(timeSinceLoad()),
+        link_clicked_in_session: String(linkClickedInSession)
+      });
+      if (window.__STATSIG_CLIENT__ && window.__STATSIG_CLIENT__.flush) {
+        window.__STATSIG_CLIENT__.flush();
+      }
+    }
+  });
+})();
+</script>
+
     {% include header.html %}
 
     <main class="site-main">
@@ -53,11 +143,22 @@
 
 <script>
 (function() {
-    var STATSIG_SRC = 'https://cdn.jsdelivr.net/npm/@statsig/js-client@3/build/statsig-js-client+session-replay+web-analytics.min.js?apikey=client-XBaeJ6hvk0nI45w5ERTiznvlzNfA2QcYdXAC6VFg29e';
+    var STATSIG_KEY = 'client-XBaeJ6hvk0nI45w5ERTiznvlzNfA2QcYdXAC6VFg29e';
 
     function loadStatsig() {
         var s = document.createElement('script');
-        s.src = STATSIG_SRC;
+        s.src = 'https://cdn.jsdelivr.net/npm/@statsig/js-client@3/build/statsig-js-client.min.js';
+        s.onload = function() {
+            try {
+                var SC = window.Statsig.StatsigClient;
+                var client = new SC(STATSIG_KEY, {});
+                client.initializeAsync();
+                window.__STATSIG_CLIENT__ = client;
+            } catch(e) {}
+            if (window.__STATSIG_CLIENT__ && window.__rtAnalytics) {
+                window.__rtAnalytics.flushQueue();
+            }
+        };
         document.head.appendChild(s);
     }
 
