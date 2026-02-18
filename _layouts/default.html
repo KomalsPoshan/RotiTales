@@ -89,6 +89,22 @@
     });
   });
 
+  // nav_dropdown_opened — fires once per hover into a pill wrapper
+  var lastDropdown = '';
+  document.addEventListener('mouseover', function(e) {
+    var wrap = e.target.closest('.nav-pill-wrap');
+    if (!wrap) { lastDropdown = ''; return; }
+    var pill = wrap.querySelector('.nav-pill');
+    if (!pill) return;
+    var name = pill.textContent.trim().toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/-$/, '');
+    if (name === lastDropdown) return;
+    lastDropdown = name;
+    logEvent('nav_dropdown_opened', {
+      dropdown: name,
+      time_on_site_ms: String(timeSinceLoad())
+    });
+  });
+
   // page_exited via visibilitychange (reliable on mobile + desktop)
   document.addEventListener('visibilitychange', function() {
     if (document.visibilityState === 'hidden') {
@@ -127,13 +143,21 @@
 
 <script>
 (function() {
-    var STATSIG_SRC = 'https://cdn.jsdelivr.net/npm/@statsig/js-client@3/build/statsig-js-client+web-analytics.min.js?apikey=client-XBaeJ6hvk0nI45w5ERTiznvlzNfA2QcYdXAC6VFg29e';
+    var STATSIG_KEY = 'client-XBaeJ6hvk0nI45w5ERTiznvlzNfA2QcYdXAC6VFg29e';
 
     function loadStatsig() {
         var s = document.createElement('script');
-        s.src = STATSIG_SRC;
+        s.src = 'https://cdn.jsdelivr.net/npm/@statsig/js-client@3/build/statsig-js-client+web-analytics.min.js';
+        s.setAttribute('data-client-key', STATSIG_KEY);
         s.onload = function() {
-            if (window.__rtAnalytics) window.__rtAnalytics.flushQueue();
+            var attempts = 0;
+            (function tryFlush() {
+                if (window.__STATSIG_CLIENT__) {
+                    if (window.__rtAnalytics) window.__rtAnalytics.flushQueue();
+                } else if (attempts++ < 30) {
+                    setTimeout(tryFlush, 100);
+                }
+            })();
         };
         document.head.appendChild(s);
     }

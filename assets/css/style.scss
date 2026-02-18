@@ -1017,7 +1017,7 @@ body {
   position: fixed;
   top: 92px;
   right: 32px;
-  z-index: 100;                       /* same layer as nav */
+  z-index: 99;                        /* below nav (100) so pill dropdowns aren't hidden */
   display: flex;
   align-items: center;
   gap: 8px;

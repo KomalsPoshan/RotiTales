@@ -389,6 +389,7 @@ var slidePlaying = {};  // per-slide play state
 var playerReady = {};  // per-slide player readiness
 var globalSpeed = 1;
 var speedOptions = [1, 1.25, 1.5, 1.75, 2];
+window._lastPlaySource = null;  // 'auto' | 'user' — set before playVideo()
 
 function onYouTubeIframeAPIReady() {
   var videoSlides = document.querySelectorAll('.carousel-slide[data-video-id]');
@@ -416,6 +417,7 @@ function onYouTubeIframeAPIReady() {
         onReady: function(e) {
           playerReady[idx] = true;
           if (isFirst) {
+            window._lastPlaySource = 'auto';
             e.target.setPlaybackRate(globalSpeed);
             e.target.playVideo();
             slidePlaying[idx] = true;
@@ -426,7 +428,31 @@ function onYouTubeIframeAPIReady() {
           }
         },
         onStateChange: function(e) {
+          var rt = window.__rtAnalytics;
+          var slideEl = document.querySelector('.carousel-slide[data-index="' + idx + '"]');
+          var titleEl = slideEl ? slideEl.querySelector('.card-header-title') : null;
+          var titleText = titleEl ? titleEl.textContent : '';
+
+          if (e.data === YT.PlayerState.PLAYING && window._lastPlaySource) {
+            if (rt) rt.logEvent('playback_started', {
+              slide: String(idx),
+              trigger: window._lastPlaySource,
+              media_type: 'video',
+              title: titleText,
+              video_id: videoId,
+              time_on_site_ms: String(rt.timeSinceLoad())
+            });
+            window._lastPlaySource = null;
+          }
+
           if (e.data === YT.PlayerState.ENDED) {
+            if (rt) rt.logEvent('playback_completed', {
+              slide: String(idx),
+              media_type: 'video',
+              title: titleText,
+              video_id: videoId,
+              time_on_site_ms: String(rt.timeSinceLoad())
+            });
             // Auto-advance to next slide when video finishes
             if (idx === currentSlide && window._carouselGoTo) {
               window._carouselGoTo(currentSlide + 1);
@@ -492,7 +518,8 @@ function onYouTubeIframeAPIReady() {
     }
   }
 
-  function goTo(idx) {
+  function goTo(idx, trigger) {
+    trigger = trigger || 'auto';
     if (idx < 0) idx = totalSlides - 1;
     if (idx >= totalSlides) idx = 0;
 
@@ -505,6 +532,23 @@ function onYouTubeIframeAPIReady() {
 
     dots.forEach(function(d, i) { d.classList.toggle('active', i === currentSlide); });
     slides.forEach(function(s, i) { s.classList.toggle('is-active', i === currentSlide); });
+
+    // Analytics: playback_loaded
+    var rt = window.__rtAnalytics;
+    var curEl = slides[currentSlide];
+    var isConnect = curEl && curEl.classList.contains('carousel-slide-connect');
+    var mediaType = isConnect ? 'music' : 'video';
+    var vidId = curEl ? (curEl.getAttribute('data-video-id') || '') : '';
+    var titleEl = curEl ? curEl.querySelector('.card-header-title') : null;
+    var titleText = titleEl ? titleEl.textContent : '';
+    if (rt) rt.logEvent('playback_loaded', {
+      slide: String(currentSlide),
+      trigger: trigger,
+      media_type: mediaType,
+      title: titleText,
+      video_id: vidId,
+      time_on_site_ms: String(rt.timeSinceLoad())
+    });
 
     // Pause previous video
     if (players[prevSlide] && players[prevSlide].pauseVideo) {
@@ -520,6 +564,7 @@ function onYouTubeIframeAPIReady() {
     // Play new video (if it's a video slide)
     if (players[currentSlide] && players[currentSlide].playVideo) {
       try {
+        window._lastPlaySource = 'auto';
         if (globalMuted) { players[currentSlide].mute(); } else { players[currentSlide].unMute(); }
         players[currentSlide].setPlaybackRate(globalSpeed);
         players[currentSlide].playVideo();
@@ -527,12 +572,20 @@ function onYouTubeIframeAPIReady() {
       } catch(e) {}
     }
     // Play connect audio when arriving at a connect slide
-    var curEl = slides[currentSlide];
-    if (curEl && curEl.classList.contains('carousel-slide-connect')) {
+    if (isConnect && curEl) {
       var curAudio = curEl.querySelector('.connect-audio');
       if (curAudio) {
+        window._lastPlaySource = 'auto';
         curAudio.muted = globalMuted;
-        curAudio.play().catch(function(){});
+        curAudio.play().then(function() {
+          if (rt) rt.logEvent('playback_started', {
+            slide: String(currentSlide),
+            trigger: 'auto',
+            media_type: 'music',
+            title: titleText,
+            time_on_site_ms: String(rt.timeSinceLoad())
+          });
+        }).catch(function(){});
       }
     }
 
@@ -542,12 +595,12 @@ function onYouTubeIframeAPIReady() {
 
   goTo(0);
 
-  document.getElementById('ctrl-prev').addEventListener('click', function() { goTo(currentSlide - 1); });
-  document.getElementById('ctrl-next').addEventListener('click', function() { goTo(currentSlide + 1); });
+  document.getElementById('ctrl-prev').addEventListener('click', function() { goTo(currentSlide - 1, 'user_trigger'); });
+  document.getElementById('ctrl-next').addEventListener('click', function() { goTo(currentSlide + 1, 'user_trigger'); });
 
   dots.forEach(function(dot) {
     dot.addEventListener('click', function() {
-      goTo(parseInt(this.getAttribute('data-slide')));
+      goTo(parseInt(this.getAttribute('data-slide')), 'user_trigger');
     });
   });
 
@@ -555,7 +608,7 @@ function onYouTubeIframeAPIReady() {
   slides.forEach(function(slide) {
     slide.addEventListener('click', function() {
       var idx = parseInt(this.getAttribute('data-index'));
-      if (idx !== currentSlide) goTo(idx);
+      if (idx !== currentSlide) goTo(idx, 'user_trigger');
     });
   });
 
@@ -566,14 +619,14 @@ function onYouTubeIframeAPIReady() {
   viewport.addEventListener('touchend', function(e) {
     var diff = startX - e.changedTouches[0].clientX;
     if (Math.abs(diff) > 50) {
-      goTo(diff > 0 ? currentSlide + 1 : currentSlide - 1);
+      goTo(diff > 0 ? currentSlide + 1 : currentSlide - 1, 'user_trigger');
     }
   });
 
   // Keyboard arrows
   document.addEventListener('keydown', function(e) {
-    if (e.key === 'ArrowRight') goTo(currentSlide + 1);
-    if (e.key === 'ArrowLeft') goTo(currentSlide - 1);
+    if (e.key === 'ArrowRight') goTo(currentSlide + 1, 'user_trigger');
+    if (e.key === 'ArrowLeft') goTo(currentSlide - 1, 'user_trigger');
   });
 
   // ===== Per-slide play/pause and mute =====
@@ -588,6 +641,7 @@ function onYouTubeIframeAPIReady() {
         slidePlaying[idx] = false;
         this.classList.add('is-paused');
       } else {
+        window._lastPlaySource = 'user';
         p.playVideo();
         slidePlaying[idx] = true;
         this.classList.remove('is-paused');
@@ -615,6 +669,15 @@ function onYouTubeIframeAPIReady() {
       } else {
         return;
       }
+
+      // Analytics: playback_control
+      var rt = window.__rtAnalytics;
+      if (rt) rt.logEvent('playback_control', {
+        action: 'mute_toggle',
+        value: globalMuted ? 'muted' : 'unmuted',
+        slide: String(idx),
+        time_on_site_ms: String(rt.timeSinceLoad())
+      });
 
       // Sync all mute buttons
       document.querySelectorAll('.card-mute').forEach(function(m) {
@@ -644,6 +707,15 @@ function onYouTubeIframeAPIReady() {
     btn.addEventListener('click', function() {
       var currentIdx = speedOptions.indexOf(globalSpeed);
       globalSpeed = speedOptions[(currentIdx + 1) % speedOptions.length];
+
+      // Analytics: playback_control
+      var rt = window.__rtAnalytics;
+      if (rt) rt.logEvent('playback_control', {
+        action: 'speed_change',
+        value: globalSpeed + 'x',
+        slide: String(currentSlide),
+        time_on_site_ms: String(rt.timeSinceLoad())
+      });
 
       // Apply to all active YouTube players
       Object.keys(players).forEach(function(key) {
