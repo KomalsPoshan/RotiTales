@@ -150,14 +150,11 @@
         s.src = 'https://cdn.jsdelivr.net/npm/@statsig/js-client@3/build/statsig-js-client+web-analytics.min.js';
         s.setAttribute('data-client-key', STATSIG_KEY);
         s.onload = function() {
-            var attempts = 0;
-            (function tryFlush() {
-                if (window.__STATSIG_CLIENT__) {
-                    if (window.__rtAnalytics) window.__rtAnalytics.flushQueue();
-                } else if (attempts++ < 30) {
-                    setTimeout(tryFlush, 100);
-                }
-            })();
+            // v3 SDK exposes the auto-initialized singleton via window.Statsig.instance()
+            try { window.__STATSIG_CLIENT__ = window.Statsig.instance(); } catch(e) {}
+            if (window.__STATSIG_CLIENT__ && window.__rtAnalytics) {
+                window.__rtAnalytics.flushQueue();
+            }
         };
         document.head.appendChild(s);
     }
