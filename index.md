@@ -458,11 +458,12 @@ function onYouTubeIframeAPIReady() {
               window._carouselGoTo(currentSlide + 1);
             }
           }
-          // Trigger pulse when playback actually starts or pauses
+          // Sync UI when playback actually starts or pauses (handles iOS autoplay blocks)
           if (e.data === YT.PlayerState.PLAYING || e.data === YT.PlayerState.PAUSED) {
             slidePlaying[idx] = (e.data === YT.PlayerState.PLAYING);
-            if (idx === currentSlide && window._updatePulse) {
-              window._updatePulse(idx);
+            if (idx === currentSlide) {
+              if (window._syncControls) window._syncControls(idx);
+              if (window._updatePulse) window._updatePulse(idx);
             }
           }
         }
@@ -553,6 +554,7 @@ function onYouTubeIframeAPIReady() {
     // Pause previous video
     if (players[prevSlide] && players[prevSlide].pauseVideo) {
       try { players[prevSlide].pauseVideo(); } catch(e) {}
+      slidePlaying[prevSlide] = false;
     }
     // Pause connect audio when leaving a connect slide
     var prevEl = slides[prevSlide];
@@ -562,14 +564,29 @@ function onYouTubeIframeAPIReady() {
     }
 
     // Play new video (if it's a video slide)
-    if (players[currentSlide] && players[currentSlide].playVideo) {
+    var targetIdx = currentSlide;
+    if (players[targetIdx] && players[targetIdx].playVideo) {
       try {
         window._lastPlaySource = 'auto';
-        if (globalMuted) { players[currentSlide].mute(); } else { players[currentSlide].unMute(); }
-        players[currentSlide].setPlaybackRate(globalSpeed);
-        players[currentSlide].playVideo();
-        slidePlaying[currentSlide] = true;
+        if (globalMuted) { players[targetIdx].mute(); } else { players[targetIdx].unMute(); }
+        players[targetIdx].setPlaybackRate(globalSpeed);
+        players[targetIdx].playVideo();
+        slidePlaying[targetIdx] = true;
       } catch(e) {}
+      // iOS may silently block playVideo(); verify actual state after a delay
+      setTimeout(function() {
+        if (targetIdx !== currentSlide) return; // user already navigated away
+        var p = players[targetIdx];
+        if (p && p.getPlayerState) {
+          var st = p.getPlayerState();
+          var actuallyPlaying = (st === YT.PlayerState.PLAYING);
+          if (slidePlaying[targetIdx] !== actuallyPlaying) {
+            slidePlaying[targetIdx] = actuallyPlaying;
+            syncControls(targetIdx);
+            updatePulse(targetIdx);
+          }
+        }
+      }, 300);
     }
     // Play connect audio when arriving at a connect slide
     if (isConnect && curEl) {
@@ -739,6 +756,7 @@ function onYouTubeIframeAPIReady() {
   // Expose for external use
   window._carouselGoTo = goTo;
   window._updatePulse = updatePulse;
+  window._syncControls = syncControls;
 })();
 
 // ===== Platform chooser popup =====
