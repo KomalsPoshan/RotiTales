@@ -35,7 +35,7 @@ body {
 /* ===== CAROUSEL TAGLINE ===== */
 .carousel-tagline {
   position: absolute;
-  top: 80px;                          /* below fixed nav (~76px) */
+  top: 84px;                          /* below fixed nav (~76px) */
   left: 50%;
   transform: translateX(-50%);
   z-index: 7;                         /* above carousel (6) but below nav (100) */
@@ -53,11 +53,14 @@ body {
   white-space: nowrap;
 }
 .mobile-device .carousel-tagline {
-  top: 100px;                         /* extra room for Follow button that drops below nav */
-  font-size: .82rem;
+  top: 58px;                          /* same row as Follow button */
+  left: 12px;
+  transform: none;
+  text-align: left;
+  font-size: .78rem;
   padding: .35rem .9rem;
   white-space: normal;
-  max-width: 85vw;
+  max-width: 55vw;                    /* leave room for Follow button on the right */
 }
 
 /* ===== FULL-SCREEN CAROUSEL ===== */
@@ -76,7 +79,7 @@ body {
 .carousel-viewport {
   flex: 1;
   overflow: hidden;
-  padding: 110px 32px 80px;
+  padding: 130px 32px 80px;
   box-sizing: border-box;
   display: flex;
   align-items: center;
@@ -1009,8 +1012,12 @@ body {
 .platform-overlay.is-open .social-link:nth-child(3)::before { animation: socialPulse 8s ease-in-out 4.5s infinite; }
 .platform-overlay.is-open .social-link:nth-child(4)::before { animation: socialPulse 8s ease-in-out 6.5s infinite; }
 
-/* ===== FOLLOW BUTTON (in header) ===== */
+/* ===== FOLLOW BUTTON (floats over nav, not inside it) ===== */
 .nav-follow {
+  position: fixed;
+  top: 10px;
+  right: 32px;
+  z-index: 100;                       /* same layer as nav */
   display: flex;
   align-items: center;
   gap: 8px;
@@ -1105,7 +1112,7 @@ body.mobile-device {
   height: auto;
   width: 100%;
   max-height: 100%;
-  margin-top: 70px; /* increased from 32px to make room for follow pill below header */
+  margin-top: 50px; /* tagline + follow now share one row below nav */
 }
 
 .mobile-device .card-header { padding: 8px 10px; }
@@ -1153,26 +1160,25 @@ body.mobile-device {
 .mobile-device .platform-heading { font-size: 22px; }
 .mobile-device .platform-row { gap: 8px; }
 
-/* Mobile: follow button — drops below header, centered above carousel */
+/* Mobile: follow button — fixed, right side, below nav, shares row with tagline */
 .mobile-device .nav-follow {
-  position: absolute;
-  top: 100%;
-  left: 50%;
-  transform: translateX(-50%);
-  margin-top: 16px;
+  top: 56px;
+  right: 12px;
+  left: auto;
+  transform: none;
   font-size: 13px;
   padding: 8px 16px 7px 12px;
   box-shadow: 0 4px 16px rgba(171, 79, 46, 0.5);
   animation: nudgeBounceMobile 2s ease-in-out infinite 0.5s;
-  z-index: 50; /* below pill-dropdown (z-index: 100) so dropdowns aren't hidden */
+  z-index: 50;
 }
 .mobile-device .nav-follow:hover {
   animation: none;
-  transform: translateX(-50%) scale(1.05);
+  transform: scale(1.05);
 }
 .mobile-device .nav-follow-hand { width: 18px; height: 18px; }
 
 @keyframes nudgeBounceMobile {
-  0%, 100% { transform: translateX(-50%) translateY(0) scale(1); }
-  50% { transform: translateX(-50%) translateY(-4px) scale(1.03); }
+  0%, 100% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(-4px) scale(1.03); }
 }
