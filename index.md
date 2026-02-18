@@ -373,17 +373,6 @@ title: Home
   </div>
 </div>
 
-<!-- ====== FOLLOW NUDGE (appears after 5s) ====== -->
-<div class="follow-nudge" id="follow-nudge">
-  <svg class="follow-nudge-hand" viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M18 11V6a2 2 0 00-4 0v1"/>
-    <path d="M14 10V4a2 2 0 00-4 0v6"/>
-    <path d="M10 10.5V6a2 2 0 00-4 0v8"/>
-    <path d="M18 11a2 2 0 014 0v3a8 8 0 01-8 8h-2c-2.5 0-4.5-1-6.2-2.8L3 16.4a2 2 0 013-2.6l.6.6"/>
-  </svg>
-  <span class="follow-nudge-text">Follow us!</span>
-</div>
-
 <!-- YouTube IFrame API -->
 <script>
 var tag = document.createElement('script');
@@ -703,12 +692,4 @@ function onYouTubeIframeAPIReady() {
   window._openPlatformPopup = openPopup;
 })();
 
-// ===== Follow nudge =====
-(function() {
-  var nudge = document.getElementById('follow-nudge');
-  if (!nudge) return;
-  nudge.addEventListener('click', function() {
-    if (window._openPlatformPopup) window._openPlatformPopup();
-  });
-})();
 </script>
