@@ -34,14 +34,30 @@ body {
 
 /* ===== CAROUSEL TAGLINE ===== */
 .carousel-tagline {
+  position: absolute;
+  top: 80px;                          /* below fixed nav (~76px) */
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 7;                         /* above carousel (6) but below nav (100) */
   text-align: center;
   font-family: var(--font-display);
-  font-size: 1.15rem;
+  font-size: 1.1rem;
   color: var(--crust);
   margin: 0;
-  padding: .6rem 1rem;
-  background: var(--flour);
+  padding: .4rem 1.2rem;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  border-radius: 20px;
   letter-spacing: .02em;
+  white-space: nowrap;
+}
+.mobile-device .carousel-tagline {
+  top: 100px;                         /* extra room for Follow button that drops below nav */
+  font-size: .82rem;
+  padding: .35rem .9rem;
+  white-space: normal;
+  max-width: 85vw;
 }
 
 /* ===== FULL-SCREEN CAROUSEL ===== */
