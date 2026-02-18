@@ -1,5 +1,5 @@
 {% for social in site.data.socials %}
-<a href="{{ social.url }}" class="{{ include.class }}">
+<a href="{{ social.url }}?utm_source=rotitales&utm_medium=website&utm_campaign=follow&utm_content={{ include.source }}" class="{{ include.class }}" rel="noopener noreferrer" data-platform="{{ social.name | downcase }}" data-source="{{ include.source }}">
   <img src="/assets/icons/{{ social.icon }}" alt="{{ social.name }}" />
   <span>{{ social.name }}</span>
 </a>

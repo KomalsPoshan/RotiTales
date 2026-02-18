@@ -136,7 +136,7 @@ title: Home
             <h3 class="connect-title">Join the Family</h3>
             <p class="connect-desc">Eating roti? Follow us to make sure it's a healthy one.</p>
             <div class="connect-grid">
-              {% include social-links.html class="social-link" %}
+              {% include social-links.html class="social-link" source="carousel-early" %}
             </div>
           </div>
           <div class="card-header">
@@ -288,7 +288,7 @@ title: Home
             <h3 class="connect-title">Join the Family</h3>
             <p class="connect-desc">Eating roti? Follow us to make sure it's a healthy one.</p>
             <div class="connect-grid">
-              {% include social-links.html class="social-link" %}
+              {% include social-links.html class="social-link" source="carousel-late" %}
             </div>
           </div>
           <div class="card-header">
@@ -368,7 +368,7 @@ title: Home
       </div>
     </div>
     <div class="platform-row">
-      {% include social-links.html class="social-link" %}
+      {% include social-links.html class="social-link" source="popup" %}
     </div>
   </div>
 </div>
@@ -670,25 +670,58 @@ function onYouTubeIframeAPIReady() {
   var popup = document.getElementById('platform-popup');
   var closeBtn = document.getElementById('platform-close');
   if (!popup) return;
+  var rt = window.__rtAnalytics;
 
-  function openPopup() {
+  function openPopup(trigger) {
     popup.classList.add('is-open');
-  }
-  function closePopup() {
-    popup.classList.remove('is-open');
+    if (rt) {
+      rt.popupOpenedAt(Date.now());
+      rt.logEvent('follow_popup_opened', {
+        trigger: trigger || 'unknown',
+        time_on_site_ms: String(rt.timeSinceLoad())
+      });
+    }
   }
 
+  function closePopup(method) {
+    if (!popup.classList.contains('is-open')) return;
+    popup.classList.remove('is-open');
+    if (rt) {
+      var openedAt = rt.popupOpenedAt();
+      rt.logEvent('follow_popup_closed', {
+        method: method || 'unknown',
+        time_on_popup_ms: String(openedAt ? Date.now() - openedAt : 0)
+      });
+    }
+  }
+
+  // Open triggers — identify which button opened it
   document.querySelectorAll('.platform-trigger').forEach(function(el) {
     el.addEventListener('click', function(e) {
       e.preventDefault();
       e.stopPropagation();
-      openPopup();
+      var trigger = el.id === 'nav-follow' ? 'nav' : 'mission';
+      openPopup(trigger);
     });
   });
 
-  if (closeBtn) closeBtn.addEventListener('click', closePopup);
-  popup.addEventListener('click', function(e) { if (e.target === popup) closePopup(); });
-  document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closePopup(); });
+  // Close: X button
+  if (closeBtn) closeBtn.addEventListener('click', function() { closePopup('close-button'); });
+  // Close: backdrop
+  popup.addEventListener('click', function(e) { if (e.target === popup) closePopup('backdrop'); });
+  // Close: Escape key
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && popup.classList.contains('is-open')) closePopup('escape');
+  });
+
+  // Auto-close after clicking a social link inside the popup.
+  // Uses setTimeout(0) so the delegated link_clicked handler on document fires first.
+  popup.querySelectorAll('a[data-source]').forEach(function(link) {
+    link.addEventListener('click', function() {
+      setTimeout(function() { closePopup('link-clicked'); }, 0);
+    });
+  });
+
   window._openPlatformPopup = openPopup;
 })();
 
