@@ -6,7 +6,7 @@ title: Home
 <!-- ====== FULL-SCREEN VIDEO CAROUSEL ====== -->
 <div class="hero-carousel">
 
-  <p class="carousel-tagline">A small selection of our reels — follow for more!</p>
+  <p class="carousel-tagline">Taste a few curated reels below — follow for more!</p>
 
   <!-- Carousel viewport -->
   <div class="carousel-viewport">
