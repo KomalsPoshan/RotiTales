@@ -681,93 +681,89 @@ body {
   height: 20px;
 }
 
-/* ===== COOKIE CONSENT MODAL ===== */
-.cookie-overlay {
+/* ===== TWO-STEP MODAL (cookie → follow) ===== */
+.modal-step {
   display: none;
-  position: fixed;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.7);
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
-  z-index: 10000;
-  align-items: center;
-  justify-content: center;
 }
 
-.cookie-overlay.is-visible {
-  display: flex;
+.modal-step.is-active {
+  display: block;
+  animation: stepFadeIn 0.3s ease-out;
 }
 
-.cookie-modal {
-  background: var(--warmth);
-  border: 1px solid var(--wheat-30);
-  border-radius: 18px;
-  padding: 32px 28px;
-  max-width: 380px;
-  width: 90%;
-  text-align: center;
-  color: var(--flour);
-  font-family: 'Kufam', sans-serif;
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5);
-  animation: cookieSlideUp 0.35s ease-out;
-}
-
-@keyframes cookieSlideUp {
-  from { opacity: 0; transform: translateY(24px); }
+@keyframes stepFadeIn {
+  from { opacity: 0; transform: translateY(10px); }
   to   { opacity: 1; transform: translateY(0); }
 }
 
-.cookie-modal-icon {
-  font-size: 40px;
+/* Cookie step — dark warmth bg matching production cookie modal */
+#step-cookie {
+  background: var(--warmth);
+  border-radius: 18px;
+  padding: 32px 28px;
+  margin: -36px -28px -32px;
+  color: var(--flour);
+}
+
+.cookie-step-icon {
+  font-size: 44px;
   margin-bottom: 8px;
 }
 
-.cookie-modal-title {
+.cookie-step-title {
   font-family: 'Kufam', sans-serif;
-  font-size: 20px;
+  font-size: 22px;
   font-weight: 700;
   color: var(--wheat);
-  margin: 0 0 10px;
+  margin: 0 0 12px;
 }
 
-.cookie-modal-text {
-  font-size: 13px;
-  line-height: 1.5;
+.cookie-step-text {
+  font-family: 'Kufam', sans-serif;
+  font-size: 14px;
+  line-height: 1.55;
   color: var(--flour);
-  margin: 0 0 20px;
   opacity: 0.9;
+  margin: 0 0 8px;
 }
 
-.cookie-modal-buttons {
+.cookie-step-aside {
+  font-family: 'Kufam', sans-serif;
+  font-size: 12px;
+  color: var(--wheat-light);
+  margin: 0 0 22px;
+}
+
+.cookie-step-buttons {
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
 
-.cookie-ok,
-.cookie-decline {
+.cookie-step-accept,
+.cookie-step-decline {
   border: none;
   font-family: 'Kufam', sans-serif;
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 700;
-  padding: 10px 20px;
-  border-radius: 10px;
+  padding: 12px 20px;
+  border-radius: 12px;
   cursor: pointer;
-  white-space: nowrap;
-  transition: opacity 0.2s;
+  transition: opacity 0.2s, transform 0.15s;
 }
 
-.cookie-ok:hover,
-.cookie-decline:hover {
+.cookie-step-accept:hover,
+.cookie-step-decline:hover {
   opacity: 0.85;
+  transform: scale(1.02);
 }
 
-.cookie-ok {
+.cookie-step-accept {
   background: var(--wheat);
   color: var(--warmth);
 }
 
-.cookie-decline {
+.cookie-step-decline {
   background: transparent;
   color: var(--flour);
   border: 1px solid var(--flour);
@@ -950,6 +946,14 @@ body {
 
 .platform-close:hover {
   color: var(--clay);
+}
+
+/* Close button on dark cookie step */
+.platform-modal:has(#step-cookie.is-active) > .platform-close {
+  color: var(--wheat-light);
+}
+.platform-modal:has(#step-cookie.is-active) > .platform-close:hover {
+  color: var(--flour);
 }
 
 /* Header: logo + title side by side */
@@ -1154,6 +1158,9 @@ body.mobile-device {
 .mobile-device .platform-logo { width: 60px; height: 60px; }
 .mobile-device .platform-heading { font-size: 22px; }
 .mobile-device .platform-row { gap: 8px; }
+
+/* Mobile: cookie step */
+.mobile-device #step-cookie { padding: 28px 20px 24px; margin: -28px -20px -24px; }
 
 /* Mobile: follow button — fixed, right side, below nav, shares row with tagline */
 .mobile-device .nav-follow {
