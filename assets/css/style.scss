@@ -698,40 +698,40 @@ body {
 
 /* Cookie step */
 .cookie-step-icon {
-  font-size: 44px;
-  margin-bottom: 6px;
+  font-size: 52px;
+  margin-bottom: 8px;
 }
 
 .cookie-step-title {
   font-family: 'Kufam', sans-serif;
-  font-size: 22px;
-  font-weight: 700;
-  color: var(--warmth);
-  margin: 0 0 10px;
+  font-size: 26px;
+  font-weight: 800;
+  color: var(--warmth-dark);
+  margin: 0 0 14px;
 }
 
 .cookie-step-text {
   font-family: 'Kufam', sans-serif;
-  font-size: 13px;
-  line-height: 1.55;
-  color: var(--clay);
-  margin: 0 0 22px;
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--warmth);
+  margin: 0 0 28px;
 }
 
 .cookie-step-buttons {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 12px;
 }
 
 .cookie-step-accept,
 .cookie-step-decline {
   border: none;
   font-family: 'Kufam', sans-serif;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 700;
-  padding: 12px 20px;
-  border-radius: 12px;
+  padding: 14px 24px;
+  border-radius: 14px;
   cursor: pointer;
   transition: opacity 0.2s, transform 0.15s;
 }
@@ -743,14 +743,14 @@ body {
 }
 
 .cookie-step-accept {
-  background: var(--wheat);
-  color: var(--warmth);
+  background: var(--warmth);
+  color: var(--flour);
 }
 
 .cookie-step-decline {
   background: transparent;
-  color: var(--clay);
-  border: 1.5px solid var(--clay-30);
+  color: var(--warmth);
+  border: 2px solid var(--warmth-30);
 }
 
 /* ===== FOOTER ===== */
