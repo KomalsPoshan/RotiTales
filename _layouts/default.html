@@ -128,27 +128,36 @@
 
     {% include footer.html %}
 
-<!-- ====== FOLLOW & COOKIE CONSENT POPUP ====== -->
+<!-- ====== TWO-STEP MODAL: COOKIES → FOLLOW ====== -->
 <div class="platform-overlay" id="platform-popup">
   <div class="platform-modal">
     <button class="platform-close" id="platform-close" type="button">&times;</button>
-    <div class="platform-header">
-      <img src="/assets/images/rotitales_roti_on_fire_logo.png" alt="Roti Tales" class="platform-logo" />
-      <div class="platform-brand">
-        <h3 class="platform-heading">Roti Tales</h3>
-        <p class="platform-tagline">Follow to keep eating healthy rotis!</p>
+
+    <!-- Step 1: Cookie consent -->
+    <div class="modal-step is-active" id="step-cookie">
+      <div class="cookie-step-icon">&#127850;</div>
+      <h3 class="cookie-step-title">Before you dig in&hellip;</h3>
+      <p class="cookie-step-text">We use cookies &amp; analytics to understand how visitors enjoy RotiTales and to keep improving the experience.<br>No personal data is sold&mdash;ever.</p>
+      <div class="cookie-step-buttons">
+        <button class="cookie-step-accept" id="cookie-accept">Accept Cookies</button>
+        <button class="cookie-step-decline" id="cookie-decline">No Thanks</button>
       </div>
     </div>
-    <div class="platform-row">
-      {% include social-links.html class="social-link" source="popup" %}
+
+    <!-- Step 2: Follow -->
+    <div class="modal-step" id="step-follow">
+      <div class="platform-header">
+        <img src="/assets/images/rotitales_roti_on_fire_logo.png" alt="Roti Tales" class="platform-logo" />
+        <div class="platform-brand">
+          <h3 class="platform-heading">Roti Tales</h3>
+          <p class="platform-tagline">Follow to keep eating healthy rotis!</p>
+        </div>
+      </div>
+      <div class="platform-row">
+        {% include social-links.html class="social-link" source="popup" %}
+      </div>
     </div>
-    <div class="cookie-consent" id="cookie-consent-section">
-      <label class="cookie-consent-label" for="cookie-consent-cb">
-        <input type="checkbox" class="cookie-consent-cb" id="cookie-consent-cb" />
-        <span class="cookie-consent-check"></span>
-        <span class="cookie-consent-text">Allow cookies &amp; analytics to help improve RotiTales. No personal data is sold&mdash;ever.</span>
-      </label>
-    </div>
+
   </div>
 </div>
 
@@ -157,18 +166,15 @@
     var STATSIG_KEY = 'client-XBaeJ6hvk0nI45w5ERTiznvlzNfA2QcYdXAC6VFg29e';
     var popup = document.getElementById('platform-popup');
     var closeBtn = document.getElementById('platform-close');
-    var cookieSection = document.getElementById('cookie-consent-section');
-    var cookieCheckbox = document.getElementById('cookie-consent-cb');
+    var stepCookie = document.getElementById('step-cookie');
+    var stepFollow = document.getElementById('step-follow');
+    var btnAccept = document.getElementById('cookie-accept');
+    var btnDecline = document.getElementById('cookie-decline');
     if (!popup) return;
 
     var rt = window.__rtAnalytics;
     var consent = localStorage.getItem('cookie-ok');
     var needsCookieConsent = (consent !== '1' && consent !== 'declined');
-
-    // Hide cookie section if consent already decided
-    if (!needsCookieConsent && cookieSection) {
-        cookieSection.style.display = 'none';
-    }
 
     function loadStatsig() {
         var s = document.createElement('script');
@@ -192,7 +198,24 @@
         loadStatsig();
     }
 
-    function openPopup(trigger) {
+    // Show a specific step
+    function showStep(step) {
+        stepCookie.classList.remove('is-active');
+        stepFollow.classList.remove('is-active');
+        step.classList.add('is-active');
+    }
+
+    // Transition from cookie step to follow step
+    function goToFollow() {
+        showStep(stepFollow);
+    }
+
+    function openPopup(trigger, skipToFollow) {
+        if (skipToFollow) {
+            showStep(stepFollow);
+        } else {
+            showStep(stepCookie);
+        }
         popup.classList.add('is-open');
         document.body.style.overflow = 'hidden';
         if (rt) {
@@ -209,16 +232,10 @@
         popup.classList.remove('is-open');
         document.body.style.overflow = '';
 
-        // Record cookie decision on close if not yet decided
-        if (needsCookieConsent) {
-            if (cookieCheckbox && cookieCheckbox.checked) {
-                localStorage.setItem('cookie-ok', '1');
-                loadStatsig();
-            } else {
-                localStorage.setItem('cookie-ok', 'declined');
-            }
+        // If user closes during cookie step without deciding, treat as declined
+        if (needsCookieConsent && stepCookie.classList.contains('is-active')) {
+            localStorage.setItem('cookie-ok', 'declined');
             needsCookieConsent = false;
-            if (cookieSection) cookieSection.style.display = 'none';
         }
 
         if (rt) {
@@ -230,18 +247,31 @@
         }
     }
 
+    // Cookie buttons → record decision, advance to follow step
+    if (btnAccept) btnAccept.addEventListener('click', function() {
+        localStorage.setItem('cookie-ok', '1');
+        needsCookieConsent = false;
+        loadStatsig();
+        goToFollow();
+    });
+    if (btnDecline) btnDecline.addEventListener('click', function() {
+        localStorage.setItem('cookie-ok', 'declined');
+        needsCookieConsent = false;
+        goToFollow();
+    });
+
     // Auto-open on page load if cookie consent is needed
     if (needsCookieConsent) {
-        openPopup('page-load');
+        openPopup('page-load', false);
     }
 
-    // Open triggers — "Follow" buttons
+    // Open triggers — "Follow" buttons (skip to follow step if consent decided)
     document.querySelectorAll('.platform-trigger').forEach(function(el) {
         el.addEventListener('click', function(e) {
             e.preventDefault();
             e.stopPropagation();
             var trigger = el.id === 'nav-follow' ? 'nav' : 'mission';
-            openPopup(trigger);
+            openPopup(trigger, !needsCookieConsent);
         });
     });
 

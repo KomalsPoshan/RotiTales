@@ -681,61 +681,76 @@ body {
   height: 20px;
 }
 
-/* ===== COOKIE CONSENT (inside platform modal) ===== */
-.cookie-consent {
-  margin-top: 22px;
-  padding-top: 18px;
-  border-top: 1px solid var(--clay-30);
+/* ===== TWO-STEP MODAL (cookie → follow) ===== */
+.modal-step {
+  display: none;
 }
 
-.cookie-consent-label {
-  display: flex;
-  align-items: flex-start;
-  gap: 10px;
-  cursor: pointer;
-  text-align: left;
+.modal-step.is-active {
+  display: block;
+  animation: stepFadeIn 0.3s ease-out;
+}
+
+@keyframes stepFadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Cookie step */
+.cookie-step-icon {
+  font-size: 44px;
+  margin-bottom: 6px;
+}
+
+.cookie-step-title {
   font-family: 'Kufam', sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--warmth);
+  margin: 0 0 10px;
 }
 
-.cookie-consent-cb {
-  position: absolute;
-  opacity: 0;
-  pointer-events: none;
-}
-
-.cookie-consent-check {
-  flex-shrink: 0;
-  width: 22px;
-  height: 22px;
-  border: 2px solid var(--clay);
-  border-radius: 6px;
-  background: var(--flour);
-  position: relative;
-  transition: background 0.2s, border-color 0.2s;
-  margin-top: 1px;
-}
-
-.cookie-consent-cb:checked + .cookie-consent-check {
-  background: var(--abundance);
-  border-color: var(--abundance);
-}
-
-.cookie-consent-cb:checked + .cookie-consent-check::after {
-  content: '';
-  position: absolute;
-  left: 6px;
-  top: 2px;
-  width: 6px;
-  height: 12px;
-  border: solid var(--flour);
-  border-width: 0 2.5px 2.5px 0;
-  transform: rotate(45deg);
-}
-
-.cookie-consent-text {
-  font-size: 12px;
+.cookie-step-text {
+  font-family: 'Kufam', sans-serif;
+  font-size: 13px;
+  line-height: 1.55;
   color: var(--clay);
-  line-height: 1.45;
+  margin: 0 0 22px;
+}
+
+.cookie-step-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.cookie-step-accept,
+.cookie-step-decline {
+  border: none;
+  font-family: 'Kufam', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  padding: 12px 20px;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: opacity 0.2s, transform 0.15s;
+}
+
+.cookie-step-accept:hover,
+.cookie-step-decline:hover {
+  opacity: 0.88;
+  transform: scale(1.02);
+}
+
+.cookie-step-accept {
+  background: var(--wheat);
+  color: var(--warmth);
+}
+
+.cookie-step-decline {
+  background: transparent;
+  color: var(--clay);
+  border: 1.5px solid var(--clay-30);
 }
 
 /* ===== FOOTER ===== */
