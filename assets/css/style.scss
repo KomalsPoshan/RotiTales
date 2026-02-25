@@ -1135,6 +1135,14 @@ body.mobile-device {
 .mobile-device .platform-heading { font-size: 22px; }
 .mobile-device .platform-row { gap: 8px; }
 
+/* Mobile: cookie step — boost contrast against busy pattern bg */
+.mobile-device .cookie-step-icon { font-size: 44px; margin-bottom: 4px; }
+.mobile-device .cookie-step-title { font-size: 22px; }
+.mobile-device .cookie-step-text { font-size: 14px; color: var(--warmth-dark); }
+.mobile-device .cookie-step-accept,
+.mobile-device .cookie-step-decline { font-size: 15px; padding: 13px 20px; }
+.mobile-device .cookie-step-decline { border-color: var(--warmth); color: var(--warmth-dark); }
+
 /* Mobile: follow button — fixed, right side, below nav, shares row with tagline */
 .mobile-device .nav-follow {
   top: 56px;
