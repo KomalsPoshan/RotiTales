@@ -358,23 +358,6 @@ title: Home
   </div>
 </div>
 
-<!-- ====== PLATFORM CHOOSER POPUP ====== -->
-<div class="platform-overlay" id="platform-popup">
-  <div class="platform-modal">
-    <button class="platform-close" id="platform-close" type="button">&times;</button>
-    <div class="platform-header">
-      <img src="/assets/images/rotitales_roti_on_fire_logo.png" alt="Roti Tales" class="platform-logo" />
-      <div class="platform-brand">
-        <h3 class="platform-heading">Roti Tales</h3>
-        <p class="platform-tagline">Follow to keep eating healthy rotis!</p>
-      </div>
-    </div>
-    <div class="platform-row">
-      {% include social-links.html class="social-link" source="popup" %}
-    </div>
-  </div>
-</div>
-
 <!-- YouTube IFrame API -->
 <script>
 var tag = document.createElement('script');
@@ -757,66 +740,6 @@ function onYouTubeIframeAPIReady() {
   window._carouselGoTo = goTo;
   window._updatePulse = updatePulse;
   window._syncControls = syncControls;
-})();
-
-// ===== Platform chooser popup =====
-(function() {
-  var popup = document.getElementById('platform-popup');
-  var closeBtn = document.getElementById('platform-close');
-  if (!popup) return;
-  var rt = window.__rtAnalytics;
-
-  function openPopup(trigger) {
-    popup.classList.add('is-open');
-    if (rt) {
-      rt.popupOpenedAt(Date.now());
-      rt.logEvent('follow_popup_opened', {
-        trigger: trigger || 'unknown',
-        time_on_site_ms: String(rt.timeSinceLoad())
-      });
-    }
-  }
-
-  function closePopup(method) {
-    if (!popup.classList.contains('is-open')) return;
-    popup.classList.remove('is-open');
-    if (rt) {
-      var openedAt = rt.popupOpenedAt();
-      rt.logEvent('follow_popup_closed', {
-        method: method || 'unknown',
-        time_on_popup_ms: String(openedAt ? Date.now() - openedAt : 0)
-      });
-    }
-  }
-
-  // Open triggers — identify which button opened it
-  document.querySelectorAll('.platform-trigger').forEach(function(el) {
-    el.addEventListener('click', function(e) {
-      e.preventDefault();
-      e.stopPropagation();
-      var trigger = el.id === 'nav-follow' ? 'nav' : 'mission';
-      openPopup(trigger);
-    });
-  });
-
-  // Close: X button
-  if (closeBtn) closeBtn.addEventListener('click', function() { closePopup('close-button'); });
-  // Close: backdrop
-  popup.addEventListener('click', function(e) { if (e.target === popup) closePopup('backdrop'); });
-  // Close: Escape key
-  document.addEventListener('keydown', function(e) {
-    if (e.key === 'Escape' && popup.classList.contains('is-open')) closePopup('escape');
-  });
-
-  // Auto-close after clicking a social link inside the popup.
-  // Uses setTimeout(0) so the delegated link_clicked handler on document fires first.
-  popup.querySelectorAll('a[data-source]').forEach(function(link) {
-    link.addEventListener('click', function() {
-      setTimeout(function() { closePopup('link-clicked'); }, 0);
-    });
-  });
-
-  window._openPlatformPopup = openPopup;
 })();
 
 </script>

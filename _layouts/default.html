@@ -128,22 +128,47 @@
 
     {% include footer.html %}
 
-<!-- Cookie consent modal -->
-<div class="cookie-overlay" id="cookie-overlay">
-    <div class="cookie-modal" id="cookie-modal">
-        <div class="cookie-modal-icon">&#127850;</div>
-        <h2 class="cookie-modal-title">Before you dig in&hellip;</h2>
-        <p class="cookie-modal-text">We use cookies and analytics to understand how visitors enjoy RotiTales and to keep improving the experience. <br>No personal data is sold&mdash;ever.</p>
-        <div class="cookie-modal-buttons">
-            <button class="cookie-ok" id="cookie-ok">Accept Cookies</button>
-            <button class="cookie-decline" id="cookie-decline">No Thanks</button>
-        </div>
+<!-- ====== FOLLOW & COOKIE CONSENT POPUP ====== -->
+<div class="platform-overlay" id="platform-popup">
+  <div class="platform-modal">
+    <button class="platform-close" id="platform-close" type="button">&times;</button>
+    <div class="platform-header">
+      <img src="/assets/images/rotitales_roti_on_fire_logo.png" alt="Roti Tales" class="platform-logo" />
+      <div class="platform-brand">
+        <h3 class="platform-heading">Roti Tales</h3>
+        <p class="platform-tagline">Follow to keep eating healthy rotis!</p>
+      </div>
     </div>
+    <div class="platform-row">
+      {% include social-links.html class="social-link" source="popup" %}
+    </div>
+    <div class="cookie-consent" id="cookie-consent-section">
+      <label class="cookie-consent-label" for="cookie-consent-cb">
+        <input type="checkbox" class="cookie-consent-cb" id="cookie-consent-cb" />
+        <span class="cookie-consent-check"></span>
+        <span class="cookie-consent-text">Allow cookies &amp; analytics to help improve RotiTales. No personal data is sold&mdash;ever.</span>
+      </label>
+    </div>
+  </div>
 </div>
 
 <script>
 (function() {
     var STATSIG_KEY = 'client-XBaeJ6hvk0nI45w5ERTiznvlzNfA2QcYdXAC6VFg29e';
+    var popup = document.getElementById('platform-popup');
+    var closeBtn = document.getElementById('platform-close');
+    var cookieSection = document.getElementById('cookie-consent-section');
+    var cookieCheckbox = document.getElementById('cookie-consent-cb');
+    if (!popup) return;
+
+    var rt = window.__rtAnalytics;
+    var consent = localStorage.getItem('cookie-ok');
+    var needsCookieConsent = (consent !== '1' && consent !== 'declined');
+
+    // Hide cookie section if consent already decided
+    if (!needsCookieConsent && cookieSection) {
+        cookieSection.style.display = 'none';
+    }
 
     function loadStatsig() {
         var s = document.createElement('script');
@@ -162,30 +187,81 @@
         document.head.appendChild(s);
     }
 
-    function closeModal() {
-        var overlay = document.getElementById('cookie-overlay');
-        overlay.classList.remove('is-visible');
-        document.body.style.overflow = '';
-    }
-
-    var consent = localStorage.getItem('cookie-ok');
+    // Load Statsig immediately if already accepted
     if (consent === '1') {
         loadStatsig();
-    } else if (consent !== 'declined') {
-        var overlay = document.getElementById('cookie-overlay');
-        overlay.classList.add('is-visible');
-        document.body.style.overflow = 'hidden';
-
-        document.getElementById('cookie-ok').addEventListener('click', function() {
-            localStorage.setItem('cookie-ok', '1');
-            closeModal();
-            loadStatsig();
-        });
-        document.getElementById('cookie-decline').addEventListener('click', function() {
-            localStorage.setItem('cookie-ok', 'declined');
-            closeModal();
-        });
     }
+
+    function openPopup(trigger) {
+        popup.classList.add('is-open');
+        document.body.style.overflow = 'hidden';
+        if (rt) {
+            rt.popupOpenedAt(Date.now());
+            rt.logEvent('follow_popup_opened', {
+                trigger: trigger || 'unknown',
+                time_on_site_ms: String(rt.timeSinceLoad())
+            });
+        }
+    }
+
+    function closePopup(method) {
+        if (!popup.classList.contains('is-open')) return;
+        popup.classList.remove('is-open');
+        document.body.style.overflow = '';
+
+        // Record cookie decision on close if not yet decided
+        if (needsCookieConsent) {
+            if (cookieCheckbox && cookieCheckbox.checked) {
+                localStorage.setItem('cookie-ok', '1');
+                loadStatsig();
+            } else {
+                localStorage.setItem('cookie-ok', 'declined');
+            }
+            needsCookieConsent = false;
+            if (cookieSection) cookieSection.style.display = 'none';
+        }
+
+        if (rt) {
+            var openedAt = rt.popupOpenedAt();
+            rt.logEvent('follow_popup_closed', {
+                method: method || 'unknown',
+                time_on_popup_ms: String(openedAt ? Date.now() - openedAt : 0)
+            });
+        }
+    }
+
+    // Auto-open on page load if cookie consent is needed
+    if (needsCookieConsent) {
+        openPopup('page-load');
+    }
+
+    // Open triggers — "Follow" buttons
+    document.querySelectorAll('.platform-trigger').forEach(function(el) {
+        el.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            var trigger = el.id === 'nav-follow' ? 'nav' : 'mission';
+            openPopup(trigger);
+        });
+    });
+
+    // Close: X button
+    if (closeBtn) closeBtn.addEventListener('click', function() { closePopup('close-button'); });
+    // Close: backdrop
+    popup.addEventListener('click', function(e) { if (e.target === popup) closePopup('backdrop'); });
+    // Close: Escape key
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && popup.classList.contains('is-open')) closePopup('escape');
+    });
+
+    // Auto-close after clicking a social link inside the popup
+    popup.querySelectorAll('a[data-source]').forEach(function(link) {
+        link.addEventListener('click', function() {
+            setTimeout(function() { closePopup('link-clicked'); }, 0);
+        });
+    });
+
+    window._openPlatformPopup = openPopup;
 })();
 </script>
 
