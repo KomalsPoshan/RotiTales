@@ -696,61 +696,70 @@ body {
   to   { opacity: 1; transform: translateY(0); }
 }
 
-/* Cookie step */
+/* Cookie step — dark warmth bg matching production cookie modal */
+#step-cookie {
+  background: var(--warmth);
+  border-radius: 18px;
+  padding: 32px 28px;
+  margin: -36px -28px -32px;
+  color: var(--flour);
+}
+
 .cookie-step-icon {
-  font-size: 52px;
+  font-size: 44px;
   margin-bottom: 8px;
 }
 
 .cookie-step-title {
   font-family: 'Kufam', sans-serif;
-  font-size: 26px;
-  font-weight: 800;
-  color: var(--warmth-dark);
-  margin: 0 0 14px;
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--wheat);
+  margin: 0 0 12px;
 }
 
 .cookie-step-text {
   font-family: 'Kufam', sans-serif;
-  font-size: 15px;
-  line-height: 1.6;
-  color: var(--warmth);
-  margin: 0 0 28px;
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--flour);
+  opacity: 0.9;
+  margin: 0 0 22px;
 }
 
 .cookie-step-buttons {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 10px;
 }
 
 .cookie-step-accept,
 .cookie-step-decline {
   border: none;
   font-family: 'Kufam', sans-serif;
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 700;
-  padding: 14px 24px;
-  border-radius: 14px;
+  padding: 12px 20px;
+  border-radius: 12px;
   cursor: pointer;
   transition: opacity 0.2s, transform 0.15s;
 }
 
 .cookie-step-accept:hover,
 .cookie-step-decline:hover {
-  opacity: 0.88;
+  opacity: 0.85;
   transform: scale(1.02);
 }
 
 .cookie-step-accept {
-  background: var(--warmth);
-  color: var(--flour);
+  background: var(--wheat);
+  color: var(--warmth);
 }
 
 .cookie-step-decline {
   background: transparent;
-  color: var(--warmth);
-  border: 2px solid var(--warmth-30);
+  color: var(--flour);
+  border: 1px solid var(--flour);
 }
 
 /* ===== FOOTER ===== */
@@ -930,6 +939,14 @@ body {
 
 .platform-close:hover {
   color: var(--clay);
+}
+
+/* Close button on dark cookie step */
+.platform-modal:has(#step-cookie.is-active) > .platform-close {
+  color: var(--wheat-light);
+}
+.platform-modal:has(#step-cookie.is-active) > .platform-close:hover {
+  color: var(--flour);
 }
 
 /* Header: logo + title side by side */
@@ -1135,13 +1152,8 @@ body.mobile-device {
 .mobile-device .platform-heading { font-size: 22px; }
 .mobile-device .platform-row { gap: 8px; }
 
-/* Mobile: cookie step — boost contrast against busy pattern bg */
-.mobile-device .cookie-step-icon { font-size: 44px; margin-bottom: 4px; }
-.mobile-device .cookie-step-title { font-size: 22px; }
-.mobile-device .cookie-step-text { font-size: 14px; color: var(--warmth-dark); }
-.mobile-device .cookie-step-accept,
-.mobile-device .cookie-step-decline { font-size: 15px; padding: 13px 20px; }
-.mobile-device .cookie-step-decline { border-color: var(--warmth); color: var(--warmth-dark); }
+/* Mobile: cookie step */
+.mobile-device #step-cookie { padding: 28px 20px 24px; margin: -28px -20px -24px; }
 
 /* Mobile: follow button — fixed, right side, below nav, shares row with tagline */
 .mobile-device .nav-follow {
