@@ -255,11 +255,8 @@
         }
     }
 
-    // Auto-open follow popup on first visit
-    if (!localStorage.getItem('follow-popup-shown')) {
-        openPopup('page-load');
-        localStorage.setItem('follow-popup-shown', '1');
-    }
+    // Auto-open follow popup on every page load
+    openPopup('page-load');
 
     // Open triggers — "Follow" buttons
     document.querySelectorAll('.platform-trigger').forEach(function(el) {
