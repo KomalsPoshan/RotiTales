@@ -144,11 +144,11 @@ title: Home
           <div class="card-header">
             <h3 class="card-header-title">Join the Family</h3>
             <div class="card-header-controls">
-              <button class="card-ctrl ctrl-playpause is-paused" disabled aria-label="Play/Pause">
+              <button class="card-ctrl ctrl-playpause is-paused" data-slide="4" aria-label="Play/Pause">
                 <svg class="pp-pause" viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg>
                 <svg class="pp-play" viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><polygon points="5,3 19,12 5,21"/></svg>
               </button>
-              <button class="card-ctrl ctrl-speed" disabled aria-label="Playback speed">
+              <button class="card-ctrl ctrl-speed" data-slide="4" aria-label="Playback speed">
                 <span class="speed-label">1x</span>
               </button>
               <button class="card-ctrl card-mute is-muted" data-slide="4" aria-label="Toggle sound">
@@ -296,11 +296,11 @@ title: Home
           <div class="card-header">
             <h3 class="card-header-title">Join the Family</h3>
             <div class="card-header-controls">
-              <button class="card-ctrl ctrl-playpause is-paused" disabled aria-label="Play/Pause">
+              <button class="card-ctrl ctrl-playpause is-paused" data-slide="9" aria-label="Play/Pause">
                 <svg class="pp-pause" viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg>
                 <svg class="pp-play" viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><polygon points="5,3 19,12 5,21"/></svg>
               </button>
-              <button class="card-ctrl ctrl-speed" disabled aria-label="Playback speed">
+              <button class="card-ctrl ctrl-speed" data-slide="9" aria-label="Playback speed">
                 <span class="speed-label">1x</span>
               </button>
               <button class="card-ctrl card-mute is-muted" data-slide="9" aria-label="Toggle sound">
@@ -544,6 +544,7 @@ function onYouTubeIframeAPIReady() {
     if (prevEl && prevEl.classList.contains('carousel-slide-connect')) {
       var prevAudio = prevEl.querySelector('.connect-audio');
       if (prevAudio) prevAudio.pause();
+      slidePlaying[prevSlide] = false;
     }
 
     // Play new video (if it's a video slide)
@@ -577,7 +578,11 @@ function onYouTubeIframeAPIReady() {
       if (curAudio) {
         window._lastPlaySource = 'auto';
         curAudio.muted = globalMuted;
+        curAudio.playbackRate = globalSpeed;
         curAudio.play().then(function() {
+          slidePlaying[currentSlide] = true;
+          syncControls(currentSlide);
+          updatePulse(currentSlide);
           if (rt) rt.logEvent('playback_started', {
             slide: String(currentSlide),
             trigger: 'auto',
@@ -633,18 +638,38 @@ function onYouTubeIframeAPIReady() {
   document.querySelectorAll('.ctrl-playpause').forEach(function(btn) {
     btn.addEventListener('click', function() {
       var idx = parseInt(this.getAttribute('data-slide'));
+      var slideEl = slides[idx];
+      var isConnect = slideEl && slideEl.classList.contains('carousel-slide-connect');
+      var ca = isConnect ? slideEl.querySelector('.connect-audio') : null;
       var p = players[idx];
-      if (!p || !p.getPlayerState) return;
-      var state = p.getPlayerState();
-      if (state === YT.PlayerState.PLAYING) {
-        p.pauseVideo();
-        slidePlaying[idx] = false;
-        this.classList.add('is-paused');
-      } else {
-        window._lastPlaySource = 'user';
-        p.playVideo();
-        slidePlaying[idx] = true;
-        this.classList.remove('is-paused');
+
+      if (isConnect && ca) {
+        // Connect slide — toggle audio
+        if (!ca.paused) {
+          ca.pause();
+          slidePlaying[idx] = false;
+          this.classList.add('is-paused');
+        } else {
+          window._lastPlaySource = 'user';
+          ca.muted = globalMuted;
+          ca.playbackRate = globalSpeed;
+          ca.play().catch(function(){});
+          slidePlaying[idx] = true;
+          this.classList.remove('is-paused');
+        }
+      } else if (p && p.getPlayerState) {
+        // Video slide — toggle YouTube player
+        var state = p.getPlayerState();
+        if (state === YT.PlayerState.PLAYING) {
+          p.pauseVideo();
+          slidePlaying[idx] = false;
+          this.classList.add('is-paused');
+        } else {
+          window._lastPlaySource = 'user';
+          p.playVideo();
+          slidePlaying[idx] = true;
+          this.classList.remove('is-paused');
+        }
       }
       updatePulse(idx);
     });
@@ -723,6 +748,11 @@ function onYouTubeIframeAPIReady() {
         if (p && p.setPlaybackRate) {
           try { p.setPlaybackRate(globalSpeed); } catch(e) {}
         }
+      });
+
+      // Apply to all connect audio elements
+      document.querySelectorAll('.connect-audio').forEach(function(a) {
+        a.playbackRate = globalSpeed;
       });
 
       syncSpeedLabels();

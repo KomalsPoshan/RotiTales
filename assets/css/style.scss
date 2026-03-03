@@ -1106,15 +1106,7 @@ body.mobile-device {
   max-height: calc((100vw - 48px) * 16 / 9 + 120px);
 }
 .mobile-device .carousel-viewport {
-  padding: 56px 24px 12px;
-}
-
-/* In-app browsers: extra top space is eaten by injected banners, reduce padding */
-.mobile-device.inapp-browser .carousel-viewport {
-  padding-top: 48px;
-}
-.mobile-device.inapp-browser .carousel-tagline {
-  top: 46px;
+  padding: 56px 24px 54px;
 }
 .mobile-device .slide-card {
   height: auto;
