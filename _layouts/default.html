@@ -27,6 +27,20 @@
     ) {
         document.body.classList.add("mobile-device");
     }
+    // Detect in-app browsers (Instagram, Messenger, Facebook, TikTok, etc.)
+    if (/FBAN|FBAV|Instagram|Messenger|Line\/|Snapchat|Twitter|BytedanceWebview|TikTok/i.test(a)) {
+        document.body.classList.add("inapp-browser");
+        // Auto-remove "unsupported browser" banners injected by third-party scripts (e.g. YouTube)
+        new MutationObserver(function(mutations) {
+            mutations.forEach(function(m) {
+                m.addedNodes.forEach(function(n) {
+                    if (n.nodeType === 1 && n.textContent && /not (officially )?supported|unsupported browser/i.test(n.textContent) && !n.closest('.hero-carousel')) {
+                        n.remove();
+                    }
+                });
+            });
+        }).observe(document.documentElement, { childList: true, subtree: true });
+    }
 })(navigator.userAgent||navigator.vendor||window.opera,'');
 </script>
 
