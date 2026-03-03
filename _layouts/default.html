@@ -128,37 +128,29 @@
 
     {% include footer.html %}
 
-<!-- ====== TWO-STEP MODAL: COOKIES → FOLLOW ====== -->
+<!-- ====== FOLLOW MODAL ====== -->
 <div class="platform-overlay" id="platform-popup">
   <div class="platform-modal">
     <button class="platform-close" id="platform-close" type="button">&times;</button>
-
-    <!-- Step 1: Cookie consent -->
-    <div class="modal-step is-active" id="step-cookie">
-      <div class="cookie-step-icon">&#127850;</div>
-      <h3 class="cookie-step-title">Before you dig in&hellip;</h3>
-      <p class="cookie-step-text">We use cookies &amp; analytics to improve your RotiTales experience.</p>
-      <p class="cookie-step-aside">No personal data is sold&mdash;ever.</p>
-      <div class="cookie-step-buttons">
-        <button class="cookie-step-accept" id="cookie-accept">Accept Cookies</button>
-        <button class="cookie-step-decline" id="cookie-decline">No Thanks</button>
+    <div class="platform-header">
+      <img src="/assets/images/rotitales_roti_on_fire_logo.png" alt="Roti Tales" class="platform-logo" />
+      <div class="platform-brand">
+        <h3 class="platform-heading">Roti Tales</h3>
+        <p class="platform-tagline">Follow to keep eating healthy rotis!</p>
       </div>
     </div>
-
-    <!-- Step 2: Follow -->
-    <div class="modal-step" id="step-follow">
-      <div class="platform-header">
-        <img src="/assets/images/rotitales_roti_on_fire_logo.png" alt="Roti Tales" class="platform-logo" />
-        <div class="platform-brand">
-          <h3 class="platform-heading">Roti Tales</h3>
-          <p class="platform-tagline">Follow to keep eating healthy rotis!</p>
-        </div>
-      </div>
-      <div class="platform-row">
-        {% include social-links.html class="social-link" source="popup" %}
-      </div>
+    <div class="platform-row">
+      {% include social-links.html class="social-link" source="popup" %}
     </div>
+  </div>
+</div>
 
+<!-- ====== COOKIE CONSENT FOOTER BANNER ====== -->
+<div class="cookie-banner" id="cookie-banner">
+  <p class="cookie-banner-text">We use cookies &amp; analytics to improve your experience. No data is sold&mdash;ever.</p>
+  <div class="cookie-banner-buttons">
+    <button class="cookie-banner-accept" id="cookie-accept">Accept</button>
+    <button class="cookie-banner-decline" id="cookie-decline">Decline</button>
   </div>
 </div>
 
@@ -167,30 +159,31 @@
     var STATSIG_KEY = 'client-XBaeJ6hvk0nI45w5ERTiznvlzNfA2QcYdXAC6VFg29e';
     var popup = document.getElementById('platform-popup');
     var closeBtn = document.getElementById('platform-close');
-    var stepCookie = document.getElementById('step-cookie');
-    var stepFollow = document.getElementById('step-follow');
+    var banner = document.getElementById('cookie-banner');
     var btnAccept = document.getElementById('cookie-accept');
     var btnDecline = document.getElementById('cookie-decline');
     if (!popup) return;
 
     var rt = window.__rtAnalytics;
     var consent = localStorage.getItem('cookie-ok');
-    var needsCookieConsent = (consent !== '1' && consent !== 'declined');
 
+    // --- Statsig: always load, userID only if consent accepted ---
     function loadStatsig() {
         var s = document.createElement('script');
         s.src = 'https://cdn.jsdelivr.net/npm/@statsig/js-client@3/build/statsig-js-client.min.js';
         s.onload = function() {
             try {
-                // Persist an anonymous user ID so Statsig can assign experiments
-                var uid = localStorage.getItem('rt-uid');
-                if (!uid) {
-                    uid = 'rt-' + Date.now() + '-' + Math.random().toString(36).substr(2, 9);
-                    localStorage.setItem('rt-uid', uid);
+                var user = {};
+                if (consent === '1') {
+                    var uid = localStorage.getItem('rt-uid');
+                    if (!uid) {
+                        uid = 'rt-' + Date.now() + '-' + Math.random().toString(36).substr(2, 9);
+                        localStorage.setItem('rt-uid', uid);
+                    }
+                    user.userID = uid;
                 }
                 var SC = window.Statsig.StatsigClient;
-                var client = new SC(STATSIG_KEY, { userID: uid });
-                // Wait for initialization to complete before exposing the client
+                var client = new SC(STATSIG_KEY, user);
                 function onReady() {
                     window.__STATSIG_CLIENT__ = client;
                     if (window.__rtAnalytics) {
@@ -203,29 +196,41 @@
         document.head.appendChild(s);
     }
 
-    // Load Statsig immediately if already accepted
-    if (consent === '1') {
-        loadStatsig();
+    // Always load Statsig — anonymous unless consent accepted
+    loadStatsig();
+
+    // --- Cookie banner: show if no decision yet ---
+    function hideBanner() {
+        if (banner) banner.classList.add('is-hidden');
     }
 
-    // Show a specific step
-    function showStep(step) {
-        stepCookie.classList.remove('is-active');
-        stepFollow.classList.remove('is-active');
-        step.classList.add('is-active');
+    if (consent === '1' || consent === 'declined') {
+        hideBanner();
     }
 
-    // Transition from cookie step to follow step
-    function goToFollow() {
-        showStep(stepFollow);
-    }
-
-    function openPopup(trigger, skipToFollow) {
-        if (skipToFollow) {
-            showStep(stepFollow);
-        } else {
-            showStep(stepCookie);
+    if (btnAccept) btnAccept.addEventListener('click', function() {
+        localStorage.setItem('cookie-ok', '1');
+        consent = '1';
+        hideBanner();
+        // Upgrade Statsig with userID: reinitialize
+        if (window.__STATSIG_CLIENT__) {
+            var uid = localStorage.getItem('rt-uid');
+            if (!uid) {
+                uid = 'rt-' + Date.now() + '-' + Math.random().toString(36).substr(2, 9);
+                localStorage.setItem('rt-uid', uid);
+            }
+            try { window.__STATSIG_CLIENT__.updateUserAsync({ userID: uid }); } catch(e) {}
         }
+    });
+
+    if (btnDecline) btnDecline.addEventListener('click', function() {
+        localStorage.setItem('cookie-ok', 'declined');
+        consent = 'declined';
+        hideBanner();
+    });
+
+    // --- Follow popup (fully independent of cookies) ---
+    function openPopup(trigger) {
         popup.classList.add('is-open');
         document.body.style.overflow = 'hidden';
         if (rt) {
@@ -241,13 +246,6 @@
         if (!popup.classList.contains('is-open')) return;
         popup.classList.remove('is-open');
         document.body.style.overflow = '';
-
-        // If user closes during cookie step without deciding, treat as declined
-        if (needsCookieConsent && stepCookie.classList.contains('is-active')) {
-            localStorage.setItem('cookie-ok', 'declined');
-            needsCookieConsent = false;
-        }
-
         if (rt) {
             var openedAt = rt.popupOpenedAt();
             rt.logEvent('follow_popup_closed', {
@@ -257,31 +255,16 @@
         }
     }
 
-    // Cookie buttons → record decision, advance to follow step
-    if (btnAccept) btnAccept.addEventListener('click', function() {
-        localStorage.setItem('cookie-ok', '1');
-        needsCookieConsent = false;
-        loadStatsig();
-        goToFollow();
-    });
-    if (btnDecline) btnDecline.addEventListener('click', function() {
-        localStorage.setItem('cookie-ok', 'declined');
-        needsCookieConsent = false;
-        goToFollow();
-    });
+    // Auto-open follow popup on every page load
+    openPopup('page-load');
 
-    // Auto-open on page load if cookie consent is needed
-    if (needsCookieConsent) {
-        openPopup('page-load', false);
-    }
-
-    // Open triggers — "Follow" buttons (skip to follow step if consent decided)
+    // Open triggers — "Follow" buttons
     document.querySelectorAll('.platform-trigger').forEach(function(el) {
         el.addEventListener('click', function(e) {
             e.preventDefault();
             e.stopPropagation();
             var trigger = el.id === 'nav-follow' ? 'nav' : 'mission';
-            openPopup(trigger, !needsCookieConsent);
+            openPopup(trigger);
         });
     });
 
