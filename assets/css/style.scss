@@ -684,89 +684,70 @@ body {
   height: 20px;
 }
 
-/* ===== TWO-STEP MODAL (cookie → follow) ===== */
-.modal-step {
-  display: none;
-}
-
-.modal-step.is-active {
-  display: block;
-  animation: stepFadeIn 0.3s ease-out;
-}
-
-@keyframes stepFadeIn {
-  from { opacity: 0; transform: translateY(10px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
-
-/* Cookie step — dark warmth bg matching production cookie modal */
-#step-cookie {
+/* ===== COOKIE CONSENT FOOTER BANNER ===== */
+.cookie-banner {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
   background: var(--warmth);
-  border-radius: 18px;
-  padding: 32px 28px;
-  margin: -36px -28px -32px;
   color: var(--flour);
-}
-
-.cookie-step-icon {
-  font-size: 44px;
-  margin-bottom: 8px;
-}
-
-.cookie-step-title {
   font-family: 'Kufam', sans-serif;
-  font-size: 22px;
-  font-weight: 700;
-  color: var(--wheat);
-  margin: 0 0 12px;
-}
-
-.cookie-step-text {
-  font-family: 'Kufam', sans-serif;
-  font-size: 14px;
-  line-height: 1.55;
-  color: var(--flour);
-  opacity: 0.9;
-  margin: 0 0 8px;
-}
-
-.cookie-step-aside {
-  font-family: 'Kufam', sans-serif;
-  font-size: 12px;
-  color: var(--wheat-light);
-  margin: 0 0 22px;
-}
-
-.cookie-step-buttons {
   display: flex;
-  flex-direction: column;
-  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  padding: 12px 20px;
+  box-shadow: 0 -4px 20px color-mix(in srgb, black 30%, transparent);
+  transform: translateY(0);
+  transition: transform 0.35s ease;
 }
 
-.cookie-step-accept,
-.cookie-step-decline {
+.cookie-banner.is-hidden {
+  transform: translateY(100%);
+  pointer-events: none;
+}
+
+.cookie-banner-text {
+  font-size: 13px;
+  line-height: 1.4;
+  margin: 0;
+  opacity: 0.92;
+  flex: 1;
+  max-width: 520px;
+}
+
+.cookie-banner-buttons {
+  display: flex;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.cookie-banner-accept,
+.cookie-banner-decline {
   border: none;
   font-family: 'Kufam', sans-serif;
-  font-size: 15px;
+  font-size: 13px;
   font-weight: 700;
-  padding: 12px 20px;
-  border-radius: 12px;
+  padding: 8px 16px;
+  border-radius: 8px;
   cursor: pointer;
-  transition: opacity 0.2s, transform 0.15s;
+  transition: opacity 0.2s;
+  white-space: nowrap;
 }
 
-.cookie-step-accept:hover,
-.cookie-step-decline:hover {
+.cookie-banner-accept:hover,
+.cookie-banner-decline:hover {
   opacity: 0.85;
-  transform: scale(1.02);
 }
 
-.cookie-step-accept {
+.cookie-banner-accept {
   background: var(--wheat);
   color: var(--warmth);
 }
 
-.cookie-step-decline {
+.cookie-banner-decline {
   background: transparent;
   color: var(--flour);
   border: 1px solid var(--flour);
@@ -951,13 +932,6 @@ body {
   color: var(--clay);
 }
 
-/* Close button on dark cookie step */
-.platform-modal:has(#step-cookie.is-active) > .platform-close {
-  color: var(--wheat-light);
-}
-.platform-modal:has(#step-cookie.is-active) > .platform-close:hover {
-  color: var(--flour);
-}
 
 /* Header: logo + title side by side */
 .platform-header {
@@ -1175,9 +1149,6 @@ body.mobile-device {
 .mobile-device .platform-logo { width: 60px; height: 60px; }
 .mobile-device .platform-heading { font-size: 22px; }
 .mobile-device .platform-row { gap: 8px; }
-
-/* Mobile: cookie step */
-.mobile-device #step-cookie { padding: 28px 20px 24px; margin: -28px -20px -24px; }
 
 /* Mobile: follow button — fixed, right side, below nav, shares row with tagline */
 .mobile-device .nav-follow {
