@@ -182,14 +182,23 @@
         s.src = 'https://cdn.jsdelivr.net/npm/@statsig/js-client@3/build/statsig-js-client.min.js';
         s.onload = function() {
             try {
+                // Persist an anonymous user ID so Statsig can assign experiments
+                var uid = localStorage.getItem('rt-uid');
+                if (!uid) {
+                    uid = 'rt-' + Date.now() + '-' + Math.random().toString(36).substr(2, 9);
+                    localStorage.setItem('rt-uid', uid);
+                }
                 var SC = window.Statsig.StatsigClient;
-                var client = new SC(STATSIG_KEY, {});
-                client.initializeAsync();
-                window.__STATSIG_CLIENT__ = client;
+                var client = new SC(STATSIG_KEY, { userID: uid });
+                // Wait for initialization to complete before exposing the client
+                function onReady() {
+                    window.__STATSIG_CLIENT__ = client;
+                    if (window.__rtAnalytics) {
+                        window.__rtAnalytics.flushQueue();
+                    }
+                }
+                client.initializeAsync().then(onReady).catch(onReady);
             } catch(e) {}
-            if (window.__STATSIG_CLIENT__ && window.__rtAnalytics) {
-                window.__rtAnalytics.flushQueue();
-            }
         };
         document.head.appendChild(s);
     }

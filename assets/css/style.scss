@@ -67,7 +67,7 @@ body {
 .hero-carousel {
   position: relative;
   width: 100%;
-  height: 100vh;
+  height: 100dvh;
   background: var(--flour) url('/assets/images/pattern_illustrations_flour.png');
   background-size: 300px;
   overflow: hidden;
@@ -1106,7 +1106,7 @@ body.mobile-device {
   max-height: calc((100vw - 48px) * 16 / 9 + 120px);
 }
 .mobile-device .carousel-viewport {
-  padding: 56px 24px 12px;
+  padding: 56px 24px 54px;
 }
 .mobile-device .slide-card {
   height: auto;
